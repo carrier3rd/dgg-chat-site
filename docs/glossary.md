@@ -1,6 +1,7 @@
 # Community glossary (v1, Nov 1, 2026)
 
 Machine-readable version: `data/glossary.csv` (55 terms). Count script: `scripts/glossary_count.py`.
+Source tags in the CSV: [verified] = checked against news coverage; [per the owner] = his community knowledge; untagged = read from comment context only.
 
 ## What this is
 Terms that mark where a comment comes from. For each of the 18 communities, I took every comment its regulars wrote

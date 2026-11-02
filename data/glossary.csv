@@ -10,17 +10,17 @@ brain broken,Destiny,11.2,1.9,house phrase,Someone whose politics got warped by 
 slopulism,Destiny,7.1,1.6,house phrase,Slop + populism; low-effort populist politics left or right,Destiny or pakman regular
 sweeping,Destiny,13.7,3.7,house phrase,Defending or covering for someone (sweeping for X),Destiny regular in political threads
 aes,thedavidpakmanshow,122.9,13.6,abbreviation,Abdul El-Sayed (Michigan Senate candidate); not Actually Existing Socialism in this data,Pakman or Bulwark or Destiny regular discussing the Michigan race
-pisco,Destiny,94.2,11.5,name,Leftist streamer and frequent Destiny opponent,Destiny regular; Destiny-orbit drama
-soypill,Destiny,28.5,3.5,name,Leftist commentator and frequent Destiny opponent,Destiny regular
-whick,Destiny,24.8,3.1,name,Commentator in the liberal and Destiny orbit,Destiny regular
+pisco,Destiny,94.2,11.5,name,Former lawyer and debater; hosts the Lib and Learn panel (some members have left); now feuding with Destiny; liberal to left [per the owner; Lib and Learn matches comment context],Destiny regular; Destiny-orbit drama
+soypill,Destiny,28.5,3.5,name,"Liberal-to-left commentator, sympathetic to Hasan; recently traveled to the West Bank [per the owner]",Destiny regular
+whick,Destiny,24.8,3.1,name,Online debate-panel host; liberal [per the owner],Destiny regular
 hutch,Destiny,53.3,8.9,name,Commentator in the Destiny orbit; also discussed in LeftoversH3 (23.5),Destiny regular or H3 snark
 lonerbox,Destiny,19.2,3.1,name,Commentator in the Destiny orbit,Destiny regular
 fungi,LeftoversH3,118.0,8.4,out-group label,Snark term for h3 podcast fans,H3 snark regular; hostile to h3 fanbase
 pedo troll,LeftoversH3,29.7,2.2,nickname,Snark epithet for Ethan Klein,H3 snark regular
-frogan,LeftoversH3,54.8,6.4,name,Twitch streamer sued by Ethan Klein in 2025 for copyright over reaction content; default later lifted [verified],H3 snark regular; lawsuit threads
-denims,LeftoversH3,49.7,5.6,name,"Twitch streamer sued by Ethan Klein in 2025 for copyright; ruled fair use, Klein lost [verified]",H3 snark regular; lawsuit threads
+frogan,LeftoversH3,54.8,6.4,name,Left-leaning streamer in the Hasan orbit [per the owner]; sued by Ethan Klein in 2025 for copyright; default later lifted [verified],H3 snark regular; lawsuit threads
+denims,LeftoversH3,49.7,5.6,name,"Twitch streamer who streams before Hasan goes live, known as 'Hasan's waiting room' [per the owner]; sued by Ethan Klein in 2025 for copyright; ruled fair use [verified]",H3 snark regular; lawsuit threads
 gwam,LeftoversH3,59.9,5.6,name,H3 crew member and co-host,H3 snark or h3 fan
-egg,LeftoversH3,45.6,6.2,nickname,Body-shaming nickname for a person in the h3 orbit,H3 snark regular
+egg,LeftoversH3,45.6,6.2,nickname,Nickname about baldness for a person in the h3 orbit [per the owner]; comments also use it about body shape,H3 snark regular
 snarkers,h3h3productions,45.8,15.3,out-group label,Members of snark communities; used by h3 fans and Destiny regulars (32.0) as an insult; snark also self-applies,h3 fan or Destiny regular when hostile
 teddy fresh,h3h3productions,26.3,6.1,name,Hila Klein's clothing brand,h3 fan or snark
 hasbara,IsraelPalestine,36.0,3.6,charged term,Israeli state public diplomacy; used as accusation of pro-Israel propaganda,Pro-Palestine side (IsraelPalestine or Palestine or H3 snark)
@@ -39,7 +39,7 @@ lib left,PoliticalCompassMemes,24.2,2.6,flair,Political compass quadrant; lib = 
 auth right,PoliticalCompassMemes,23.8,2.5,flair,Political compass quadrant,PCM regular
 unflaired,PoliticalCompassMemes,,,flair,PCM user without a quadrant flair; ritual insult,PCM regular
 based,PoliticalCompassMemes,222.9,103.7,approval,Approval; heavy in PCM; Destiny 153.7,PCM or Destiny regular; weak signal alone
-waow,neoliberal,22.8,5.8,house reaction,Mock-awed reaction,neoliberal regular
+waow,neoliberal,22.8,5.8,house reaction,Reaction to an edgy take that the poster half agrees with but will not say so [per the owner],neoliberal regular
 succ,neoliberal,17.0,4.1,house label,Social democrat (succdem),neoliberal regular
 ping,neoliberal,84.1,20.7,house mechanic,!ping bot that alerts topic groups,neoliberal regular
 dt,neoliberal,,,house mechanic,Discussion Thread (99% of uses are neoliberal regulars),neoliberal regular
@@ -49,7 +49,7 @@ vatnik,ukraine,5.4,0.3,out-group label,Pro-Kremlin person,r/ukraine or neolibera
 slava ukraini,ukraine,,,slogan,Glory to Ukraine (90% of uses are r/ukraine regulars),r/ukraine regular
 mostly peaceful,Conservative,19.0,0.9,ironic,Mocking 2020 media phrasing about protests,Conservative or right regular
 bee,Conservative,21.0,1.4,name,Babylon Bee satire site,Conservative regular
-roach king,Asmongold,14.2,0.7,nickname,Affectionate or mocking name for Asmongold,Asmongold regular when affectionate; LSF when mocking
+roach king,Asmongold,14.2,0.7,nickname,Nickname for Asmongold [per the owner; matches context],Asmongold regular when affectionate; LSF when mocking
 glizzy,atrioc,78.6,0.3,nickname,Atrioc in-joke,atrioc regular
 chud,neoliberal,11.4,7.3,out-group label,Right-wing person; spread across neoliberal and LSF and PCM and Destiny,Weak signal; general left or center use
 omnicause,Destiny,1.7,0.7,out-group label,Left bundling all causes together (often I/P),Center or right critic of the left; weak signal
