@@ -1,0 +1,56 @@
+term,used_most_by,rate_top_per10k,rate_all_per10k,kind,meaning,signal
+pestiny,LeftoversH3,9.8,0.9,nickname,Mocking name for Destiny (sex pest + Destiny),H3 snark or Hasan side; hostile to Destiny
+sexpestiny,LeftoversH3,5.9,1.1,nickname,Same as pestiny; also used by Hasan regulars (4.7),H3 snark or Hasan side; hostile to Destiny
+dggers,Destiny,7.1,1.2,self-label,Destiny's community (destiny.gg); used by members about themselves,Destiny regular when used neutrally; rival when sneering
+regarded,Destiny,86.4,13.1,in-group slur,Softened r-word; DGG house style,Destiny regular
+regard,Destiny,,,in-group slur,Same as regarded (noun),Destiny regular
+lefties,Destiny,39.7,8.6,out-group label,Dismissive term for the online left,Destiny or PCM or Bulwark regular; center-left or right critic of the left
+dear leader,Destiny,14.0,2.7,ironic,Destiny regulars joking about Destiny; elsewhere used for Trump,Destiny regular when about Destiny
+brain broken,Destiny,11.2,1.9,house phrase,Someone whose politics got warped by an issue or audience,Destiny regular
+slopulism,Destiny,7.1,1.6,house phrase,Slop + populism; low-effort populist politics left or right,Destiny or pakman regular
+sweeping,Destiny,13.7,3.7,house phrase,Defending or covering for someone (sweeping for X),Destiny regular in political threads
+aes,thedavidpakmanshow,122.9,13.6,abbreviation,Abdul El-Sayed (Michigan Senate candidate); not Actually Existing Socialism in this data,Pakman or Bulwark or Destiny regular discussing the Michigan race
+pisco,Destiny,94.2,11.5,name,Leftist streamer and frequent Destiny opponent,Destiny regular; Destiny-orbit drama
+soypill,Destiny,28.5,3.5,name,Leftist commentator and frequent Destiny opponent,Destiny regular
+whick,Destiny,24.8,3.1,name,Commentator in the liberal and Destiny orbit,Destiny regular
+hutch,Destiny,53.3,8.9,name,Commentator in the Destiny orbit; also discussed in LeftoversH3 (23.5),Destiny regular or H3 snark
+lonerbox,Destiny,19.2,3.1,name,Commentator in the Destiny orbit,Destiny regular
+fungi,LeftoversH3,118.0,8.4,out-group label,Snark term for h3 podcast fans,H3 snark regular; hostile to h3 fanbase
+pedo troll,LeftoversH3,29.7,2.2,nickname,Snark epithet for Ethan Klein,H3 snark regular
+frogan,LeftoversH3,54.8,6.4,name,YouTuber sued by Ethan Klein,H3 snark regular; lawsuit threads
+denims,LeftoversH3,49.7,5.6,name,YouTuber sued by Ethan Klein,H3 snark regular; lawsuit threads
+gwam,LeftoversH3,59.9,5.6,name,H3 crew member and co-host,H3 snark or h3 fan
+egg,LeftoversH3,45.6,6.2,nickname,Body-shaming nickname for a person in the h3 orbit,H3 snark regular
+snarkers,h3h3productions,45.8,15.3,out-group label,Members of snark communities; used by h3 fans and Destiny regulars (32.0) as an insult; snark also self-applies,h3 fan or Destiny regular when hostile
+teddy fresh,h3h3productions,26.3,6.1,name,Hila Klein's clothing brand,h3 fan or snark
+hasbara,IsraelPalestine,36.0,3.6,charged term,Israeli state public diplomacy; used as accusation of pro-Israel propaganda,Pro-Palestine side (IsraelPalestine or Palestine or H3 snark)
+iof,Palestine,47.7,1.7,charged term,Israeli Occupation Forces; hostile rename of IDF,Strongly pro-Palestine; Palestine or H3 snark or Hasan regulars
+zio,Palestine,44.1,1.4,slur,Short for Zionist; widely treated as a slur,Palestine regular; also quoted by critics
+tisch,Hasan_Piker,21.5,1.2,name,NYPD commissioner Jessica Tisch; Mamdani's choice to keep her,Hasan or DSA regular; NYC left politics
+angie,dsa,31.3,1.8,name,Angie Nixon; DSA-backed candidate,DSA or Hasan regular
+meat pic,Hasan_Piker,13.2,0.6,event,RNC's shirtless Hasan photo,Hasan regular; also H3 snark
+the flame,Hasan_Piker,17.5,2.0,ironic,We carry the flame; Charlie Kirk memorial chant used mockingly,Hasan regular when mocking; PCM or right when sincere
+campist,dsa,13.2,0.6,charged term,Siding with any anti-US bloc; insult from left anti-campists and defended by Tankie,DSA or Tankie regular; intra-left fight
+libs,TankieTheDeprogram,79.6,11.7,out-group label,Liberals as an insult from the left,Tankie regular (also PCM and Destiny at lower rates)
+imperial core,TankieTheDeprogram,,,house phrase,Western countries in Marxist-Leninist framing,Tankie regular
+global south,TankieTheDeprogram,,,house phrase,Non-Western countries; heavy Tankie use (48% of all uses),Tankie regular
+material conditions,TankieTheDeprogram,,,house phrase,Marxist framing phrase,Tankie regular
+lib left,PoliticalCompassMemes,24.2,2.6,flair,Political compass quadrant; lib = libertarian here,PCM regular
+auth right,PoliticalCompassMemes,23.8,2.5,flair,Political compass quadrant,PCM regular
+unflaired,PoliticalCompassMemes,,,flair,PCM user without a quadrant flair; ritual insult,PCM regular
+based,PoliticalCompassMemes,222.9,103.7,approval,Approval; heavy in PCM; Destiny 153.7,PCM or Destiny regular; weak signal alone
+waow,neoliberal,22.8,5.8,house reaction,Mock-awed reaction,neoliberal regular
+succ,neoliberal,17.0,4.1,house label,Social democrat (succdem),neoliberal regular
+ping,neoliberal,84.1,20.7,house mechanic,!ping bot that alerts topic groups,neoliberal regular
+dt,neoliberal,,,house mechanic,Discussion Thread (99% of uses are neoliberal regulars),neoliberal regular
+blue maga,thedavidpakmanshow,22.0,1.1,out-group label,Hyper-partisan Democrats; insult from left or center,Pakman regular (both directions)
+orcs,ukraine,49.2,2.0,dehumanizing,Russian soldiers,r/ukraine regular; strongly pro-Ukraine
+vatnik,ukraine,5.4,0.3,out-group label,Pro-Kremlin person,r/ukraine or neoliberal regular
+slava ukraini,ukraine,,,slogan,Glory to Ukraine (90% of uses are r/ukraine regulars),r/ukraine regular
+mostly peaceful,Conservative,19.0,0.9,ironic,Mocking 2020 media phrasing about protests,Conservative or right regular
+bee,Conservative,21.0,1.4,name,Babylon Bee satire site,Conservative regular
+roach king,Asmongold,14.2,0.7,nickname,Affectionate or mocking name for Asmongold,Asmongold regular when affectionate; LSF when mocking
+glizzy,atrioc,78.6,0.3,nickname,Atrioc in-joke,atrioc regular
+chud,neoliberal,11.4,7.3,out-group label,Right-wing person; spread across neoliberal and LSF and PCM and Destiny,Weak signal; general left or center use
+omnicause,Destiny,1.7,0.7,out-group label,Left bundling all causes together (often I/P),Center or right critic of the left; weak signal
+zog,thedavidpakmanshow,5.1,0.5,charged term,Antisemitic conspiracy term; mostly appears in accusations of zog-posting,Mostly critics quoting it; check context
