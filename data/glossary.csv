@@ -17,8 +17,8 @@ hutch,Destiny,53.3,8.9,name,Commentator in the Destiny orbit; also discussed in 
 lonerbox,Destiny,19.2,3.1,name,Commentator in the Destiny orbit,Destiny regular
 fungi,LeftoversH3,118.0,8.4,out-group label,Snark term for h3 podcast fans,H3 snark regular; hostile to h3 fanbase
 pedo troll,LeftoversH3,29.7,2.2,nickname,Snark epithet for Ethan Klein,H3 snark regular
-frogan,LeftoversH3,54.8,6.4,name,YouTuber sued by Ethan Klein,H3 snark regular; lawsuit threads
-denims,LeftoversH3,49.7,5.6,name,YouTuber sued by Ethan Klein,H3 snark regular; lawsuit threads
+frogan,LeftoversH3,54.8,6.4,name,Twitch streamer sued by Ethan Klein in 2025 for copyright over reaction content; default later lifted [verified],H3 snark regular; lawsuit threads
+denims,LeftoversH3,49.7,5.6,name,"Twitch streamer sued by Ethan Klein in 2025 for copyright; ruled fair use, Klein lost [verified]",H3 snark regular; lawsuit threads
 gwam,LeftoversH3,59.9,5.6,name,H3 crew member and co-host,H3 snark or h3 fan
 egg,LeftoversH3,45.6,6.2,nickname,Body-shaming nickname for a person in the h3 orbit,H3 snark regular
 snarkers,h3h3productions,45.8,15.3,out-group label,Members of snark communities; used by h3 fans and Destiny regulars (32.0) as an insult; snark also self-applies,h3 fan or Destiny regular when hostile
@@ -27,7 +27,7 @@ hasbara,IsraelPalestine,36.0,3.6,charged term,Israeli state public diplomacy; us
 iof,Palestine,47.7,1.7,charged term,Israeli Occupation Forces; hostile rename of IDF,Strongly pro-Palestine; Palestine or H3 snark or Hasan regulars
 zio,Palestine,44.1,1.4,slur,Short for Zionist; widely treated as a slur,Palestine regular; also quoted by critics
 tisch,Hasan_Piker,21.5,1.2,name,NYPD commissioner Jessica Tisch; Mamdani's choice to keep her,Hasan or DSA regular; NYC left politics
-angie,dsa,31.3,1.8,name,Angie Nixon; DSA-backed candidate,DSA or Hasan regular
+angie,dsa,31.3,1.8,name,Angie Nixon; Florida state rep and DSA-backed 2026 Democratic US Senate nominee (won Aug primary; later distanced from DSA) [verified],DSA or Hasan regular
 meat pic,Hasan_Piker,13.2,0.6,event,RNC's shirtless Hasan photo,Hasan regular; also H3 snark
 the flame,Hasan_Piker,17.5,2.0,ironic,We carry the flame; Charlie Kirk memorial chant used mockingly,Hasan regular when mocking; PCM or right when sincere
 campist,dsa,13.2,0.6,charged term,Siding with any anti-US bloc; insult from left anti-campists and defended by Tankie,DSA or Tankie regular; intra-left fight
@@ -54,3 +54,4 @@ glizzy,atrioc,78.6,0.3,nickname,Atrioc in-joke,atrioc regular
 chud,neoliberal,11.4,7.3,out-group label,Right-wing person; spread across neoliberal and LSF and PCM and Destiny,Weak signal; general left or center use
 omnicause,Destiny,1.7,0.7,out-group label,Left bundling all causes together (often I/P),Center or right critic of the left; weak signal
 zog,thedavidpakmanshow,5.1,0.5,charged term,Antisemitic conspiracy term; mostly appears in accusations of zog-posting,Mostly critics quoting it; check context
+pangram,atrioc,,,name,"Pangram, an AI-text detector; atrioc threads about scripts flagged as AI-written [verified product; atrioc link from context]",atrioc regular
