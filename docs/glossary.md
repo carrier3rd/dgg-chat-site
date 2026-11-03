@@ -1,6 +1,6 @@
 # Community glossary (v2, Nov 2, 2026)
 
-Machine-readable version: `data/glossary.csv` (76 terms). Count script: `scripts/glossary_count.py`.
+Machine-readable version: `data/glossary.csv` (79 terms). Count script: `scripts/glossary_count.py`.
 Source tags in the CSV: [verified] = checked against news coverage; [per the owner] = his community knowledge; untagged = read from comment context only.
 
 ## What this is
@@ -77,6 +77,8 @@ mainly in one community.
 Added 15 names from the Ethan-week talking-point clusters and the H3 cast research (see docs/h3-cast.md). Rewrote hutch, lonerbox, gwam, egg, fungi, pedo troll, glizzy, dear leader, sweeping, slopulism, brain broken, omnicause, blue maga, meat pic and the flame with the owner's answers and news checks. Corrections: gwam is Kate 'GirlWithAMicrophone' of the After Show, and egg is a snark nickname for her; omnicause is mostly a neoliberal term, not DGG; 'sweeping' only marks DGG in the 'sweeping for X' form.
 
 Nov 3: added chat-era history for nine terms and five chat-to-Reddit crossover emotes from the OverRustle archive (docs/chat-reddit-crossover-results.md).
+
+All 325 destiny.gg emotes, with chat and Reddit rates: docs/dgg-emotes.md.
 
 ## Full term list
 
@@ -161,3 +163,6 @@ Source tags: [verified] = checked against news coverage; [per the owner] = the o
 | yee | Destiny | 2.4 / 0.5 | DGG emote | YEE, a destiny.gg emote since 2016 (2,400 per 100k messages that year); typed in r/Destiny at 5x the all-sub rate [chat: OverRustle archive] | Destiny regular (chat-to-Reddit crossover) |
 | pepe | Destiny | 2.8 / 0.6 | DGG emote | PEPE, destiny.gg's top emote 2016-2020; typed in r/Destiny at 5x the all-sub rate [chat: OverRustle archive] | Destiny regular (chat-to-Reddit crossover) |
 | omegalul | Destiny | 2.3 / 0.5 | laugh emote | OMEGALUL laugh emote, on destiny.gg and Twitch; site chat 6,446 per 100k messages in 2020; r/Destiny 4.5x the all-sub rate [chat: OverRustle archive] | Destiny regular (chat-to-Reddit crossover) |
+| schizo | Destiny | 11.04 / 3.35 | DGG emote | SCHIZO, a destiny.gg emote (first in site chat: -); typed in r/Destiny comments at 3.3x the all-sub rate [chat: OverRustle archive]; see docs/dgg-emotes.md | Destiny regular (chat-to-Reddit crossover) |
+| gigachad | Destiny | 3.52 / 0.99 | DGG emote | GIGACHAD, a destiny.gg emote (first in site chat: -); typed in r/Destiny comments at 3.6x the all-sub rate [chat: OverRustle archive]; see docs/dgg-emotes.md | Destiny regular (chat-to-Reddit crossover) |
+| dggl | Destiny | 5.82 / 0.69 | DGG emote | dggL, a destiny.gg emote (first in site chat: -); typed in r/Destiny comments at 8.4x the all-sub rate [chat: OverRustle archive]; see docs/dgg-emotes.md | Destiny regular (chat-to-Reddit crossover) |
