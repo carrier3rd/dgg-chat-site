@@ -212,6 +212,20 @@
     });
     list.replaceChildren(...rows.map(glCard));
     $("#gl-empty").hidden = rows.length > 0;
+    const et = $("#tb-gl-emotes tbody");
+    if (et) {
+      const er = (g.emotes || []).filter((e) => !q || e.emote.toLowerCase().includes(q) || (e.meaning || "").toLowerCase().includes(q));
+      et.replaceChildren(...er.map((e) => {
+        const tr = document.createElement("tr");
+        const a = document.createElement("td"); a.textContent = e.emote;
+        const b = document.createElement("td"); b.className = "num"; b.textContent = nf.format(e.messages_7d);
+        const c = document.createElement("td");
+        c.textContent = e.meaning || "No meaning yet.";
+        if (!e.meaning) c.className = "empty";
+        if (e.source) { const s = document.createElement("div"); s.className = "gl-src"; s.textContent = e.source === "Claude" ? "Written by Claude, unreviewed" : "From the " + e.source; c.append(s); }
+        tr.append(a, b, c); return tr;
+      }));
+    }
   }
   $("#gl-q") && $("#gl-q").addEventListener("input", renderGlossary);
   document.querySelectorAll(".gl-filter button").forEach((b) => b.addEventListener("click", () => {
