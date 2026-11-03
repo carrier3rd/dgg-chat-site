@@ -52,3 +52,7 @@ h2 { font-size: 16px; font-weight: 600; margin: 0; }
 .tip { position: fixed; pointer-events: none; background: var(--panel); border: 1px solid var(--line); border-radius: 8px;
   box-shadow: 0 4px 14px rgba(0,0,0,.15); padding: 6px 9px; font-size: 12px; z-index: 10; white-space: nowrap; }
 .tip .k { color: var(--muted); }
+
+/* destiny.gg chat embed on the Live tab */
+.chat-embed { display: block; width: 100%; height: 520px; border: 0; border-radius: 8px; background: #000; }
+@media (max-width: 600px) { .chat-embed { height: 420px; } }

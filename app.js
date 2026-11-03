@@ -167,7 +167,7 @@
     const st = $("#live-status"); st.replaceChildren();
     const dot = document.createElement("span"); dot.className = "dot" + (meta.logger_connected ? " on" : "");
     const gen = meta.generated ? new Date(meta.generated) : null;
-    st.append(dot, document.createTextNode(`Logger ${meta.logger_connected ? "connected" : "offline"} at last update · updated ${gen ? gen.toLocaleString() : "—"} · refreshes daily`));
+    st.append(dot, document.createTextNode(`Logger ${meta.logger_connected ? "connected" : "offline"} at last update · updated ${gen ? gen.toLocaleString() : "—"} · refreshes every 15 min`));
     fillTable("#tb-days", days.slice().reverse(), [["day"], ["messages", "num"], ["chatters", "num"],
       [(r) => r.emote_only_share == null ? null : 100 * r.emote_only_share, "pct"], ["median_words", "num"],
       [(r) => r.connected_minutes == null ? "" : (r.connected_minutes / 60).toFixed(1) + " h", "txt"]]);
