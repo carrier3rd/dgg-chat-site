@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DGG Chat Stats</title>
+<meta name="description" content="Destiny.gg chat in numbers: a live daily view and the 2014-2020 OverRustle archive, with overlap across 22 nearby Twitch chats.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>DGG chat, then and now</h1>
+    <p class="sub">Destiny.gg chat in numbers: today's chat, logged live, and six years of archived logs set against 22 nearby Twitch chats.</p>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="live" aria-selected="true">Live</button>
+      <button role="tab" data-tab="archive" aria-selected="false">Archive 2014-2020</button>
+      <button role="tab" data-tab="about" aria-selected="false">About</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="tab-live" class="tab">
+    <p class="status" id="live-status">Loading…</p>
+    <div class="tiles">
+      <div class="tile"><div class="big" id="t-msgs">—</div><div class="lab" id="t-msgs-lab">Messages today (UTC)</div></div>
+      <div class="tile"><div class="big" id="t-users">—</div><div class="lab">Chatters today</div></div>
+      <div class="tile"><div class="big" id="t-emote">—</div><div class="lab">Messages that are only emotes</div></div>
+      <div class="tile"><div class="big" id="t-7d">—</div><div class="lab">Messages, last 7 days</div></div>
+    </div>
+
+    <div class="card">
+      <h2>Messages per hour, last 7 days</h2>
+      <p class="note">Times in your time zone. Gaps before logging began or while the logger was offline show as zero.</p>
+      <div class="chart" id="c-hours"></div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Top emotes, last 7 days</h2>
+        <p class="note">Share of messages using each emote at least once.</p>
+        <div class="chart" id="c-emotes"></div>
+      </div>
+      <div class="card">
+        <h2>Community vocabulary, last 7 days</h2>
+        <p class="note">Terms from the project's glossary of r/Destiny and nearby subreddits, per 10k chat messages. Emotes are left out.</p>
+        <table class="tbl" id="tb-terms"><thead><tr><th>Term</th><th class="num">Messages</th><th class="num">Per 10k</th></tr></thead><tbody></tbody></table>
+        <p class="empty" id="terms-empty" hidden>Not enough messages yet.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>By day</h2>
+      <p class="note">UTC days. Coverage is how long the logger was connected; days under 24 hours are incomplete.</p>
+      <div class="tbox"><table class="tbl" id="tb-days"><thead><tr><th>Day</th><th class="num">Messages</th><th class="num">Chatters</th><th class="num">Emote-only</th><th class="num">Median words</th><th class="num">Coverage</th></tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+
+  <section id="tab-archive" class="tab" hidden>
+    <div class="tiles">
+      <div class="tile"><div class="big" id="a-total">—</div><div class="lab">Archived chat messages</div></div>
+      <div class="tile"><div class="big" id="a-chats">—</div><div class="lab">Chats in the archive</div></div>
+      <div class="tile"><div class="big" id="a-dgg">—</div><div class="lab">DGG messages, Dec 2013 to Apr 2020</div></div>
+      <div class="tile"><div class="big" id="a-hasan">—</div><div class="lab">Of Destiny's Twitch regulars also in Hasan's chat, 2019-20</div></div>
+    </div>
+
+    <div class="card">
+      <h2>Who shared chatters with Destiny</h2>
+      <p class="note">Share of each chat's regulars (3+ messages in a month) who were also regulars in Destiny's Twitch chat or in DGG that month, pooled over the months both were logged. DGG and vaush.gg are site chats with their own accounts, so any match with them counts same-spelled names only and is a lower bound.</p>
+      <div class="legend"><span><i class="sw s1"></i>In Destiny's Twitch chat</span><span><i class="sw s2"></i>In DGG</span></div>
+      <div class="chart" id="c-overlap"></div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Hasan's early chat was Destiny's audience</h2>
+        <p class="note">Shared regulars between Hasan's and Destiny's Twitch chats, as a share of each. Hasan's side falls as his chat grows; Destiny's side holds near a third.</p>
+        <div class="legend"><span><i class="sw s1"></i>Share of Hasan's regulars</span><span><i class="sw s2"></i>Share of Destiny's regulars</span></div>
+        <div class="chart" id="c-hasan"></div>
+      </div>
+      <div class="card">
+        <h2>Badbunny drifts away</h2>
+        <p class="note">Share of Badbunny's regulars also in Destiny's Twitch chat.</p>
+        <div class="chart" id="c-bb"></div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>DGG grew by talking more</h2>
+        <p class="note">Messages per month, averaged by year. Monthly chatters stayed at 6-9k throughout. 2020 is January to April.</p>
+        <div class="chart" id="c-dgg"></div>
+      </div>
+      <div class="card">
+        <h2>Emote eras in DGG</h2>
+        <p class="note">Top five destiny.gg emotes each year, from today's emote list (retired emotes are missed).</p>
+        <table class="tbl" id="tb-emotes"><thead><tr><th>Year</th><th>Top emotes</th><th class="num">PEPE</th><th class="num">YEE</th></tr></thead><tbody></tbody></table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Political vocabulary by chat</h2>
+      <p class="note">Per 10k messages. Electoral: politicians, parties, elections. Culture war: sjw, feminist, woke, cuck, soy, incel and similar. Word lists were fixed before the counts were read.</p>
+      <div class="tbox"><table class="tbl" id="tb-pol"><thead><tr><th>Chat</th><th>Year</th><th class="num">Electoral</th><th class="num">Culture war</th></tr></thead><tbody></tbody></table></div>
+    </div>
+
+    <div class="card">
+      <h2>The chats</h2>
+      <p class="note">Logged range is the first and last month with 1,000+ messages. Groups are descriptive labels.</p>
+      <div class="tbox"><table class="tbl" id="tb-chans"><thead><tr><th>Chat</th><th>Group</th><th class="num">Messages</th><th>From</th><th>To</th><th class="num">Median words</th><th>Top short message</th></tr></thead><tbody></tbody></table></div>
+    </div>
+
+    <div class="card">
+      <h2>Predictions, scored</h2>
+      <p class="note">Each was written down and timestamped before the matching data was read. Misses stay in.</p>
+      <div class="tbox"><table class="tbl" id="tb-score"><thead><tr><th>#</th><th>Prediction</th><th>Result</th><th>Evidence</th></tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+
+  <section id="tab-about" class="tab prose" hidden>
+    <h2>What this is</h2>
+    <p>A side study from a student research project on online communities around streamers. It looks at destiny.gg (DGG) chat two ways: a live log of today's chat, and the OverRustle archive of chat logs up to April 2020.</p>
+    <h2>Live data</h2>
+    <p>A read-only logger reads DGG's public chat feed. It never posts. The DGG moderators okayed it. Logging began on November 3, 2026, and the numbers here refresh once a day. Bot accounts are left out of the counts.</p>
+    <h2>Archive data</h2>
+    <p>OverRustle logged DGG and many Twitch chats until spring 2020. Coverage differs a lot by chat: some have years, some have weeks. The archive's own gaps (outages, late additions) are not filled in.</p>
+    <h2>Privacy</h2>
+    <p>No messages, usernames or user identifiers are published. Usernames are replaced by a salted one-way code as soon as a message is read, and only totals, shares and rates leave the research machine. Overlap between chats is counted only in aggregate; no one is followed from one chat to another.</p>
+    <h2>Limits</h2>
+    <ul>
+      <li>Twitch-to-Twitch overlap matches the same accounts. Overlap with DGG or vaush.gg, which have their own accounts, matches same-spelled names only, so it undercounts.</li>
+      <li>Words that are also someone's chat name were dropped from word counts, which removed a few ordinary words in some chats.</li>
+      <li>Emotes are matched against today's destiny.gg emote list, so emotes retired before 2020 are not counted.</li>
+      <li>Shared chatters show who was present in both chats, not what they thought of either streamer.</li>
+    </ul>
+    <p class="note" id="about-gen"></p>
+  </section>
+</main>
+<div class="tip" id="tip" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>
