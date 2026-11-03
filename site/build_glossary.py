@@ -19,8 +19,10 @@ Safeguards (definitions publish without human review, so these are automatic):
   published) and listed in the state file.
 - Sample messages sent to the model have names replaced with [user] and links removed. They are not published.
 
-Claude API key: ANTHROPIC_API_KEY in the environment (the systemd unit loads it from
-~/.config/socialscope/anthropic.env). Without a key, terms publish with "definition pending".
+Definitions without an API key: each run writes the terms that need a meaning, with sanitized sample lines, to
+~/socialscope_data/glossary_pending.json (private, never published). A daily scheduled Claude task reads it and
+writes ~/socialscope_data/glossary_definitions.json, which the next run applies (sensitive ones are held).
+Optional: with ANTHROPIC_API_KEY set, the script drafts definitions itself through the API instead.
 """
 import argparse
 import collections
@@ -186,6 +188,8 @@ def main():
     ap.add_argument("--emote-meanings", default=H("~/socialscope/data/dgg_emotes.csv"))
     ap.add_argument("--glossary", default=H("~/socialscope/data/glossary.csv"))
     ap.add_argument("--state", default=H("~/socialscope_data/glossary_state.json"))
+    ap.add_argument("--definitions", default=H("~/socialscope_data/glossary_definitions.json"))
+    ap.add_argument("--pending", default=H("~/socialscope_data/glossary_pending.json"))
     ap.add_argument("--out", required=True)
     ap.add_argument("--dry-run", action="store_true", help="no API calls; print what would be drafted")
     a = ap.parse_args()
@@ -197,6 +201,11 @@ def main():
     rates, arch_base, arch_n, names = load_archive(H(a.agg))
     state = json.load(open(a.state)) if os.path.exists(a.state) else {"terms": {}}
     key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
+    try:
+        defs = json.load(open(a.definitions)).get("terms", {})
+    except (OSError, ValueError):
+        defs = {}
+    pending = []
 
     now = dt.datetime.now(dt.timezone.utc)
     now_ms = now.timestamp() * 1000
@@ -343,8 +352,20 @@ def main():
             e["definition"], e["source"] = meanings[t]
             e["def_date"] = e.get("def_date") or now.strftime("%Y-%m-%d")
         else:
+            d = defs.get(t)
+            if d and d.get("date") and (not e.get("definition") or d["date"] >= e.get("def_date", "")):
+                if d.get("sensitive"):
+                    e.update(held=True, held_reason=d.get("reason") or "flagged sensitive",
+                             held_at=now.isoformat(timespec="minutes"))
+                    held_now.append(t)
+                    continue
+                if d.get("definition"):
+                    e.update(definition=str(d["definition"]).strip()[:400], source="Claude",
+                             model=d.get("model", "Claude"), def_date=d["date"], kind=str(d.get("kind", kind))[:20])
             stale = (not e.get("definition") or (t in trending and e.get("source") == "Claude" and
                      dt.date.fromisoformat(e["def_date"]) <= now.date() - dt.timedelta(days=REDRAFT_DAYS)))
+            if stale:
+                pending.append({"term": emotes_low.get(t, t), "key": t, **info, "samples": samples(t)})
             if stale and calls < MAX_CALLS_PER_RUN:
                 s = samples(t)
                 if a.dry_run or not key:
@@ -377,11 +398,32 @@ def main():
             "first_seen_live": e["first_seen"], "archive": arch, "co_terms": info["co"], "quotes": quotes(t),
         })
 
+    # ---- every emote used in the last 7 days, with its meaning where one exists
+    held_keys = {t for t, e in terms.items() if e.get("held")} | {k for k, v in defs.items() if v.get("sensitive")}
+    ecount = collections.Counter()
+    for _, _, _, toks in recent:
+        ecount.update(x for x in toks if x in emotes_low)
+    emote_rows = []
+    for k, c in ecount.most_common():
+        if k in held_keys or BLOCK.search(k):
+            continue
+        if k in meanings:
+            mean, src = meanings[k]
+        elif (defs.get(k) or {}).get("definition"):
+            mean, src = defs[k]["definition"], "Claude"
+        else:
+            mean, src = None, None
+        emote_rows.append({"emote": emotes_low[k], "messages_7d": c,
+                           "share_7d": round(c / max(1, len(recent)), 4), "meaning": mean, "source": src})
+
     os.makedirs(a.out, exist_ok=True)
-    payload = {"generated": now.isoformat(timespec="minutes"), "messages_24h": n24, "model": MODEL,
-               "entries": entries}
+    payload = {"generated": now.isoformat(timespec="minutes"), "messages_24h": n24, "messages_7d": len(recent),
+               "model": MODEL, "entries": entries, "emotes": emote_rows}
     with open(os.path.join(a.out, "glossary.json"), "w") as f:
         json.dump(payload, f, separators=(",", ":"))
+    with open(a.pending + ".tmp", "w") as f:
+        json.dump({"generated": now.isoformat(timespec="minutes"), "terms": pending[:40]}, f, indent=1)
+    os.replace(a.pending + ".tmp", a.pending)
     tmp = a.state + ".tmp"
     with open(tmp, "w") as f:
         json.dump(state, f, indent=1)
