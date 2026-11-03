@@ -16,11 +16,11 @@
     redraw();
   };
   tabs.forEach((b) => b.addEventListener("click", () => show(b.dataset.tab)));
-  const fromHash = () => { const t = (location.hash || "#live").slice(1).replace(/[^a-z]/g, ""); return ["live", "archive", "about"].includes(t) ? t : "live"; };
+  const fromHash = () => { const t = (location.hash || "#live").slice(1).replace(/[^a-z]/g, ""); return ["live", "glossary", "archive", "about"].includes(t) ? t : "live"; };
   window.addEventListener("hashchange", () => { if (D.meta !== undefined) show(fromHash()); });
 
   // ---------- data
-  const files = ["meta", "live_days", "live_hours", "live_emotes", "live_terms", "archive_overlap", "archive_channels",
+  const files = ["glossary", "meta", "live_days", "live_hours", "live_emotes", "live_terms", "archive_overlap", "archive_channels",
     "archive_dgg_years", "archive_dgg_emotes", "archive_politics", "archive_hasan_monthly", "archive_badbunny_monthly",
     "scorecard"];
   const D = {};
@@ -152,8 +152,77 @@
     }));
   };
 
+
+  // ---------- glossary
+  let glFilter = "all";
+  const kindLabel = { emote: "emote", word: "word", phrase: "phrase", nickname: "nickname", meme: "meme",
+    reference: "reference", person: "person", event: "event", other: "term" };
+  const srcLabel = (e) => e.definition_source === "Claude" ? `Written by Claude from recent chat, ${e.definition_date}, unreviewed`
+    : e.definition_source ? `From the ${e.definition_source}` : "";
+  function spark(trend) {
+    const vals = trend.map((d) => d.per_10k);
+    const w = 300, h = 34, max = Math.max(1, ...vals.filter((v) => v != null));
+    const s = el("svg", { viewBox: `0 0 ${w} ${h}`, class: "spark", preserveAspectRatio: "none", role: "img" });
+    const step = w / Math.max(1, vals.length - 1);
+    const pts = vals.map((v, i) => v == null ? null : `${i * step},${h - 2 - (h - 4) * v / max}`).filter(Boolean);
+    if (pts.length > 1) el("polyline", { points: pts.join(" "), fill: "none", stroke: "var(--s2)", "stroke-width": 2, "stroke-linejoin": "round", "vector-effect": "non-scaling-stroke" }, s);
+    else if (pts.length === 1) { const [x, y] = pts[0].split(","); el("circle", { cx: x, cy: y, r: 3, fill: "var(--s2)" }, s); }
+    const t = document.createElementNS(NS, "title"); t.textContent = "Uses per 10k messages, last 14 days"; s.prepend(t);
+    return s;
+  }
+  const div = (cls, txt) => { const d = document.createElement("div"); if (cls) d.className = cls; if (txt != null) d.textContent = txt; return d; };
+  function glCard(e) {
+    const c = div("card gl-card");
+    const head = div("gl-head");
+    head.append(div("gl-term", e.term));
+    const chips = div("gl-co");
+    if (e.status === "trending") chips.append(Object.assign(div("chip hot", `trending ${e.lift >= 100 ? "new" : e.lift + "x"}`)));
+    chips.append(div("chip", kindLabel[e.kind] || "term"));
+    head.append(chips); c.append(head);
+    const p = document.createElement("p");
+    p.className = "gl-def" + (e.definition ? "" : " pending");
+    p.textContent = e.definition || "Definition pending.";
+    c.append(p);
+    if (e.definition) c.append(div("gl-src", srcLabel(e)));
+    c.append(div("gl-stats", `${nf.format(e.messages_24h)} messages from ${nf.format(e.chatters_24h)} chatters in the last 24 hours · ${e.per_10k_24h} per 10k`));
+    c.append(spark(e.trend || []));
+    const a = e.archive;
+    c.append(div("gl-stats", a ? `In 2014-2020 DGG chat: first seen ${a.first_year}, peaked ${a.peak_year}, ${a.rate_2019_per100k} per 100k messages in 2019` : "Not seen in 2014-2020 DGG chat"));
+    if (e.co_terms && e.co_terms.length) {
+      const co = div("gl-co"); co.append(div("gl-stats", "Seen with:"));
+      e.co_terms.forEach((t) => co.append(div("chip", t))); c.append(co);
+    }
+    (e.quotes || []).forEach((q) => {
+      const b = document.createElement("blockquote"); b.className = "gl-q"; b.textContent = q.text + " ";
+      const sp = document.createElement("span"); sp.textContent = `sent by ${q.chatters} chatters`; b.append(sp); c.append(b);
+    });
+    return c;
+  }
+  function renderGlossary() {
+    const g = D.glossary;
+    const list = $("#gl-list"); if (!list) return;
+    if (!g || !g.entries) { $("#gl-status").textContent = "The glossary hasn't been built yet."; list.replaceChildren(); return; }
+    $("#gl-status").textContent = `${g.entries.length} terms · ${nf.format(g.messages_24h)} messages in the last 24 hours · updated ${new Date(g.generated).toLocaleString()}`;
+    const q = ($("#gl-q").value || "").trim().toLowerCase();
+    const rows = g.entries.filter((e) => {
+      if (glFilter === "trending" && e.status !== "trending") return false;
+      if (glFilter === "emote" && e.kind !== "emote") return false;
+      if (glFilter === "word" && e.kind === "emote") return false;
+      return !q || e.term.toLowerCase().includes(q) || (e.definition || "").toLowerCase().includes(q);
+    });
+    list.replaceChildren(...rows.map(glCard));
+    $("#gl-empty").hidden = rows.length > 0;
+  }
+  $("#gl-q") && $("#gl-q").addEventListener("input", renderGlossary);
+  document.querySelectorAll(".gl-filter button").forEach((b) => b.addEventListener("click", () => {
+    glFilter = b.dataset.f;
+    document.querySelectorAll(".gl-filter button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+    renderGlossary();
+  }));
+
   // ---------- static fills (tables and tiles)
   function fillStatic() {
+    renderGlossary();
     const meta = D.meta || {};
     const days = D.live_days || [];
     const today = days[days.length - 1];

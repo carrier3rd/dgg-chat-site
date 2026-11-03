@@ -56,3 +56,25 @@ h2 { font-size: 16px; font-weight: 600; margin: 0; }
 /* destiny.gg chat embed on the Live tab */
 .chat-embed { display: block; width: 100%; height: 520px; border: 0; border-radius: 8px; background: #000; }
 @media (max-width: 600px) { .chat-embed { height: 420px; } }
+
+.gl-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.gl-controls input { flex: 1 1 220px; font: inherit; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px;
+  background: var(--bg); color: var(--fg); }
+.gl-filter { display: flex; gap: 4px; flex-wrap: wrap; }
+.gl-filter button { font: inherit; font-size: 13px; padding: 5px 10px; border: 1px solid var(--line); border-radius: 999px;
+  background: none; color: var(--muted); cursor: pointer; }
+.gl-filter button[aria-pressed=true] { background: var(--s2); border-color: var(--s2); color: #fff; }
+.gl-list { display: grid; gap: var(--gap); grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+.gl-card { display: flex; flex-direction: column; gap: 8px; }
+.gl-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.gl-term { font: 400 22px/1.2 Georgia, serif; word-break: break-word; }
+.chip { font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
+.chip.hot { border-color: var(--s2); color: var(--s2); }
+.gl-def { margin: 0; }
+.gl-def.pending { color: var(--muted); font-style: normal; }
+.gl-src { font-size: 12px; color: var(--muted); }
+.gl-stats { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.gl-co { display: flex; flex-wrap: wrap; gap: 4px; }
+.gl-q { margin: 0; padding-left: 10px; border-left: 2px solid var(--line); font-size: 13px; }
+.gl-q span { color: var(--muted); font-size: 12px; }
+.spark { width: 100%; height: 34px; display: block; }
