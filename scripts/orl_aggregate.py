@@ -51,6 +51,10 @@ WHITELIST = {
 }
 
 
+# Filled from --keep-file: single words join the whitelist; multi-word phrases are counted into phrases.tsv.
+PHRASES = []
+
+
 def salted_hash(name, salt):
     return hmac.new(salt, name.lower().encode(), hashlib.sha256).hexdigest()[:16]
 
@@ -134,6 +138,7 @@ def process_channel(archive, channel, out_dir, salt, emotes, prog, prog_path, id
         shorts = collections.defaultdict(collections.Counter)
         user_years = collections.Counter()
         user_months = collections.Counter()
+        phrase_counts = collections.defaultdict(collections.Counter)
         nicks = set()
         done_bytes, msgs, t0 = 0, 0, time.time()
 
@@ -158,6 +163,11 @@ def process_channel(archive, channel, out_dir, salt, emotes, prog, prog_path, id
                     toks = TOKEN.findall(text)
                     lengths[(y, min(len(toks), 100))] += 1
                     tokens[y].update(toks)
+                    if PHRASES:
+                        low = " " + " ".join(toks).lower() + " "
+                        for ph in PHRASES:
+                            if ph in low:
+                                phrase_counts[y][ph.strip()] += 1
                     if 0 < len(toks) <= 3:
                         shorts[y][" ".join(toks)] += 1
                     user_years[(y, u)] += 1
@@ -196,6 +206,12 @@ def process_channel(archive, channel, out_dir, salt, emotes, prog, prog_path, id
                         break
                     if keep(tok):
                         f.write(f"{y}\t{tok}\t{c}\n")
+        if PHRASES:
+            with open(os.path.join(cdir, "phrases.tsv"), "w") as f:
+                f.write("year\tphrase\tmessages\n")
+                for y in sorted(phrase_counts):
+                    for ph, c in phrase_counts[y].most_common():
+                        f.write(f"{y}\t{ph}\t{c}\n")
         with open(os.path.join(cdir, "short_msgs.tsv"), "w") as f:
             f.write("year\tmessage\tcount\n")
             for y in sorted(shorts):
@@ -227,6 +243,8 @@ def main():
     ap.add_argument("--salt-file", required=True)
     ap.add_argument("--emotes", help="destiny.gg emotes.json; emote names survive the nick filter")
     ap.add_argument("--progress-dir", default=os.path.expanduser("~/socialscope_data/orl_progress"))
+    ap.add_argument("--keep-file", help="one term per line (e.g. glossary terms): single words survive the nick "
+                    "filter; multi-word phrases are counted per message into phrases.tsv")
     ap.add_argument("--channels", nargs="*", help="subset of channel names (default: all .7z files, smallest first)")
     args = ap.parse_args()
 
@@ -237,6 +255,10 @@ def main():
     emotes = set()
     if args.emotes and os.path.exists(os.path.expanduser(args.emotes)):
         emotes = {e["prefix"] for e in json.load(open(os.path.expanduser(args.emotes)))}
+    if args.keep_file:
+        terms = [t.strip().lower() for t in open(os.path.expanduser(args.keep_file)) if t.strip()]
+        WHITELIST.update(t for t in terms if " " not in t)
+        PHRASES.extend(" " + t + " " for t in terms if " " in t)
 
     files = sorted((fn for fn in os.listdir(args.archive) if fn.endswith(".7z")),
                    key=lambda fn: os.path.getsize(os.path.join(args.archive, fn)))

@@ -1,19 +1,19 @@
 term,used_most_by,rate_top_per10k,rate_all_per10k,kind,meaning,signal
 pestiny,LeftoversH3,9.8,0.9,nickname,Mocking name for Destiny (sex pest + Destiny),H3 snark or Hasan side; hostile to Destiny
 sexpestiny,LeftoversH3,5.9,1.1,nickname,Same as pestiny; also used by Hasan regulars (4.7),H3 snark or Hasan side; hostile to Destiny
-dggers,Destiny,7.1,1.2,self-label,Destiny's community (destiny.gg); used by members about themselves,Destiny regular when used neutrally; rival when sneering
-regarded,Destiny,86.4,13.1,in-group slur,Softened r-word; DGG house style,Destiny regular
+dggers,Destiny,7.1,1.2,self-label,"Destiny's community (destiny.gg); used by members about themselves Chat history: near zero in destiny.gg chat before 2018, then 4.2 per 100k messages in 2019 and 8.1 in 2020; the self-label grew late.",Destiny regular when used neutrally; rival when sneering
+regarded,Destiny,86.4,13.1,in-group slur,"Softened r-word; DGG house style Chat history: under 1 per 100k destiny.gg messages every year to 2020, while the plain r-word ran 90-120; the softened form is a post-2020 house style.",Destiny regular
 regard,Destiny,,,in-group slur,Same as regarded (noun),Destiny regular
-lefties,Destiny,39.7,8.6,out-group label,Dismissive term for the online left,Destiny or PCM or Bulwark regular; center-left or right critic of the left
+lefties,Destiny,39.7,8.6,out-group label,"Dismissive term for the online left Chat history: rare in destiny.gg chat through 2016 (0.6 per 100k messages), then 28.6 in 2019 and 35.0 in 2020, matching Destiny's 2019 turn to arguing with the online left. Also heavy in Vaush's chat (41.7).",Destiny or PCM or Bulwark regular; center-left or right critic of the left
 dear leader,Destiny,14.0,2.7,ironic,"Ironic: mocks the idea that DGG goes along with whatever Destiny says ('of course, dear leader'); started by Mouton [per the owner]; elsewhere used for Trump","Destiny regular when about Destiny; self-mocking, not hostile"
 brain broken,Destiny,11.2,1.9,house phrase,Someone stuck on one issue who can't let it go even when dropping it would serve them [per the owner],Destiny regular
 slopulism,Destiny,7.1,1.6,house phrase,"Slop + populism: low-effort populist talking points, left or right [per the owner]",Destiny or pakman regular
-sweeping,Destiny,13.7,3.7,house phrase,"'Sweeping for X' = covering for or defending X; Destiny has an emote for it [per the owner]; the bare word is mostly ordinary English ('sweeping generalization'), so only the 'sweeping for' form is a marker",Destiny regular (the sweeping-for form)
+sweeping,Destiny,13.7,3.7,house phrase,"'Sweeping for X' = covering for or defending X; Destiny has an emote for it [per the owner]; the bare word is mostly ordinary English ('sweeping generalization'), so only the 'sweeping for' form is a marker Confirmed: SWEEPING is an official destiny.gg emote (in the site's emote list).",Destiny regular (the sweeping-for form)
 aes,thedavidpakmanshow,122.9,13.6,abbreviation,Abdul El-Sayed (Michigan Senate candidate); not Actually Existing Socialism in this data,Pakman or Bulwark or Destiny regular discussing the Michigan race
 pisco,Destiny,94.2,11.5,name,Former lawyer and debater; hosts the Lib and Learn panel (some members have left); now feuding with Destiny; liberal to left [per the owner; Lib and Learn matches comment context],Destiny regular; Destiny-orbit drama
 soypill,Destiny,28.5,3.5,name,"Liberal-to-left commentator, sympathetic to Hasan; recently traveled to the West Bank [per the owner]",Destiny regular
 whick,Destiny,24.8,3.1,name,Online debate-panel host; liberal [per the owner],Destiny regular
-hutch,Destiny,53.3,8.9,name,"Destiny-aligned liberal streamer; conventional Democrat, closer to Destiny than to progressives or DSA; one of a few commentators openly fighting the left/'tankie' push inside the party [per the owner]; co-hosts The Lesser Evil with Lonerbox and Dan Saltman [per the owner]","Destiny regular or H3 snark; liberal, anti-left framing"
+hutch,Destiny,53.3,8.9,name,"Destiny-aligned liberal streamer; conventional Democrat, closer to Destiny than to progressives or DSA; one of a few commentators openly fighting the left/'tankie' push inside the party [per the owner]; co-hosts The Lesser Evil with Lonerbox and Dan Saltman [per the owner] Chat history: mentioned in destiny.gg chat from 2018 (4.2 per 100k), 23.1 in early 2020.","Destiny regular or H3 snark; liberal, anti-left framing"
 lonerbox,Destiny,19.2,3.1,name,Scottish video essayist turned streamer; deep I/P research; fell out with Destiny over Destiny's legal case and no longer talks to him; co-hosts The Lesser Evil with Hutch and Dan Saltman; dated Pxie; willing to criticize the left [per the owner],"Destiny regular or H3 snark; liberal, anti-left framing"
 fungi,LeftoversH3,118.0,8.4,out-group label,"Snark term for h3 podcast fans (often 'the fungi'); 1,274 of about 1,300 uses are in LeftoversH3; origin not found","LeftoversH3 regular, hostile to h3 fans"
 pedo troll,LeftoversH3,29.7,2.2,nickname,"From 'pedo_troll', an old Reddit account linked to Ethan via breach data; Ethan admitted it was his, about 15 years old, an edgy troll name; snark uses it as an epithet. Destiny used it as a counterattack after Ethan tried to cast him as a pedophile under pressure from the left after Ethan's falling out with Hasan [per the owner]",H3 snark regular; Destiny regular when used against Ethan
@@ -31,7 +31,7 @@ angie,dsa,31.3,1.8,name,Angie Nixon; Florida state rep and DSA-backed 2026 Democ
 meat pic,Hasan_Piker,13.2,0.6,event,"Hasan's Nov 2024 underwear mirror selfie, shown (blurred) in a socialism segment at the GOP Midterm Convention in Dallas, Sep 2026; Hasan joked about it on stream [verified, Aftermath]; the owner links it to puff pieces about his looks",Hasan regular; also H3 snark
 the flame,Hasan_Piker,17.5,2.0,ironic,"Mocking reference to the Charlie Kirk memorial chant/song ('we are Charlie Kirk', 'we carry the flame') [per the owner]",Hasan regular when mocking; PCM or right when sincere
 campist,dsa,13.2,0.6,charged term,Siding with any anti-US bloc; insult from left anti-campists and defended by Tankie,DSA or Tankie regular; intra-left fight
-libs,TankieTheDeprogram,79.6,11.7,out-group label,Liberals as an insult from the left,Tankie regular (also PCM and Destiny at lower rates)
+libs,TankieTheDeprogram,79.6,11.7,out-group label,Liberals as an insult from the left Chat history: Vaush's chat 132 per 100k messages (2019-20) against about 10 in destiny.gg chat.,Tankie regular (also PCM and Destiny at lower rates)
 imperial core,TankieTheDeprogram,,,house phrase,Western countries in Marxist-Leninist framing,Tankie regular
 global south,TankieTheDeprogram,,,house phrase,Non-Western countries; heavy Tankie use (48% of all uses),Tankie regular
 material conditions,TankieTheDeprogram,,,house phrase,Marxist framing phrase,Tankie regular
@@ -51,7 +51,7 @@ mostly peaceful,Conservative,19.0,0.9,ironic,Mocking 2020 media phrasing about p
 bee,Conservative,21.0,1.4,name,Babylon Bee satire site,Conservative regular
 roach king,Asmongold,14.2,0.7,nickname,Nickname for Asmongold [per the owner; matches context],Asmongold regular when affectionate; LSF when mocking
 glizzy,atrioc,78.6,0.3,nickname,Atrioc in-joke about his large fingers; now a word chat throws out to get his attention [per the owner],atrioc regular
-chud,neoliberal,11.4,7.3,out-group label,Right-wing person; spread across neoliberal and LSF and PCM and Destiny,Weak signal; general left or center use
+chud,neoliberal,11.4,7.3,out-group label,"Right-wing person; spread across neoliberal and LSF and PCM and Destiny Chat history: a left-chat word first. Vaush's 2019-20 chat used it at 95 per 100k messages, destiny.gg chat at about 1.",Weak signal; general left or center use
 omnicause,neoliberal,1.7,0.7,out-group label,"Mocking the left for folding every cause into one (usually Gaza); not common in DGG [per the owner]; most used by neoliberal regulars (42 of 101 uses), then Destiny and PCM",neoliberal or Destiny regular; anti-left
 zog,thedavidpakmanshow,5.1,0.5,charged term,Antisemitic conspiracy term; mostly appears in accusations of zog-posting,Mostly critics quoting it; check context
 pangram,atrioc,,,name,"Pangram, an AI-text detector; atrioc threads about scripts flagged as AI-written [verified product; atrioc link from context]",atrioc regular
@@ -64,9 +64,14 @@ olivia,h3h3productions,104.1,21.3,name,"Olivia Lopes, H3 crew, helps with resear
 morgan,h3h3productions,32.9,7.0,name,"Morgan Smalley, former H3 crew; fans speculate his firing is linked to the affair [past crew verified; link is speculation]",h3 fan or snark regular
 moses,LeftoversH3,13.1,3.6,name,Moses Hacmon: Hila Klein's brother [per the owner] and Trisha Paytas's husband; central to the Frenemies fallout,h3 or snark regular
 jennings,thedavidpakmanshow,5.1,0.6,name,"Scott Jennings, conservative CNN commentator; Hasan sued him (reported Oct 28, 2026) for $72.5M over a 42-second clip compilation Jennings posted Aug 12 and aired Aug 17 captioned as Hasan backing lynchings; the complaint says it stripped sarcasm and context from an Oct 2024 stream [verified, Dexerto; allegations untested]",politics-sub discussion of Hasan
-kulinski,thedavidpakmanshow,8.5,1.0,name,"Kyle Kulinski (Secular Talk), left-populist commentator [per the owner]","pakman, Destiny or bulwark regular"
+kulinski,thedavidpakmanshow,8.5,1.0,name,"Kyle Kulinski (Secular Talk), left-populist commentator [per the owner] Chat history: rising in destiny.gg chat 2018-2020 (0.6 to 6.8 per 100k); Vaush's chat 14.7.","pakman, Destiny or bulwark regular"
 mehdi,samharris,51.6,6.1,name,"Mehdi Hasan, journalist and debater [per the owner]; heavy in samharris and Destiny",samharris or Destiny regular
-mouton,Destiny,10.3,1.4,name,DGG figure who started the 'dear leader' joke [per the owner],Destiny regular
+mouton,Destiny,10.3,1.4,name,"DGG figure who started the 'dear leader' joke [per the owner] Chat history: a destiny.gg chat fixture since 2016, about 97 per 100k messages in 2018-19.",Destiny regular
 saltman,LeftoversH3,24.8,2.6,name,"Dan Saltman, co-host of The Lesser Evil with Hutch and Lonerbox [per the owner]; most discussed by LeftoversH3 regulars",Destiny-orbit or snark regular
 pxie,Destiny,5.5,1.3,name,Streamer who dated Lonerbox [per the owner],Destiny regular
 after dark,h3h3productions,44.1,7.4,name,"H3 After Dark, the after show with Harley and Kate [verified]",h3 fan or snark regular
+soy,Destiny,17.0,3.1,DGG emote / insult,"SOY, a destiny.gg emote (soy-face); surged in site chat 2018-2020 (93 to 388 per 100k messages) and typed in r/Destiny comments at 5.5x the all-sub rate [chat: OverRustle archive]",Destiny regular (chat-to-Reddit crossover)
+amazin,Destiny,0.9,0.2,DGG emote,"AMAZIN, a destiny.gg emote; 354 per 100k site-chat messages in 2019; typed in r/Destiny at 5x the all-sub rate [chat: OverRustle archive]",Destiny regular (chat-to-Reddit crossover)
+yee,Destiny,2.4,0.5,DGG emote,"YEE, a destiny.gg emote since 2016 (2,400 per 100k messages that year); typed in r/Destiny at 5x the all-sub rate [chat: OverRustle archive]",Destiny regular (chat-to-Reddit crossover)
+pepe,Destiny,2.8,0.6,DGG emote,"PEPE, destiny.gg's top emote 2016-2020; typed in r/Destiny at 5x the all-sub rate [chat: OverRustle archive]",Destiny regular (chat-to-Reddit crossover)
+omegalul,Destiny,2.3,0.5,laugh emote,"OMEGALUL laugh emote, on destiny.gg and Twitch; site chat 6,446 per 100k messages in 2020; r/Destiny 4.5x the all-sub rate [chat: OverRustle archive]",Destiny regular (chat-to-Reddit crossover)
