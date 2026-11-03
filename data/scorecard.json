@@ -1,0 +1,110 @@
+[
+ {
+  "n": 1,
+  "prediction": "'Regarded' barely exists before 2020",
+  "result": "Held",
+  "evidence": "0.3% of the r-word every year, mostly 'regarded as'. A sanity check."
+ },
+ {
+  "n": 2,
+  "prediction": "DGG's own emotes hold 6+ of its top 10",
+  "result": "Partly held",
+  "evidence": "6-9 of 10 in 2014-18; 4 of 10 in 2019-20 as PepeLaugh, LULW and OMEGALUL took over."
+ },
+ {
+  "n": 3,
+  "prediction": "PEPE beats YEE overall, YEE wins a year",
+  "result": "Missed (half)",
+  "evidence": "PEPE 3.1M vs YEE 1.5M; YEE never wins a full year."
+ },
+ {
+  "n": 4,
+  "prediction": "Destiny's Twitch chat is more emote-heavy than DGG",
+  "result": "Mostly missed",
+  "evidence": "DGG is 20-28% emote-only vs Twitch 4-21%."
+ },
+ {
+  "n": 5,
+  "prediction": "Top 1% dominate DGG more than Twitch",
+  "result": "Missed",
+  "evidence": "Twitch top 1%: 49-65% of messages; DGG: 42-44%."
+ },
+ {
+  "n": 6,
+  "prediction": "Hutch's chat overlaps most with DGG",
+  "result": "Missed",
+  "evidence": "Denims 16.6% and Mindwave 15.9%; Hutch 1.0%."
+ },
+ {
+  "n": 7,
+  "prediction": "Fuentes overlap spikes around interactions",
+  "result": "Partly held",
+  "evidence": "8% in May 2018, 0-4% otherwise; the spike isn't tied to an event yet."
+ },
+ {
+  "n": 8,
+  "prediction": "DGG volume peaks in 2019-20",
+  "result": "Held",
+  "evidence": "0.87M messages a month (2014) to 2.06M (early 2020)."
+ },
+ {
+  "n": 9,
+  "prediction": "No 2026 snark terms in old H3 chat",
+  "result": "Held",
+  "evidence": "'Pestiny' and 'fungi' are zero in 2017-18."
+ },
+ {
+  "n": 10,
+  "prediction": "Asmongold electoral talk under 10 per 10k",
+  "result": "Missed on number",
+  "evidence": "15-23 per 10k, the same band as Ludwig and Moist."
+ },
+ {
+  "n": 11,
+  "prediction": "Asmongold culture-war words above peers",
+  "result": "Held",
+  "evidence": "17-21 per 10k vs Ludwig 3 and Moist 9; declining by 2020."
+ },
+ {
+  "n": 12,
+  "prediction": "2026 Asmongold markers absent",
+  "result": "Partly held",
+  "evidence": "DEI zero; 'woke' 1-2 per 10k, likely 'woke up'."
+ },
+ {
+  "n": 13,
+  "prediction": "Asmongold-Destiny overlap under 3%",
+  "result": "Missed",
+  "evidence": "2-7% of Asmongold regulars also in Destiny's Twitch chat."
+ },
+ {
+  "n": 14,
+  "prediction": "Hasan overlap with Destiny 5-15%",
+  "result": "Missed",
+  "evidence": "24% overall; 42-53% of Hasan's regulars from Nov 2018 to Apr 2019."
+ },
+ {
+  "n": 15,
+  "prediction": "Vaush overlaps more than Hasan",
+  "result": "Not testable",
+  "evidence": "vaush.gg is a separate site chat; his Twitch is logged for only two months (33%)."
+ },
+ {
+  "n": 16,
+  "prediction": "Vaush's chat names Destiny 100+ per 10k",
+  "result": "Missed",
+  "evidence": "39-86 per 10k."
+ },
+ {
+  "n": 17,
+  "prediction": "Destiny's chat says Vaush more than Hasan (2019)",
+  "result": "Missed",
+  "evidence": "Hasan 57 per 10k, Vaush 0.8."
+ },
+ {
+  "n": 18,
+  "prediction": "Hasan's chat is the most electoral",
+  "result": "Missed",
+  "evidence": "157-398 per 10k, under Hutch (955) and Badbunny (637)."
+ }
+]
