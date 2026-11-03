@@ -1,0 +1,326 @@
+emote,sub_tier,twitch_emote,first_year_in_chat,chat_2016_per100k,chat_2018_per100k,chat_2019_per100k,chat_2020_per100k,twitch_chat_per100k,rdestiny_per10k,allsubs_per10k,reddit_lift,meaning
+PepeLaugh,0,False,2019.0,0.0,0.1,5865.1,5963.2,1220.6,0.0,0.0,,PEPE variant signaling chuckling at someone who doesn't know something important.
+LUL,0,False,2013.0,9863.2,11614.7,4379.0,1605.5,6813.4,1.43,0.6,2.4,"Image of TotalBiscuit, used in response to something funny."
+LULW,0,False,2019.0,0.0,0.9,3151.8,3777.6,2727.9,0.0,0.0,,Used ironically for a played-out joke or to imitate over-the-top laughter.
+REE,0,False,2015.0,4.0,5033.7,3067.4,2457.5,21.1,0.0,0.0,,"Used in response to anger or screaming, such as when someone breaks a combo."
+DuckerZ,0,False,2013.0,2362.4,3346.6,3019.0,2784.3,725.6,0.0,0.0,,"Laughing emote for people who get insulted, banned, or hurt. Also spammed when birds appear. Made by RightToBearArmsLOL."
+OMEGALUL,0,False,2017.0,0.0,667.9,2639.0,6445.7,908.0,2.31,0.51,4.5,LUL variant signifying humor; also used when someone misspeaks.
+PEPE,0,False,2015.0,5127.0,2858.4,2532.6,2587.0,17.0,2.8,0.56,5.0,Destiny-styled variant of a frog from a French comic; used in response to racist beliefs.
+FeelsWeirdMan,0,False,2018.0,0.0,250.2,2425.9,2477.1,553.4,0.0,0.0,,"Twitch emote used to let someone know they're being weird or creepy, sometimes jokingly."
+GODSTINY,0,False,2017.0,0.0,1829.2,2231.5,3151.4,8.5,0.0,0.0,,Signifies a win or success.
+DANKMEMES,0,False,2014.0,3529.4,3077.7,1944.8,2254.8,3.5,0.0,0.0,,Posted when a common meme sound effect or phrase is heard.
+SWEATSTINY,0,False,2015.0,5242.9,1970.0,1827.8,2053.0,8.6,0.0,0.0,,Used in response to high-tension situations; a former variant also exists.
+monkaS,0,False,2017.0,0.0,3902.0,1469.1,916.3,2566.4,0.0,0.0,,Scared emote.
+DaFeels,0,False,2013.0,4563.3,2346.4,1329.3,1484.0,6.0,0.0,0.0,,Used when something is sad.
+PepoThink,0,False,2017.0,0.0,3037.8,1294.1,946.7,6.2,0.0,0.0,,Thinking about something.
+Pog,0,False,2018.0,0.2,11.4,1183.3,1262.9,1225.9,0.0,0.0,,Cropped variant of the Twitch emote PogChamp.
+Abathur,0,False,2013.0,1288.3,1373.4,1168.7,1056.0,5.5,0.0,0.0,,"Image used to say ""Lets do it!"" when proposing an activity or making a decision."
+AngelThump,0,False,2013.0,1840.8,1797.8,1129.8,1054.3,279.7,0.0,0.0,,"Used when Destiny goes live or Dan joins, or to signal relief when an annoyance leaves or a fix lands."
+LeRuse,0,False,2015.0,1071.9,1221.0,1125.6,873.9,4.0,0.0,0.0,,Used in response to someone lying.
+Wowee,0,False,2017.0,0.0,1491.7,1125.2,677.8,188.9,0.0,0.0,,One of several emotes posted whenever a dog is on stream.
+YEE,0,False,2015.0,2366.8,1607.0,1057.7,1308.9,75.5,2.42,0.47,5.1,Animated dinosaur from a viral meme song; locked in eternal battle with PEPE.
+GRUG,0,False,2019.0,0.0,0.3,1016.2,687.7,16.3,0.0,0.0,,Used to jokingly signal misogyny or when Trainwreckz is mentioned.
+WEEWOO,0,False,2015.0,232.2,1258.6,981.3,407.7,1.9,0.0,0.0,,PC Principal from South Park; used to jokingly act politically correct or in response to sirens and police.
+gachiGASM,0,False,2016.0,436.8,1858.9,864.7,323.1,162.6,0.0,0.0,,Used in response to attractive (generally) men. Originates from Gachimuchi Twitch music and memes.
+PepeHands,0,False,2018.0,0.0,212.2,847.7,692.2,809.3,0.0,0.0,,PEPE variant from a Twitch emote used to signal deep sadness.
+WhoahDude,0,False,2013.0,2854.2,2184.7,843.1,443.9,1.1,0.0,0.0,,Used for genuine good surprises; taken from a scene in the sitcom Life's Too Short.
+haHAA,0,False,2016.0,205.2,1055.4,779.5,510.8,820.7,0.0,0.0,,"MrMouton variant of the Twitch emote haHAA, used for cringeworthy or unfunny things."
+BOOMER,0,False,2018.0,0.1,323.2,758.8,572.5,211.4,5.66,6.71,0.8,Used when being old or technology problems are mentioned on stream.
+MLADY,0,False,2014.0,893.8,1108.8,727.3,562.1,3.8,0.0,0.0,,"Cropped Destiny in the blue coat; mocks pretentiousness, edgy atheist content, and fedoras."
+AYAYA,0,False,2018.0,0.0,387.5,727.1,534.0,780.2,0.0,0.0,,Used when anime or anime-related things appear on screen.
+FerretLOL,0,False,2014.0,337.2,743.4,678.6,610.4,2.0,0.0,0.0,,"Used when someone is being weaselly, or in response to ferrets, rats, and similar animals."
+JAMSTINY,0,False,2019.0,0.0,0.0,590.3,982.5,0.2,0.0,0.0,,"Used to jam out, generally when Destiny plays piano, or in response to children's music."
+BERN,0,False,2015.0,391.4,396.3,566.9,376.9,6.0,0.0,0.0,,Used in reference to Bernie Sanders. Forms half of an emote combo with MALARKEY.
+OverRustle,0,False,2013.0,4812.0,1048.6,536.7,469.7,259.3,0.0,0.0,,Used when something is too loud.
+Clap,0,False,2017.0,0.4,253.3,497.7,599.7,1320.7,2.47,1.91,1.3,"Pair of clapping hands, used with other emotes for emphasis, like TF Clap for a successful troll."
+Klappa,0,False,2013.0,1493.3,1063.7,436.5,533.4,5.2,0.0,0.0,,Kappa variant used to applaud someone or respond to applause.
+ZOOMER,0,False,2018.0,0.0,266.4,435.8,273.6,49.3,1.92,1.44,1.3,"Used in reference to Gen Z people, images, or phrases."
+GameOfThrows,0,False,2013.0,477.1,504.6,421.8,486.1,0.8,0.0,0.0,,"Altered Game of Thrones logo, used for losses, fails, or mentions of the show."
+ECH,0,False,2014.0,19.5,603.5,411.2,286.7,9.4,0.0,0.0,,"Used in response to a disgusting image or video, generally food."
+TRUMPED,0,False,2016.0,962.1,585.4,392.0,382.5,2.0,0.0,0.0,,Trump behind prison bars for his indictments and convictions; formerly showed him smug before an American flag.
+NoTears,0,False,2013.0,1232.3,550.5,373.8,342.2,3.6,0.0,0.0,,Used for monkeys; symbolizes stoic bravery before a hot take and formerly composure.
+AMAZIN,0,False,2019.0,0.0,0.0,354.1,208.0,124.1,0.88,0.17,5.2,"Used when Jesse Lee Peterson is mentioned or someone says ""amazing"" or ""beta male."""
+monkaSMEGA,0,False,2018.0,0.0,183.7,336.1,369.9,0.1,0.0,0.0,,Scared emote.
+FiveHead,0,False,2019.0,0.0,0.0,334.9,390.0,0.1,0.0,0.0,,"Used when something extremely smart happens on stream, sometimes ironically."
+SLEEPSTINY,0,False,2015.0,222.0,239.0,327.9,257.3,0.2,0.0,0.0,,Used in reference to sleeping or boring content.
+FeelsBadMan,0,False,2015.0,152.4,364.0,320.6,322.0,983.2,0.0,0.0,,Twitch emote used to signal sadness.
+SOY,0,False,2017.0,0.2,76.3,319.9,381.4,18.0,17.03,3.12,5.5,Soyjak variant styled as Destiny; used for virtue signaling or statements perceived as soy.
+FeelsGoodMan,0,False,2015.0,107.8,464.2,313.7,186.3,508.1,0.0,0.0,,Twitch emote used in response to loud sounds or low framerate.
+NOBULLY,0,False,2016.0,449.7,523.3,306.5,272.7,5.5,0.0,0.0,,"Used, often ironically, to defend someone being insulted or attacked by chat."
+widepeepoHappy,0,False,2019.0,0.0,0.0,290.8,1742.0,38.2,0.0,0.0,,"PEPE variant used in reference to happiness, cuteness, or being overweight."
+BOGGED,0,False,2018.0,0.0,154.3,288.6,172.3,104.7,1.1,0.53,2.1,"Depicts the Bogdanoff Twins. Used when misfortune strikes at opportune moments, as if planned."
+MiyanoHype,0,False,2018.0,0.0,158.0,271.2,198.2,1.3,0.0,0.0,,Used in reference to jumping.
+SNAP,0,False,2014.0,1.5,2.0,257.7,64.6,10.7,4.01,2.82,1.4,Used in reference to photography or in response to clippable statements.
+CuckCrab,0,False,2016.0,284.2,318.2,255.0,438.2,0.9,0.0,0.0,,"Used when someone is cucked by Sneako, when crabs come up, or as a dance emote."
+DAFUK,0,False,2014.0,639.0,508.7,253.7,142.5,0.3,0.0,0.0,,Morty from Rick and Morty. Used when the show is mentioned or as a rare shocked reaction.
+RaveDoge,0,False,2015.0,443.0,342.0,237.7,443.5,5.0,0.0,0.0,,Used in response to loud techno or EDM; originates from a dancing dog video.
+TeddyPepe,0,False,2019.0,0.0,0.0,213.6,266.8,0.2,0.0,0.0,,PEPE variant used to signal support or love toward another chatter.
+COOMER,0,False,2019.0,0.0,0.0,211.6,2179.8,73.5,0.0,0.0,,Used in response to attractive (generally) women.
+WORTH,0,False,2013.0,855.8,538.4,204.6,228.6,7.3,59.99,46.9,1.3,Used in reference to gaining wealth or stealing.
+nathanW,0,False,2019.0,0.2,0.0,193.9,72.7,61.5,0.0,0.0,,
+BibleThump,0,False,2013.0,625.9,391.6,182.8,117.8,329.9,0.0,0.0,,Image from a video of Destiny using a TikTok crying filter. Formerly showed Zei Squirrel's crying avatar.
+DEATH,0,False,2013.0,12.1,10.0,176.3,174.9,8.4,58.56,53.03,1.1,Used when someone dies in a game or in real life. Sometimes used when communism is mentioned.
+Memegasm,0,False,2015.0,817.5,342.1,165.6,144.8,0.0,0.0,0.0,,Destiny image for delicious food; less commonly used for attractive people.
+nathanTiny2,0,False,2018.0,0.0,49.5,152.1,132.7,11.3,0.0,0.0,,Twitch combo emote of the same StarCraft photo; used when tinyposting by lining up with the chatter above.
+POGGERS,0,False,2017.0,0.0,118.0,147.1,163.2,582.0,0.38,0.28,1.4,PEPE variant jokingly signaling childish or ironic excitement.
+OhKrappa,0,False,2013.0,1112.2,545.8,145.2,107.3,0.8,0.0,0.0,,Responds to a genuine failure despite a good attempt; often a failed nathanTiny2 landing.
+SOTRIGGERED,0,False,2014.0,568.5,242.9,135.8,120.3,0.6,0.0,0.0,,Used in reference to guns or threats of violence; Biden variant.
+COGGERS,0,False,2018.0,0.0,129.8,133.1,144.7,50.0,0.0,0.0,,Used when conversations loop or when spinning or rotating things appear on stream.
+PepOk,0,False,2018.0,0.0,37.0,132.6,166.8,0.0,0.0,0.0,,PEPE variant used to respond with a thumbs up.
+SoDoge,0,False,2013.0,1092.3,223.9,116.5,71.4,0.7,0.0,0.0,,
+UWOTM8,0,False,2013.0,634.2,145.6,116.2,67.1,0.3,0.0,0.0,,"Used in reference to British people, images, or speech."
+SICKO,0,False,2019.0,0.0,0.1,111.1,413.7,0.7,0.6,0.63,1.0,"Image of Varys from Game of Thrones; used in response to loud, heavy music."
+FourHead,0,False,2019.0,0.0,0.0,109.1,173.6,0.0,0.0,0.0,,"Used when someone understates a task's difficulty or says something obvious, often ""why not just x."""
+ChibiDesti,0,False,2015.0,19.5,151.4,106.1,105.4,0.3,0.0,0.0,,"Commonly used as a combo-breaker, to the annoyance of many chatters."
+POTATO,0,False,2014.0,167.7,225.9,102.9,70.2,1.9,1.65,1.94,0.9,"Happy potato used in a counting game where chatters take turns counting, often failing deliberately."
+ASLAN,0,False,2013.0,318.9,158.8,94.8,90.0,12.9,0.11,0.17,0.6,"One of several cat emotes, modeled after the late Aslan, ErisAnn's cat."
+Slumlord,0,False,2019.0,0.0,0.2,93.3,176.5,1.1,0.0,0.0,,Used to reference Dan Saltman's real estate empire and supposedly unethical practices.
+Sippy,0,False,2014.0,148.3,134.1,83.5,108.2,0.5,0.0,0.0,,Animated Soylent often drunk by Destiny; commonly combined with SOY; formerly a glass of milk and cookies.
+NiceMeMe,0,False,2015.0,140.6,242.2,79.8,71.0,0.2,0.0,0.0,,Used when a gnome appears or someone speaks in a higher pitch.
+LIES,0,False,2013.0,434.0,165.8,76.7,68.7,9.8,28.84,21.46,1.3,
+FrankerZ,0,False,2013.0,414.3,69.8,73.7,26.6,72.7,0.0,0.0,,One of several dog emotes.
+HACKERMAN,0,False,2018.0,0.2,1.1,70.1,68.8,0.7,0.0,0.0,,"Neo from The Matrix. Used for mentions of the series, hacking, computer use, or Destiny's son Nathan."
+BasedGod,0,False,2013.0,694.2,200.2,66.8,31.4,44.4,0.0,0.0,,"Image of Lil B, the Based God."
+PepoTurkey,0,False,2019.0,0.0,0.0,66.4,88.0,0.1,0.0,0.0,,PEPE variant referencing turkeys and occasionally other birds.
+PepoWant,0,False,2018.0,0.0,25.0,64.8,34.2,0.1,0.0,0.0,,"PEPE variant signaling wanting something, often an attractive person."
+AYYYLMAO,0,False,2014.0,508.2,164.9,56.2,61.5,0.5,0.0,0.0,,"Used when an extremely precise shot is taken, generally with a gun."
+Nappa,0,False,2014.0,477.3,130.9,55.5,20.2,0.7,0.0,0.0,,Used in response to explosions.
+ForYou,0,False,2019.0,0.0,0.0,55.0,49.2,0.0,0.0,0.0,,"DANKMEMES variant styled as Bane, used for references to Bane or his dialogue."
+MotherFuckinGame,0,False,2013.0,88.1,111.0,52.2,25.1,0.0,0.0,0.0,,One of several emotes posted whenever a cat is on stream.
+DURRSTINY,0,False,2013.0,505.0,212.0,52.2,58.5,0.5,0.0,0.0,,Used to mock someone who sounds dumb.
+MASTERB8,0,False,2014.0,198.5,122.0,51.8,33.2,0.3,0.0,0.0,,"Used in response to bait, meaning saying something dumb to farm reactions."
+Kappa,0,False,2013.0,212.2,75.1,50.2,35.9,1294.5,0.0,0.0,,"Originally a Twitch emote for sarcasm, used rarely for rainbows or references to gay people."
+PARDNER,0,False,2019.0,0.0,0.0,49.6,165.6,15.0,0.0,0.0,,Animated cowboy PEPE variant; used during quickdraws with YEEHAW.
+FeedNathan,0,False,2013.0,179.1,156.2,49.5,17.4,1.2,0.0,0.0,,"Image of Destiny's son Nathan, used when Nathan is on stream or mentioned."
+YEEHAW,0,False,2019.0,0.1,0.2,44.0,139.9,5.1,0.0,0.0,,Animated cowboy YEE variant; used during quickdraws with PARDNER.
+nathanTiny1,0,False,2018.0,0.0,14.6,43.7,41.1,12.9,0.0,0.0,,Twitch combo emote splitting a famous photo of Destiny from his StarCraft career.
+ComfyFerret,0,False,2018.0,0.0,22.2,43.3,35.5,0.1,0.0,0.0,,
+SURPRISE,0,False,2013.0,153.3,92.2,42.1,48.3,1.1,14.23,13.28,1.1,Used in response to trumpets or other brass instruments.
+SpookerZ,0,False,2014.0,389.3,107.9,41.9,43.8,1.5,0.0,0.0,,Image shown on banned Twitch accounts; used for ghosts or wind. Former appearance also listed.
+CUX,0,False,2015.0,205.5,132.9,39.0,25.6,20.9,0.0,0.0,,"Used when the stream lags. Refers to Destiny's former ISP, COX Communications, which led to a Twitter account ban."
+ApeHands,0,False,2018.0,0.0,29.2,37.5,43.0,0.0,0.0,0.0,,"Gets a chatter to look at another chatter's message, such as prompting Destiny to view someone's chats."
+nathanWeeb,0,False,2016.0,83.2,229.0,35.1,81.4,177.2,0.0,0.0,,Twitch emote resembling an anime girl; less common than AYAYA.
+INFESTINY,0,False,2013.0,114.1,72.9,28.8,26.5,0.3,0.0,0.0,,"Infestor from StarCraft II, used for insects or bugs on stream."
+NOTMYTEMPO,0,False,2015.0,119.2,63.8,26.8,33.8,0.2,0.0,0.0,,Altered Whiplash image of Neiman and Fletcher; references the film or tempo.
+FeelsGimiMan,0,False,2018.0,0.0,21.7,25.0,35.7,0.0,0.0,0.0,,"Used in response to racecars, named after Kimi Räikkönen. ""b"" paired as a thumbs-up, ""p"" as a thumbs-down."
+BoomerSippy,0,False,2019.0,0.0,0.0,21.5,19.6,0.0,0.0,0.0,,"Animated White Monster Zero Ultra can, related to the Sippy emote."
+WEOW,0,False,2014.0,77.3,26.4,20.8,17.1,5.3,0.0,0.0,,Used in any context; chat constantly searches for the golden WEOW.
+tonyW,0,False,2019.0,0.0,0.0,18.8,2.7,0.1,0.0,0.0,,Cropped film composer Tony Dofat from a Startups Podcast episode; locked in battle with anime emotes.
+nathanYee,0,False,2016.0,14.1,19.8,15.1,16.6,95.8,0.0,0.0,,Twitch emote variant of YEE.
+KappaRoss,0,False,2015.0,33.1,20.6,13.3,11.3,15.6,0.0,0.0,,"Bob Ross-style Kappa, used rarely for painting, art, or MS Paint visualizations."
+FeelsBirthdayMan,0,False,2019.0,0.6,0.7,7.3,3.2,62.9,0.0,0.0,,Posted toward a user on their DGG birthday.
+NOOOO,0,False,2013.0,7.3,5.5,7.0,8.2,8.4,1.1,1.53,0.7,"Used ironically and exaggeratedly to signify something going wrong, like insincere ""oh no"" videos."
+Classic,0,False,2014.0,2.3,2.7,5.8,1.8,4.7,15.88,16.64,1.0,
+HUH,0,False,2014.0,4.2,5.8,4.2,4.5,7.1,18.18,18.59,1.0,"GIF of LowTierGod, used to denote shock or confusion."
+mhm,0,False,2014.0,2.4,2.4,3.7,3.3,5.4,0.27,0.24,1.1,
+BLADE,0,False,2015.0,2.0,2.2,3.2,197.4,0.9,0.93,1.28,0.7,"Animated sword, used when swords, fighting, or stabbing is mentioned on stream."
+TF,0,False,2014.0,2.2,2.2,2.8,3.3,4.5,13.18,14.52,0.9,Used in response to trolling: saying or doing something dumb to trick or anger someone.
+Chatting,0,False,2017.0,0.1,4.7,2.6,0.8,2.5,1.26,1.64,0.8,"Keyboard with typing hands, used when Destiny types to friends on Discord. Combines with SMASHit."
+EVIL,0,False,2014.0,4.4,3.4,2.5,3.7,3.4,59.16,49.3,1.2,Used when devious things are said on stream. Combines with Clap to rub hands together.
+MODS,0,False,2014.0,8.5,5.3,2.5,2.6,20.2,15.27,26.43,0.6,GIF of WillyMac reporting Destiny to police; mocks overzealous users seeking moderator punishment.
+Hmm,0,False,2014.0,3.1,2.5,2.3,2.3,4.6,6.37,5.92,1.1,
+PepoG,0,False,2019.0,0.0,0.0,1.7,309.4,117.6,0.0,0.0,,"PEPE variant signaling listening or note-taking, often jokingly."
+FeelsOkayMan,0,False,2019.0,0.0,0.3,1.7,1.0,88.2,0.0,0.0,,"Twitch emote used to signal being okay with something, sometimes jokingly."
+Looking,0,False,2014.0,2.1,1.8,1.5,1.3,2.4,82.51,73.04,1.1,"PEPE looking at something, often used when someone attractive is on screen."
+WOOF,0,False,2016.0,1.2,0.6,1.4,745.9,10.1,0.05,0.34,0.2,"Dog from the ""Dont Woof"" meme; posted when a dog or barking is heard on stream."
+KEK,0,False,2014.0,6.4,1.5,1.3,1.5,8.9,0.82,0.4,2.1,"Reference to a long-standing meme, used as a smug alternative to PepeLaugh."
+CAUGHT,0,False,2014.0,1.9,1.2,1.0,1.1,1.4,24.77,27.19,0.9,Refers to the allegations against Dr. Disrespect.
+PAINSTINY,0,False,,0.0,0.0,0.9,0.5,0.6,0.0,0.0,,Signals painful or extremely cringe moments; originates from a music session with LilyPichu.
+DOUBT,0,False,2020.0,0.5,0.7,0.9,1.1,0.7,53.67,41.88,1.3,"Spammed whenever a dubious claim is made. Responds to the LA Noire ""press X to doubt"" meme."
+OOOO,0,False,2014.0,0.8,0.6,0.7,703.4,114.0,0.22,0.47,0.5,"Loud alternative to MMMM; used when an ""Ooo"" sound is made."
+Listening,0,False,2017.0,0.9,1.1,0.7,0.6,1.3,20.0,16.02,1.2,"Altered Patrick Bateman image with the blue coat, used for good, calming music."
+Skip,0,False,,0.5,0.6,0.5,0.8,1.1,5.05,4.8,1.1,Cat waving something away with its paws.
+FeelsStrongMan,0,False,2020.0,0.0,0.0,0.5,1.5,40.0,0.0,0.0,,"Twitch emote used for heartwarming moments, sometimes jokingly."
+Hollow,0,False,2018.0,0.3,4.0,0.4,0.4,1.0,2.75,1.79,1.5,Withered wojak meme.
+DERPSTINY,0,False,,0.0,0.2,0.3,0.4,0.1,0.0,0.0,,Used to respond to someone saying something dumb or posting an absurdly long link.
+LUPUS,0,False,2018.0,0.0,2.7,0.3,0.5,0.1,0.27,0.4,0.7,Dr. House image. References the show's running joke of doctors always suggesting lupus.
+NAILS,0,False,,0.3,0.3,0.3,0.3,0.2,1.7,1.35,1.3,Sarcastic response to high-tension situations; came from YouTube emotes and was popularized in xQc's chat.
+DITCHSTINY,0,False,,0.0,0.0,0.3,0.0,0.2,0.0,0.0,,
+CINEMA,0,False,,0.1,0.3,0.2,0.1,0.1,4.56,2.2,2.1,"Absolute Cinema meme with Destiny's face, used for cinematic or extremely dramatic moments."
+pepeJAM,0,False,,0.0,0.0,0.2,0.1,6.6,0.0,0.0,,PEPE variant used in response to upbeat music.
+MMMM,0,False,,0.4,0.3,0.2,0.5,0.5,0.22,0.17,1.3,Generally used in response to silence.
+SHROOMSTINY,0,False,,0.0,0.4,0.2,0.0,0.3,0.0,0.0,,Used to reference drugs or existential confusion.
+nathanPEPE,0,False,,0.2,0.4,0.2,0.1,0.4,0.0,0.0,,Twitch emote variant of PEPE.
+OBJECTION,0,False,,0.5,0.5,0.2,0.1,0.4,2.03,1.42,1.4,Altered Phoenix Wright image; used for law references or heated accusations.
+Lonely,0,False,,0.6,0.6,0.2,0.1,0.9,2.36,2.93,0.8,"Ryan Gosling from Blade Runner 2049, used for dystopian events, especially involving love or relationships."
+SLUGSTINY,0,False,,0.0,0.0,0.2,0.1,0.0,0.0,0.0,,"Used for slow movement, snails, or worms, or for someone very late to something."
+BLESSTINY,0,False,,0.0,0.0,0.2,0.2,0.1,0.0,0.0,,"Used for religious topics, sneezes, begging like ""pretty please,"" or to ""thank god."""
+ACKSHUALLY,0,False,,0.0,0.4,0.2,0.1,0.1,0.44,0.42,1.0,"DGG-L version of the ackshually meme, mocking evidence havers with a misspelled neckbeard illustration. Added January 2024."
+SCHIZO,0,False,,0.0,0.1,0.2,0.1,0.2,11.04,3.35,3.3,Used when schizophrenic opinions are expressed on stream or chatters feel like they're going crazy.
+WHAAAAT,0,False,,0.4,0.1,0.2,0.3,0.4,0.0,0.1,0.0,Surprised Destiny from a DemonMama debate; used ironically to express shock.
+guh,0,False,,0.3,0.3,0.2,0.1,0.4,0.0,0.0,,Similar to the past emote FeelsDankMan. Conveys stupidity or lack of knowledge on a matter.
+BONK,0,False,,0.3,0.3,0.1,0.5,0.1,0.11,0.76,0.1,"Used to stop a user from posting horny messages or emotes, referencing a meme."
+BLICKY,0,False,,0.0,0.4,0.1,0.0,0.0,0.0,0.0,,
+hhhehhehe,0,False,2014.0,0.5,0.1,0.1,0.1,0.2,0.0,0.0,,"Cropped laughing lizard, used in response to long chuckling sounds."
+BLUBSTINY,0,False,,0.0,0.7,0.1,0.1,0.1,0.0,0.0,,"Used when anything involving LilyPichu, best friend of the stream, comes up."
+POPPERS,0,False,,0.0,0.1,0.1,0.0,0.0,0.0,0.0,,
+HEIMERDONGER,0,False,,0.0,0.0,0.1,0.0,0.1,0.0,0.0,,"Image of Heimerdinger from League of Legends, sometimes paired with ""live in 5"" regardless of timing."
+SHRUGSTINY,0,False,,0.0,0.1,0.1,0.0,0.0,0.0,0.0,,Used to signal shrugging.
+YIKESTINY,0,False,2018.0,0.0,1.1,0.1,0.3,0.2,0.0,0.0,,Used in response to cringy or embarrassing statements; renamed from nathanYikes.
+Chud,0,False,,0.0,0.0,0.1,0.1,0.0,6.43,7.15,0.9,"Wojack depicting a far-right ""chud,"" tied to the ""nothing ever happens"" meme. Posted when Dan discusses similar ""nothing burgers"" or world events occur."
+WICKED,0,False,,0.6,0.3,0.1,0.3,0.2,0.66,1.06,0.6,"Variant of the Twitch emote WICKED; used for racing, skateboard tricks, or similar high-intensity feats."
+WHISPERING,0,False,,0.4,0.1,0.1,0.4,0.2,0.82,0.53,1.6,Reference to 2024 leaks about Dr Disrespect's whisper messages to a minor and sexting while married.
+SALUTE,0,False,,0.2,0.2,0.1,0.2,0.2,2.53,1.66,1.5,Used when saluting; Joe Biden variant.
+CHILLS,0,False,2014.0,0.3,0.2,0.1,0.1,0.1,0.49,0.39,1.3,Freezing cat shaking from the cold.
+ComfyCat,0,False,,0.0,1.0,0.1,0.0,0.0,0.0,0.0,,"One of several cat emotes, also used as a comfy emote."
+CUTESTINY,0,False,,0.0,0.1,0.1,0.0,0.2,0.0,0.0,,"Used for cute, heartwarming moments or when animals appear on stream."
+pepoComfy,0,False,,0.0,0.1,0.1,0.1,0.0,0.0,0.0,,PEPE variant used as a comfy emote.
+GIGACHAD,0,False,,0.0,0.1,0.1,0.2,0.1,3.52,0.99,3.6,"Used for something based, or ironically for unhinged, racist, or sexist remarks. Embodies strength and confidence."
+GAMBA,0,False,,0.1,0.2,0.1,0.1,0.3,0.44,0.49,0.9,Used when gambling. Often paired with another emote in search of the golden WEOW jackpot.
+MiyanoBird,0,False,,0.0,0.0,0.1,0.0,0.0,0.0,0.0,,Used to flip the bird at people or reference someone raising the middle finger.
+MILKERINO,0,False,,0.0,0.0,0.1,0.1,0.0,0.0,0.0,,"FeelsGoodMan variant with milk dripping; used for sucking up, and for Sam Seder references tied to a Rittenhouse debate."
+IMPRESSED,0,False,,0.1,0.1,0.1,0.1,0.1,4.28,3.68,1.2,
+ARRIVE,0,False,,0.1,0.1,0.1,0.1,0.0,3.24,2.28,1.4,"GIF of Patrick Bateman walking, marking someone's arrival in chat or on stream, used like GIGACHAD."
+Susge,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Used when something suspicious happens.
+ALARMA,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+AbaW,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Joke emote for someone acting creepy or perverted, or when Aba is on stream."
+TRIAD,0,False,,0.1,0.0,0.0,0.0,0.0,0.22,0.29,0.8,Reference to the Dark Triad psychological theory; used for accusations of those traits or mental illness generally.
+tinyWoah,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Literally Crash Bandicoot; used when Poland is mentioned.
+tinySuffer,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Tiny suffering.
+TINYING,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Used when Destiny is irritated, often paired with ""What do you want me to say?"""
+SWEEPING,0,False,,0.1,0.1,0.0,0.0,0.0,13.35,3.45,3.9,Counterpoints sweeping with a broom; used when someone tries to cover up or diffuse responsibility.
+THATNINJA,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,GIF of Solid Snake; used for stealth or when MGS music plays.
+Cabge,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Cabbage-headed PEPE in the -adge family, created by cweetron after a dream. Given rare status on August 31, 2025."
+BUTTSTINY,5,False,,0.0,0.2,0.0,0.0,0.0,0.0,0.0,,"Drawn by MrGemzar. Used by mods, Protected chatters, or Tier 5 subs to identify themselves, since it is Tier 5 only."
+buddy-nutcheck,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+wcat,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Originally a custom userscript, later a blocked phrase; used with the joke ""bidness"" and during suit depictions."
+SMASHit,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,GIF of MrMouton after losing League of Legends games; used for raging or loud slamming.
+BINGQILIN,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Used when chatters feel censored. Shows John Cena eating ice cream, comparing censorship to the CCP's and often spammed about a redacted topic."
+BlackGuyLaptop,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+CamOnIngerland,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+Stare,0,False,,0.1,0.1,0.0,0.1,0.0,2.31,1.59,1.5,Altered gnome child from Old School RuneScape; used when someone stares or to stare at someone.
+Smadge,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,A sad and mad frog.
+WarmWaterPort,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Depicts Dr. Egon Cholakian; used for AI, Egon, or conspiracy theories, referencing Crimea's warm-water port annexation."
+TeaTime,0,False,,0.0,0.0,0.0,0.0,0.5,0.0,0.0,,
+SNIFFA,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,A dog sniffing.
+SoyPoint,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Used to point at something in chat, especially to mock; originated as a Halloween 2023 ApeHands reskin."
+ThisIsFine,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Reference to a dog webcomic; used similarly to Copium.
+temmieDank,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Lily Pichu's dog Temmie wearing a dunce cap; conveys naivete, stupidity, or ignorance, like guh."
+GAGAGA,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+GAENGSTALKED-IN-YOUR-ATTIC-OHIO-STATE-STUDENT-MAKES-THOUSANDS-A-MONTH-AS-A-GAMING-STREAMER,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+glorp,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Alien cat with gold, platinum, emerald, and diamond variants, each matching the odds of a higher-tier WEOW."
+GSN,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+IKneel,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Vegeta kneeling from Dragon Ball Z, used when calling people ""Queen"" or ""King,"" sometimes ironically."
+IDidntKnowThat,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Buddy as Trump's ""first time hearing about that"" clip, used when someone claims ignorance of well-known info."
+hesRight,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Variant of the Morgan Freeman ""He's right you know"" meme, used when someone says something correct."
+HMMSTINY,0,False,,0.2,0.0,0.0,0.0,0.1,0.0,0.0,,"Used when a bear is on stream, RTBA is mentioned, or someone makes a ""hmm"" sound."
+dggL,0,False,,0.0,0.0,0.0,0.0,0.0,5.82,0.69,8.4,Expresses support or love for someone or when DGG is mentioned. Heart matches the poster's sub tier. Originally modeled after xQc's xqcL.
+INREALLIFE,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Sam Hyde calling out Hasan Piker after a boxing match. Often paired with Hasan's name.
+DinkDonk,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Signals alarm or draws attention. Part of the ""conductor, we have a problem"" meme."
+diNoThanks,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,YEE emote used to refuse something. Made by chatter picklesnathan.
+JustCantProveItYet,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Doakes from Dexter, used to convey ""off"" feelings about a person or situation."
+KYEK,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,YEE variant of KEK.
+IKnowWhatYouAre,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+IMEANNN,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Image of friend of the stream Aba Atlas, used to call cap on someone lying."
+MarioPissing,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+MALARKEY,0,False,2020.0,0.0,0.0,0.0,247.4,5.2,0.05,7.01,0.0,Refers to Joe Biden; makes up half of a combo emote with BERN.
+KYSNOW,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Animated LowTierGod GIF referencing him crashing out on a chatter.
+LETHIMCOOK,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Altered ""let him cook"" meme featuring Destiny's blue coat."
+JARVIS,0,False,,0.1,0.0,0.0,0.0,0.0,0.99,0.5,2.0,"Scene from Iron Man, used when AI is referenced."
+JOEVER,0,False,,0.0,0.0,0.0,0.0,0.0,0.99,1.11,0.9,"Used when something ends or is over, occasionally referencing Joe Biden or his failed 2024 bid."
+LifeIsGreat,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+LOCKEDIN,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Zoomed image of Allan Lichtman, whose name likely plays on his ""Keys"" prediction system."
+AWAWA,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Anime girl.
+Aware,0,False,,0.0,0.0,0.0,0.0,0.0,35.93,27.32,1.3,"Used when someone speaks a frank, uncomfortable truth, or someone on stream has a moment of acute awareness."
+AwShoot,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Anime girl, typically used when Dan says ""Pause"" and holds up his paws, referencing a well-known meme."
+BasedWatM8,0,False,,0.1,0.0,0.0,0.0,0.0,0.0,0.0,,Used to signal confusion or when someone says something absurd or ridiculous.
+ALO,0,False,,0.0,0.0,0.0,0.1,0.1,0.0,0.0,,"Response to someone joining the stream, calling in, or saying hello."
+BEARSLEEP,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Used when sleepy or when referring to RTBA.
+AMOGUS,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Used in reference to Among Us.
+LookUp,0,False,,0.0,0.0,0.0,0.0,0.0,0.33,0.19,1.8,
+TeddYEE,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,YEE variant used to signal support or love toward another chatter.
+SpeedLaugh,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+pepeMODS,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"PEPE variant for being fed up or exhausted, often at disliked orbiters."
+pepeW,0,False,,0.0,0.0,0.0,0.0,0.2,0.0,0.0,,"Animated PEPE variant for being fed up or exhausted, often at disliked orbiters."
+MonkeyListening,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+monkaVIRUS,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Typically used when illnesses or sick people are on stream.
+MICROAGGRESSIONS,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Dean Withers making an exaggerated soy face after a father said his child can't consent; urges viewers to report him.
+pepeSmug,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Smug PEPE used in response to smugness or condescension.
+OneGuy,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Used when someone is baited into angrily responding to a single chatter.
+omgBruh,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+NoThanks,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Pepo refusing something.
+peepoHug,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Represents hugging.
+OhNo,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Stressed Rowlet from Pokemon; signals distress.
+OkaygeBusiness,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,PEPE wearing business attire and holding a briefcase.
+peepoRiot,0,False,2020.0,0.0,0.0,0.0,228.9,6.9,0.0,0.0,,"Signals rebellion, such as chat demanding Dan be on stream."
+PEEKSTINY,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Buddy peeking from behind a wall.
+PepeSteer,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Animated PEPE for fast driving or quick speech; signals chatters flipping their positions.
+nathanOOO,0,False,2020.0,0.0,0.0,0.0,61.1,0.1,0.0,0.0,,Used when the poster senses a ban or meganuke coming; Twitch variant of OOOO.
+Normgasm,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Norman Finkelstein during his debate with Destiny; used for Finkelstein, Wikipedia, name mispronunciations, or the word moron."
+NOPERS,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Signals head-shaking in response to a statement; the other answer to being asked to come.
+ItsFine,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Mad soyjack in a happy mask, signaling someone pretending to be okay while actually coping."
+NODDERS,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Signals nodding in response to a statement; one of two answers to being asked to come.
+ITSBECAUSEYOUREYELLING,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+monkaGun,0,False,,0.0,0.1,0.0,0.0,117.7,0.0,0.0,,Used when triggered.
+NAHH,0,False,,0.0,0.0,0.0,0.0,0.0,0.16,0.14,1.2,Expresses disbelief; originated from Black Gen Z creators and is referenced in discussions of AAVE.
+nathanLook,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+FLIPMYBURGER,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"PEPE sadly tipping a McDonald's hat, referencing minimum-wage workers."
+GatoPls,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,GIF of El Gato Immortal dancing.
+FISHIES,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Used for any and all reasons.
+FishShy,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Altered MMMM with shy hands.
+FlawlessVictory,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+GLIZZY,0,False,,0.0,0.0,0.0,0.0,0.0,0.16,0.23,0.7,Briefly added for April Fools'. Depicts Destiny in glizzy overdrive.
+NOWWHAT,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Image of a dog laying its head on a windowsill in despair.
+DEPRESSTINY,0,False,,0.2,0.1,0.0,0.0,0.0,0.0,0.0,,"Cropped blue coat image signaling deep sadness, often paired with ""it's Joever."""
+DankWave,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Altered FeelsDankMan waving, used to say hi."
+DCOLON,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Used to express shock or offense at a statement or cussing, often jokingly."
+DONTSAYIT,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Used by a chatter who wants to say something but holds back, such as avoiding a nuke after a misspeak."
+diNOWAY,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"YEE emote with a shocked expression, used in response to surprising moments."
+DISGUSTINY,0,False,2014.0,0.7,0.3,0.0,0.0,0.3,0.0,0.0,,Used to signal disgust.
+DonoWall,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Guy talking to a brick wall, used when someone talks excessively without being heard. Name references donating to get past the wall."
+FellForItAgain,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Ribbon from the ""Fell for it again award"" meme, with a MAGA hat and the abbreviation FFIA."
+Fishge,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Smiling fish, a variant of the non-DGG emote Okayge."
+EatFresh,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Animated Buddy eating a sub sandwich, referencing Destiny's Subway habit and its motto."
+NOSHOT,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Image of Trainwreckstv; named after his famous ""no shot, bucko"" catchphrase."
+NOTHINGBURGER,0,False,,0.0,0.0,0.0,0.0,0.0,3.13,1.61,2.0,
+ChokeDank,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+FeelsOrbMan,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+FeelsPeekMan,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Cropped YEE dinosaur used to signal sadness.
+peepoShy,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Used in response to shy or cute things.
+POOTUBE,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Used in reference to YouTube chat.
+PoroPls,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+Pointless,0,False,,0.1,0.1,0.0,0.1,0.2,9.89,7.17,1.4,Depressed emote similar to Hollow or Aware.
+PepoPunch,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Boxing emote used for fights or antagonizing.
+PepoTurtle,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,PEPE mixed with a turtle.
+RainbowPls,0,False,,0.0,0.0,0.0,0.0,12.2,0.0,0.0,,Weeb dancing emote.
+RAGEBAIT,0,False,,0.0,0.0,0.0,0.0,0.0,4.5,3.4,1.3,
+RATTED,0,False,,0.1,0.1,0.0,0.1,0.0,0.0,0.0,,Destiny wearing PirateSoftware's WoW wizard hat; used for Pirate references or rat-like behavior.
+SideEye,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+SHOCKSTINY,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Reference to the surprised Pikachu meme; expresses shock at an event.
+RightThere,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+SCHEMING,0,False,,0.0,0.0,0.0,0.1,0.0,0.82,0.65,1.3,Destiny rubbing his hands mischievously; used to reference a scheme.
+RIPBOZO,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Reference to an infamous video; used when something bad happens to someone chat dislikes.
+ShrimpleAs,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Kermit consoling Pepe the King Prawn.
+OhBrother,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Rolling eyes.
+Cooked,0,False,,0.1,0.2,0.0,0.0,0.1,16.1,10.22,1.6,"Cooked dog image, used to express apprehension or accepting one's fate."
+Concerned,0,False,,0.0,0.0,0.0,0.0,0.0,20.0,15.01,1.3,Common Twitch emote and variant of Aware and Clueless.
+coMMMMfy,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Comfy-style MMMM, used to show arousal. Temporarily removed for excessive horny-posting."
+ComfYEE,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Comfy variant of the YEE emote.
+CORNPOP,0,False,,0.0,0.0,0.0,0.3,0.0,0.0,0.0,,"Confused Joe Biden image, used when someone sounds senile or confused. Added after Biden's 2024 debate performance."
+CROPSTINY,0,False,2020.0,0.0,0.0,0.0,130.4,0.0,0.0,0.0,,"Used when someone farms emotes, and also for actual farming and Southern accents."
+smolguh,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+SNARKMAN,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+RapThis,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Combo emote used with NODDERS to reference rapping.
+catJAM,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Used when a major bop is playing on stream.
+YeeMODS,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"YEE variant for being fed up or exhausted, often at disliked orbiters."
+CheckEm,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Patrick Bateman pointing at a stereo, used to point out rare-chance emotes like WEOW and glorp."
+Clueless,0,False,,0.0,0.0,0.0,0.0,0.2,4.72,2.73,1.7,"Counterpart to Aware, used when someone on stream seems deluded or lacks critical information."
+COKEJAW,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Refers to Trainwreckstv and the common meme about his cocaine addiction.
+ComfyBuddy,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+COPIUM,0,False,,0.0,0.0,0.0,0.0,0.0,3.3,2.17,1.5,"Used when someone is coping, in denial."
+YouWouldntGetIt,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Image from the movie Joker; used ironically when someone expresses confusion.
+Yoda1,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+YesHoney,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Meme reference used in response to chat-disliked topics like Destiny's audio setup or tired people.
+YeeSmug,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,YEE variant of pepeSmug.
+CHEERSTINY,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Buddy waving pom-poms like a cheerleader.
+YAM,0,False,,0.1,0.0,0.0,0.1,0.0,0.0,0.0,,YEE variant used in response to upbeat music.
+YAP,0,False,,0.1,0.1,0.0,0.0,0.3,1.54,0.96,1.6,Reference to the yap meme; used when someone talks too much. Made by former chatter Wolfgand_Shuric.
+AlienPls,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,
+YeeLaugh,0,False,,0.0,0.0,0.0,0.1,0.0,0.0,0.0,,YEE variant signaling chuckling at someone who doesn't know something important.
+WWWWaiting,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Altered MMMM with crossed arms; used when waiting for something.
+TRUELOVE,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Image of Dan and MrMouton showing affection; used in response to anyone kissing.
+WooYeah,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Used in reference to sex; often in response to Destiny joking about fucking your mom.
+VeryPog,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"GIF of a pufferfish eating a carrot; used in any context, especially when someone is eating."
+WAOW,0,False,,0.4,0.2,0.0,0.2,1.0,2.2,5.7,0.4,
+Askers,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,"Says ""Who asked?"" when someone tells a totally unrelated personal story."
+ZoomerSippy,0,False,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,Animated Red Bull can related to the Sippy emote.
