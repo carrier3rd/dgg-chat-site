@@ -103,9 +103,10 @@ class Logger:
         d[kind] = d.get(kind, 0) + 1
 
     def msg(self, j):
-        mid = j.get("id")
+        # "id" in a DGG MSG is the sender's account id, not a message id, so it can't be the dedup key.
+        # A HISTORY replay repeats messages exactly, so (timestamp, nick, text) identifies a message.
         ts = j.get("timestamp") or int(time.time() * 1000)
-        key = mid if mid is not None else (ts, j.get("nick"), j.get("data"))
+        key = (ts, j.get("nick"), j.get("data"))
         if key in self.seen_set:
             return
         if len(self.seen) == self.seen.maxlen:
