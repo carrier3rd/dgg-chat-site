@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily publish of DGG chat stats site
+
+[Timer]
+# 00:43 UTC = just after each UTC day closes (7:43 PM Eastern in winter)
+OnCalendar=*-*-* 00:43:00 UTC
+Persistent=true
+
+[Install]
+WantedBy=timers.target
