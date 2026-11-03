@@ -5,22 +5,22 @@ dggers,Destiny,7.1,1.2,self-label,Destiny's community (destiny.gg); used by memb
 regarded,Destiny,86.4,13.1,in-group slur,Softened r-word; DGG house style,Destiny regular
 regard,Destiny,,,in-group slur,Same as regarded (noun),Destiny regular
 lefties,Destiny,39.7,8.6,out-group label,Dismissive term for the online left,Destiny or PCM or Bulwark regular; center-left or right critic of the left
-dear leader,Destiny,14.0,2.7,ironic,Destiny regulars joking about Destiny; elsewhere used for Trump,Destiny regular when about Destiny
-brain broken,Destiny,11.2,1.9,house phrase,Someone whose politics got warped by an issue or audience,Destiny regular
-slopulism,Destiny,7.1,1.6,house phrase,Slop + populism; low-effort populist politics left or right,Destiny or pakman regular
-sweeping,Destiny,13.7,3.7,house phrase,Defending or covering for someone (sweeping for X),Destiny regular in political threads
+dear leader,Destiny,14.0,2.7,ironic,"Ironic: mocks the idea that DGG goes along with whatever Destiny says ('of course, dear leader'); started by Mouton [per the owner]; elsewhere used for Trump","Destiny regular when about Destiny; self-mocking, not hostile"
+brain broken,Destiny,11.2,1.9,house phrase,Someone stuck on one issue who can't let it go even when dropping it would serve them [per the owner],Destiny regular
+slopulism,Destiny,7.1,1.6,house phrase,"Slop + populism: low-effort populist talking points, left or right [per the owner]",Destiny or pakman regular
+sweeping,Destiny,13.7,3.7,house phrase,"'Sweeping for X' = covering for or defending X; Destiny has an emote for it [per the owner]; the bare word is mostly ordinary English ('sweeping generalization'), so only the 'sweeping for' form is a marker",Destiny regular (the sweeping-for form)
 aes,thedavidpakmanshow,122.9,13.6,abbreviation,Abdul El-Sayed (Michigan Senate candidate); not Actually Existing Socialism in this data,Pakman or Bulwark or Destiny regular discussing the Michigan race
 pisco,Destiny,94.2,11.5,name,Former lawyer and debater; hosts the Lib and Learn panel (some members have left); now feuding with Destiny; liberal to left [per the owner; Lib and Learn matches comment context],Destiny regular; Destiny-orbit drama
 soypill,Destiny,28.5,3.5,name,"Liberal-to-left commentator, sympathetic to Hasan; recently traveled to the West Bank [per the owner]",Destiny regular
 whick,Destiny,24.8,3.1,name,Online debate-panel host; liberal [per the owner],Destiny regular
-hutch,Destiny,53.3,8.9,name,Commentator in the Destiny orbit; also discussed in LeftoversH3 (23.5),Destiny regular or H3 snark
-lonerbox,Destiny,19.2,3.1,name,Commentator in the Destiny orbit,Destiny regular
-fungi,LeftoversH3,118.0,8.4,out-group label,Snark term for h3 podcast fans,H3 snark regular; hostile to h3 fanbase
-pedo troll,LeftoversH3,29.7,2.2,nickname,Snark epithet for Ethan Klein,H3 snark regular
+hutch,Destiny,53.3,8.9,name,"Destiny-aligned liberal streamer; conventional Democrat, closer to Destiny than to progressives or DSA; one of a few commentators openly fighting the left/'tankie' push inside the party [per the owner]; co-hosts The Lesser Evil with Lonerbox and Dan Saltman [per the owner]","Destiny regular or H3 snark; liberal, anti-left framing"
+lonerbox,Destiny,19.2,3.1,name,Scottish video essayist turned streamer; deep I/P research; fell out with Destiny over Destiny's legal case and no longer talks to him; co-hosts The Lesser Evil with Hutch and Dan Saltman; dated Pxie; willing to criticize the left [per the owner],"Destiny regular or H3 snark; liberal, anti-left framing"
+fungi,LeftoversH3,118.0,8.4,out-group label,"Snark term for h3 podcast fans (often 'the fungi'); 1,274 of about 1,300 uses are in LeftoversH3; origin not found","LeftoversH3 regular, hostile to h3 fans"
+pedo troll,LeftoversH3,29.7,2.2,nickname,"From 'pedo_troll', an old Reddit account linked to Ethan via breach data; Ethan admitted it was his, about 15 years old, an edgy troll name; snark uses it as an epithet. Destiny used it as a counterattack after Ethan tried to cast him as a pedophile under pressure from the left after Ethan's falling out with Hasan [per the owner]",H3 snark regular; Destiny regular when used against Ethan
 frogan,LeftoversH3,54.8,6.4,name,"Left-leaning streamer in the Hasan orbit; the owner's assessment: unironically pro-terrorism and anti-American [per the owner, unsourced]; sued by Ethan Klein in 2025 for copyright; default later lifted [verified]",H3 snark regular; lawsuit threads
 denims,LeftoversH3,49.7,5.6,name,"Twitch streamer who streams before Hasan goes live, known as 'Hasan's waiting room' [per the owner]; sued by Ethan Klein in 2025 for copyright; ruled fair use [verified]",H3 snark regular; lawsuit threads
-gwam,LeftoversH3,59.9,5.6,name,H3 crew member and co-host,H3 snark or h3 fan
-egg,LeftoversH3,45.6,6.2,nickname,Nickname about baldness for a person in the h3 orbit [per the owner]; comments also use it about body shape,H3 snark regular
+gwam,LeftoversH3,59.9,5.6,name,"Kate, 'GirlWithAMicrophone': H3 After Show / After Dark co-host [verified, H3 Podcast Wikipedia cast list]; heavily mocked in snark for her tweets and takes",H3 snark regular when mocking; h3 fan otherwise
+egg,LeftoversH3,45.6,6.2,nickname,"Snark nickname for Kate (GWAM): 'egg with a microphone' pun on GirlWithAMicrophone, plus baldness/body jokes [read from context; the owner had baldness]",LeftoversH3 regular
 snarkers,h3h3productions,45.8,15.3,out-group label,Members of snark communities; used by h3 fans and Destiny regulars (32.0) as an insult; snark also self-applies,h3 fan or Destiny regular when hostile
 teddy fresh,h3h3productions,26.3,6.1,name,Hila Klein's clothing brand,h3 fan or snark
 hasbara,IsraelPalestine,36.0,3.6,charged term,Israeli state public diplomacy; used as accusation of pro-Israel propaganda,Pro-Palestine side (IsraelPalestine or Palestine or H3 snark)
@@ -28,8 +28,8 @@ iof,Palestine,47.7,1.7,charged term,Israeli Occupation Forces; hostile rename of
 zio,Palestine,44.1,1.4,slur,Short for Zionist; widely treated as a slur,Palestine regular; also quoted by critics
 tisch,Hasan_Piker,21.5,1.2,name,NYPD commissioner Jessica Tisch; Mamdani's choice to keep her,Hasan or DSA regular; NYC left politics
 angie,dsa,31.3,1.8,name,Angie Nixon; Florida state rep and DSA-backed 2026 Democratic US Senate nominee (won Aug primary; later distanced from DSA) [verified],DSA or Hasan regular
-meat pic,Hasan_Piker,13.2,0.6,event,RNC's shirtless Hasan photo,Hasan regular; also H3 snark
-the flame,Hasan_Piker,17.5,2.0,ironic,We carry the flame; Charlie Kirk memorial chant used mockingly,Hasan regular when mocking; PCM or right when sincere
+meat pic,Hasan_Piker,13.2,0.6,event,"Hasan's Nov 2024 underwear mirror selfie, shown (blurred) in a socialism segment at the GOP Midterm Convention in Dallas, Sep 2026; Hasan joked about it on stream [verified, Aftermath]; the owner links it to puff pieces about his looks",Hasan regular; also H3 snark
+the flame,Hasan_Piker,17.5,2.0,ironic,"Mocking reference to the Charlie Kirk memorial chant/song ('we are Charlie Kirk', 'we carry the flame') [per the owner]",Hasan regular when mocking; PCM or right when sincere
 campist,dsa,13.2,0.6,charged term,Siding with any anti-US bloc; insult from left anti-campists and defended by Tankie,DSA or Tankie regular; intra-left fight
 libs,TankieTheDeprogram,79.6,11.7,out-group label,Liberals as an insult from the left,Tankie regular (also PCM and Destiny at lower rates)
 imperial core,TankieTheDeprogram,,,house phrase,Western countries in Marxist-Leninist framing,Tankie regular
@@ -43,15 +43,30 @@ waow,neoliberal,22.8,5.8,house reaction,Reaction to an edgy take that the poster
 succ,neoliberal,17.0,4.1,house label,Social democrat (succdem),neoliberal regular
 ping,neoliberal,84.1,20.7,house mechanic,!ping bot that alerts topic groups,neoliberal regular
 dt,neoliberal,,,house mechanic,Discussion Thread (99% of uses are neoliberal regulars),neoliberal regular
-blue maga,thedavidpakmanshow,22.0,1.1,out-group label,Hyper-partisan Democrats; insult from left or center,Pakman regular (both directions)
+blue maga,thedavidpakmanshow,22.0,1.1,out-group label,"2026: insult from young progressives (Hasan defines it as cult-like loyalty to the Democratic Party) aimed at establishment Democrats [verified, Deseret News Jul 2026]; Ro Khanna used it positively in 2025 for 'economic patriotism'; the owner's Nick Fuentes guess not confirmed",progressive/Hasan-aligned when used as insult
 orcs,ukraine,49.2,2.0,dehumanizing,Russian soldiers,r/ukraine regular; strongly pro-Ukraine
 vatnik,ukraine,5.4,0.3,out-group label,Pro-Kremlin person,r/ukraine or neoliberal regular
 slava ukraini,ukraine,,,slogan,Glory to Ukraine (90% of uses are r/ukraine regulars),r/ukraine regular
 mostly peaceful,Conservative,19.0,0.9,ironic,Mocking 2020 media phrasing about protests,Conservative or right regular
 bee,Conservative,21.0,1.4,name,Babylon Bee satire site,Conservative regular
 roach king,Asmongold,14.2,0.7,nickname,Nickname for Asmongold [per the owner; matches context],Asmongold regular when affectionate; LSF when mocking
-glizzy,atrioc,78.6,0.3,nickname,Atrioc in-joke,atrioc regular
+glizzy,atrioc,78.6,0.3,nickname,Atrioc in-joke about his large fingers; now a word chat throws out to get his attention [per the owner],atrioc regular
 chud,neoliberal,11.4,7.3,out-group label,Right-wing person; spread across neoliberal and LSF and PCM and Destiny,Weak signal; general left or center use
-omnicause,Destiny,1.7,0.7,out-group label,Left bundling all causes together (often I/P),Center or right critic of the left; weak signal
+omnicause,neoliberal,1.7,0.7,out-group label,"Mocking the left for folding every cause into one (usually Gaza); not common in DGG [per the owner]; most used by neoliberal regulars (42 of 101 uses), then Destiny and PCM",neoliberal or Destiny regular; anti-left
 zog,thedavidpakmanshow,5.1,0.5,charged term,Antisemitic conspiracy term; mostly appears in accusations of zog-posting,Mostly critics quoting it; check context
 pangram,atrioc,,,name,"Pangram, an AI-text detector; atrioc threads about scripts flagged as AI-written [verified product; atrioc link from context]",atrioc regular
+tamara,h3h3productions,579.2,115.9,name,"Tamara Joseph ('Undead Mummy'), British animator who joined H3 May 2025, later on camera [verified]",h3 fan or snark regular
+harley,h3h3productions,231.5,39.8,name,Harley Morenstein (Epic Meal Time founder); H3 After Show / After Dark co-host; said after the Oct 2026 split it is 'plausible' H3 shows continue without Ethan [verified cast; quote via X]; snark calls him 'drunk bacon man',h3 fan or snark regular
+kate,h3h3productions,191.1,30.8,name,"Kate 'GirlWithAMicrophone' (GWAM), After Show co-host; see gwam, egg [verified]",h3 fan or snark regular
+lena,h3h3productions,71.4,13.3,name,"Lena Ayad, H3 crew, married to AB; fans discuss her pregnancy and work as Ethan and Hila's assistant [cast verified; rest from context]",h3 fan or snark regular
+zach,h3h3productions,68.6,14.2,name,"Zach Louis, H3 head of sound design since 2018 ('sound lad'), soundboard and theme songs [verified, The Click]",h3 fan or snark regular
+olivia,h3h3productions,104.1,21.3,name,"Olivia Lopes, H3 crew, helps with research [verified, The Click]",h3 fan or snark regular
+morgan,h3h3productions,32.9,7.0,name,"Morgan Smalley, former H3 crew; fans speculate his firing is linked to the affair [past crew verified; link is speculation]",h3 fan or snark regular
+moses,LeftoversH3,13.1,3.6,name,Moses Hacmon: Hila Klein's brother [per the owner] and Trisha Paytas's husband; central to the Frenemies fallout,h3 or snark regular
+jennings,thedavidpakmanshow,5.1,0.6,name,"Scott Jennings, conservative CNN commentator; Hasan sued him (reported Oct 28, 2026) for $72.5M over a 42-second clip compilation Jennings posted Aug 12 and aired Aug 17 captioned as Hasan backing lynchings; the complaint says it stripped sarcasm and context from an Oct 2024 stream [verified, Dexerto; allegations untested]",politics-sub discussion of Hasan
+kulinski,thedavidpakmanshow,8.5,1.0,name,"Kyle Kulinski (Secular Talk), left-populist commentator [per the owner]","pakman, Destiny or bulwark regular"
+mehdi,samharris,51.6,6.1,name,"Mehdi Hasan, journalist and debater [per the owner]; heavy in samharris and Destiny",samharris or Destiny regular
+mouton,Destiny,10.3,1.4,name,DGG figure who started the 'dear leader' joke [per the owner],Destiny regular
+saltman,LeftoversH3,24.8,2.6,name,"Dan Saltman, co-host of The Lesser Evil with Hutch and Lonerbox [per the owner]; most discussed by LeftoversH3 regulars",Destiny-orbit or snark regular
+pxie,Destiny,5.5,1.3,name,Streamer who dated Lonerbox [per the owner],Destiny regular
+after dark,h3h3productions,44.1,7.4,name,"H3 After Dark, the after show with Harley and Kate [verified]",h3 fan or snark regular
