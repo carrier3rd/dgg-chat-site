@@ -191,11 +191,13 @@ async def run(lg):
         start = dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")
         reason = "closed"
         try:
+            # ping_interval=None: chat.destiny.gg does not answer websocket pings, so library keepalives closed
+            # every connection after 60 s (Nov 2 2026). Real network drops still raise and reconnect below.
             try:  # websockets >= 14 uses additional_headers; older versions use extra_headers
-                conn = websockets.connect(URL, additional_headers=HEADERS, ping_interval=30, ping_timeout=30,
+                conn = websockets.connect(URL, additional_headers=HEADERS, ping_interval=None,
                                           max_size=2**22)
             except TypeError:
-                conn = websockets.connect(URL, extra_headers=HEADERS, ping_interval=30, ping_timeout=30,
+                conn = websockets.connect(URL, extra_headers=HEADERS, ping_interval=None,
                                           max_size=2**22)
             async with conn as ws:
                 lg.connected_since = start
