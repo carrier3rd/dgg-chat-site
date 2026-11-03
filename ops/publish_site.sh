@@ -1,6 +1,6 @@
 #!/bin/bash
 # Rebuild the public DGG chat stats site and push it to its GitHub Pages repo.
-# Only aggregates are published (see site/build_site_data.py). Run daily by dgg-site.timer.
+# Only aggregates are published (see site/build_site_data.py). Run every 15 minutes by dgg-site.timer.
 set -euo pipefail
 REPO="$HOME/socialscope"
 SITE="$HOME/dgg-chat-site"          # local clone of the public Pages repo

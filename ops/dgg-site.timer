@@ -1,9 +1,10 @@
 [Unit]
-Description=Daily publish of DGG chat stats site
+Description=Publish DGG chat stats site every 15 minutes
 
 [Timer]
-# 00:43 UTC = just after each UTC day closes (7:43 PM Eastern in winter)
-OnCalendar=*-*-* 00:43:00 UTC
+# Every 15 minutes (was daily at 00:43 UTC until Nov 3, 2026; changed so the live numbers stay current).
+# 4 Pages builds an hour, under GitHub's soft limit of 10.
+OnCalendar=*:00/15
 Persistent=true
 
 [Install]
