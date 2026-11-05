@@ -13,10 +13,10 @@ Safeguards (definitions publish without human review, so these are automatic):
 - Example lines are only lines that 3+ different chatters sent word for word (copypastas and common
   reactions), at most 120 characters, with no name, link, @, long number or blocked word.
 - Terms matching the slur blocklist never become entries.
-- Definitions come first from the project glossary (data/glossary.csv), then the DGG wiki
-  (data/dgg_emotes.csv), and only then from Claude. Claude also judges each new term; anything it flags as a slur,
-  harassment, sexual content or a claim about a real person's private life is held back entirely (not
-  published) and listed in the state file.
+- Definitions come only from context in the collected chat lines (no DGG wiki, no project glossary, no outside
+  knowledge). A definition counts only if it is marked basis "chat"; anything else in the state file is cleared.
+  Claude also judges each new term; anything it flags as a slur, harassment, sexual content or a claim about a
+  real person's private life is held back entirely (not published) and listed in the state file.
 - Sample messages sent to the model have names replaced with [user] and links removed. They are not published.
 
 Definitions without an API key: each run writes the terms that need a meaning, with sanitized sample lines, to
@@ -132,21 +132,6 @@ def load_archive(agg):
     return rates, base, n, names
 
 
-def load_meanings(glossary_csv, emotes_csv):
-    m = {}
-    if os.path.exists(glossary_csv):
-        for r in csv.DictReader(open(glossary_csv, encoding="utf-8")):
-            mean = (r.get("meaning") or "").strip()
-            mean = re.split(r"\s+Chat history:", mean)[0].strip()  # project notes, not part of the meaning
-            if mean and not re.search(r"\ba destiny\.gg emote\b", mean):  # skip auto-filled emote stubs
-                m[r["term"].strip().lower()] = (mean, "Project glossary")
-    if os.path.exists(emotes_csv):  # for emotes the DGG wiki wins
-        for r in csv.DictReader(open(emotes_csv, encoding="utf-8")):
-            if (r.get("meaning") or "").strip():
-                m[r["emote"].lower()] = (r["meaning"].strip(), "DGG wiki")
-    return m
-
-
 def call_claude(key, term, info, samples):
     prompt = f"""You are writing one entry for a public glossary of destiny.gg (DGG) livestream chat, a community
 around the political streamer Destiny. The entry is published automatically, so be careful and neutral.
@@ -157,7 +142,9 @@ Use in the last 24 hours: {info['messages_24h']} messages from {info['chatters_2
 {info['lift']}x its usual rate. Archive history (2014-2020 DGG chat): {info['archive_note']}.
 Words and emotes it appears with: {', '.join(info['co']) or 'none'}.
 
-Recent chat lines using it (names replaced with [user]; these are context for you and will not be published):
+Recent chat lines using it (names replaced with [user]; these are context for you and will not be published).
+Base the definition ONLY on these lines and the counts above. Do not use outside knowledge (wikis, what the emote is
+known for elsewhere, where it comes from). If the lines don't make the meaning clear, say what chat uses it for.
 {chr(10).join('- ' + s for s in samples)}
 
 Reply with JSON only, no prose:
@@ -185,8 +172,6 @@ def main():
     ap.add_argument("--agg", default=H("~/socialscope_data/orl_agg"))
     ap.add_argument("--salt-file", default=H("~/socialscope/.socialscope_salt"))
     ap.add_argument("--emotes", default=H("~/socialscope_data/dgg_chat/emotes.json"))
-    ap.add_argument("--emote-meanings", default=H("~/socialscope/data/dgg_emotes.csv"))
-    ap.add_argument("--glossary", default=H("~/socialscope/data/glossary.csv"))
     ap.add_argument("--state", default=H("~/socialscope_data/glossary_state.json"))
     ap.add_argument("--definitions", default=H("~/socialscope_data/glossary_definitions.json"))
     ap.add_argument("--pending", default=H("~/socialscope_data/glossary_pending.json"))
@@ -197,7 +182,6 @@ def main():
     salt = open(H(a.salt_file)).read().strip().encode()
     emotes = {e["prefix"] for e in json.load(open(H(a.emotes)))}
     emotes_low = {e.lower(): e for e in emotes}
-    meanings = load_meanings(H(a.glossary), H(a.emote_meanings))
     rates, arch_base, arch_n, names = load_archive(H(a.agg))
     state = json.load(open(a.state)) if os.path.exists(a.state) else {"terms": {}}
     key = os.environ.get("ANTHROPIC_API_KEY", "").strip()
@@ -248,14 +232,18 @@ def main():
         return arch_base.get(t, 0.0)
 
     def ok_term(t):
-        if t in emotes_low or t in meanings:
-            return not BLOCK.search(t)  # known emotes and glossary terms skip the name check
+        if t in emotes_low:
+            return not BLOCK.search(t)  # known emotes skip the name check
         if len(t) < 3 or t in JUNK or t in STOP or t.isdigit() or BLOCK.search(t) or URLISH.search(t):
             return False
         if re.search(r"\d", t) and not t.isalpha() and len(t) > 6:  # IDs, codes, link remnants
             return False
-        if " " in t and (any(p in JUNK or len(p) < 2 for p in t.split(" ")) or all(p in STOP for p in t.split(" "))):
-            return False
+        if " " in t:
+            parts = t.split(" ")
+            # Phrases need two content words: no filler word, no repeated word, no emote (combos and reactions).
+            if (any(p in JUNK or p in STOP or len(p) < 2 for p in parts) or len(set(parts)) < len(parts)
+                    or any(p in emotes_low for p in parts)):
+                return False
         return not is_name(t)
 
     # ---- trending candidates
@@ -267,7 +255,7 @@ def main():
                 continue
             base = max(cbase[t] / nbase if nbase else 0.0, archive_rate(t), floor)
             lift = (c / n24) / base
-            looks_addressed = " " not in t and t not in emotes_low and t not in meanings and first24[t] >= 0.5 * c
+            looks_addressed = " " not in t and t not in emotes_low and first24[t] >= 0.5 * c
             if lift >= MIN_LIFT and ok_term(t) and not looks_addressed:
                 cands.append((math.log(lift) * math.sqrt(len(u24[t])), t, lift))
         cands.sort(reverse=True)
@@ -284,16 +272,20 @@ def main():
             dt.datetime.fromisoformat(e.get("last_trending", e["first_seen"])) >= now - dt.timedelta(days=TRACK_DAYS)}
 
     # ---- context per term
+    df = collections.Counter()  # how many recent messages contain each token, counted once
+    for _, _, _, toks in recent:
+        df.update(toks)
+
     def co_terms(t):
         co = collections.Counter()
         for _, _, _, toks in recent:
             if t in toks:
                 co.update(x for x in toks if x != t and " " not in x)
-        tot = sum(1 for _, _, _, toks in recent if t in toks) or 1
+        tot = df[t] or 1
         n7 = len(recent) or 1
         out = []
         for x, c in co.most_common(200):
-            base = sum(1 for _, _, _, toks in recent if x in toks) if c >= 5 else 0
+            base = df[x] if c >= 5 else 0
             if c >= 5 and base and ok_term(x) and x not in t.split(" "):
                 out.append(((c / tot) / (base / n7), x))
         out.sort(reverse=True)
@@ -344,15 +336,19 @@ def main():
     entries, calls, drafted, held_now = [], 0, [], []
     for t in sorted(keep, key=lambda x: (-trending.get(x, 0), -c24[x])):
         e = terms[t]
+        if not ok_term(t):   # terms kept from earlier runs are re-checked against the current filters
+            continue
         kind = "emote" if t in emotes_low else ("phrase" if " " in t else "word")
         arch, arch_note = archive_info(t)
         info = {"kind": kind, "messages_24h": c24[t], "chatters_24h": len(u24[t]),
                 "lift": round(trending.get(t, 0), 1), "archive_note": arch_note, "co": co_terms(t)}
-        if t in meanings:
-            e["definition"], e["source"] = meanings[t]
-            e["def_date"] = e.get("def_date") or now.strftime("%Y-%m-%d")
-        else:
+        if e.get("definition") and e.get("basis") != "chat":  # wiki, project-glossary and older definitions
+            for k in ("definition", "source", "def_date", "model", "kind"):
+                e.pop(k, None)
+        if True:
             d = defs.get(t)
+            if d and d.get("basis") != "chat":
+                d = None
             if d and d.get("date") and (not e.get("definition") or d["date"] >= e.get("def_date", "")):
                 if d.get("sensitive"):
                     e.update(held=True, held_reason=d.get("reason") or "flagged sensitive",
@@ -360,7 +356,7 @@ def main():
                     held_now.append(t)
                     continue
                 if d.get("definition"):
-                    e.update(definition=str(d["definition"]).strip()[:400], source="Claude",
+                    e.update(definition=str(d["definition"]).strip()[:400], source="Claude", basis="chat",
                              model=d.get("model", "Claude"), def_date=d["date"], kind=str(d.get("kind", kind))[:20])
             stale = (not e.get("definition") or (t in trending and e.get("source") == "Claude" and
                      dt.date.fromisoformat(e["def_date"]) <= now.date() - dt.timedelta(days=REDRAFT_DAYS)))
@@ -383,7 +379,7 @@ def main():
                                      held_at=now.isoformat(timespec="minutes"))
                             held_now.append(t)
                             continue
-                        e.update(definition=d["definition"], source="Claude", model=MODEL,
+                        e.update(definition=d["definition"], source="Claude", basis="chat", model=MODEL,
                                  def_date=now.strftime("%Y-%m-%d"), kind=d["kind"])
         if e.get("held"):
             continue
@@ -407,9 +403,7 @@ def main():
     for k, c in ecount.most_common():
         if k in held_keys or BLOCK.search(k):
             continue
-        if k in meanings:
-            mean, src = meanings[k]
-        elif (defs.get(k) or {}).get("definition"):
+        if (defs.get(k) or {}).get("definition") and defs[k].get("basis") == "chat":
             mean, src = defs[k]["definition"], "Claude"
         else:
             mean, src = None, None
