@@ -157,7 +157,7 @@
   let glFilter = "all";
   const kindLabel = { emote: "emote", word: "word", phrase: "phrase", nickname: "nickname", meme: "meme",
     reference: "reference", person: "person", event: "event", other: "term" };
-  const srcLabel = (e) => e.definition_source === "Claude" ? `Written by Claude from recent chat, ${e.definition_date}, unreviewed`
+  const srcLabel = (e) => e.definition_source === "Claude" ? `Written by Claude from chat lines only, ${e.definition_date}, unreviewed`
     : e.definition_source ? `From the ${e.definition_source}` : "";
   function spark(trend) {
     const vals = trend.map((d) => d.per_10k);
@@ -222,7 +222,7 @@
         const c = document.createElement("td");
         c.textContent = e.meaning || "No meaning yet.";
         if (!e.meaning) c.className = "empty";
-        if (e.source) { const s = document.createElement("div"); s.className = "gl-src"; s.textContent = e.source === "Claude" ? "Written by Claude, unreviewed" : "From the " + e.source; c.append(s); }
+        if (e.source) { const s = document.createElement("div"); s.className = "gl-src"; s.textContent = e.source === "Claude" ? "Written by Claude from chat lines only, unreviewed" : "From the " + e.source; c.append(s); }
         tr.append(a, b, c); return tr;
       }));
     }
