@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Build the public site's data files from the archive tables and the live DGG log.
 
-Everything written here is public. Only aggregates leave this script: counts, shares, rates, emote names and
-glossary terms. No message text, no nicks, no user hashes. Free-text "top words" are deliberately not published
+Everything written here is public. Aggregates leave this script (counts, shares, rates, emote names and glossary
+terms), plus, since Nov 5 2026 (the owner's decision), DGG chat handles in live_chatters.json: per-handle message
+counts, active days, words per message and favorite emote over the last 7 days. No message text and no user
+hashes are published. Records logged before the logger stored nicks get a handle when the same hash shows up
+later with one. Free-text "top words" are deliberately not published
 (the live log has no nick list to filter them against); tracked vocabulary comes from data/glossary.csv instead.
 
 Inputs (defaults are the laptop's paths):
@@ -199,6 +202,8 @@ def build_live(live, status_path, out, emotes, terms):
     cutoff7 = (now - dt.timedelta(days=7)).timestamp() * 1000
 
     day_rows, hours = [], collections.Counter()
+    by_u = collections.defaultdict(lambda: {"m": 0, "w": 0, "days": set(), "em": collections.Counter()})
+    nick_of = {}  # hash -> latest nick seen with it
     emo7, term7, n7 = collections.Counter(), collections.Counter(), 0
     for d in days:
         msgs = users = emote_only = 0
@@ -223,6 +228,8 @@ def build_live(live, status_path, out, emotes, terms):
                     msgs += 1
                     first_ts = r["ts"] if first_ts is None else min(first_ts, r["ts"])
                     seen_u.add(r.get("u"))
+                    if r.get("nick"):
+                        nick_of[r.get("u")] = r["nick"]
                     hist[min(len(words), 100)] += 1
                     em = [w for w in words if w in emotes]
                     if words and len(em) == len(words):
@@ -231,6 +238,11 @@ def build_live(live, status_path, out, emotes, terms):
                         n7 += 1
                         hours[int(r["ts"] // 3600000) * 3600] += 1
                         emo7.update(set(em))
+                        b = by_u[r.get("u")]
+                        b["m"] += 1
+                        b["w"] += len(words) - len(em)
+                        b["days"].add(d)
+                        b["em"].update(em)
                         low = text.lower()
                         toks = set(TOK.findall(low))
                         term7.update(toks & single)
@@ -278,8 +290,19 @@ def build_live(live, status_path, out, emotes, terms):
     dump(out, "live_hours.json", hour_rows)
     dump(out, "live_emotes.json", emote_rows)
     dump(out, "live_terms.json", term_rows)
+    chatter_rows = []
+    for u, b in sorted(by_u.items(), key=lambda x: -x[1]["m"]):
+        if u not in nick_of:
+            continue
+        chatter_rows.append({"nick": nick_of[u], "messages": b["m"], "share": round(b["m"] / n7, 4),
+                             "days": len(b["days"]), "words_per_msg": round(b["w"] / b["m"], 1),
+                             "top_emote": b["em"].most_common(1)[0][0] if b["em"] else None})
+        if len(chatter_rows) >= 100:
+            break
+    dump(out, "live_chatters.json", chatter_rows)
     return {"live_first_day": days[0] if days else None, "live_messages": sum(r["messages"] for r in day_rows),
             "live_messages_7d": n7, "logger_connected": bool(st.get("connected")),
+            "chatters_named_7d": sum(1 for u in by_u if u in nick_of), "chatters_7d": len(by_u),
             "last_message": st.get("last_msg")}
 
 

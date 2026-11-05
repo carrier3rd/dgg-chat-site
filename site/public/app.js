@@ -20,7 +20,7 @@
   window.addEventListener("hashchange", () => { if (D.meta !== undefined) show(fromHash()); });
 
   // ---------- data
-  const files = ["glossary", "meta", "live_days", "live_hours", "live_emotes", "live_terms", "archive_overlap", "archive_channels",
+  const files = ["glossary", "meta", "live_days", "live_hours", "live_emotes", "live_terms", "live_chatters", "archive_overlap", "archive_channels",
     "archive_dgg_years", "archive_dgg_emotes", "archive_politics", "archive_hasan_monthly", "archive_badbunny_monthly",
     "scorecard"];
   const D = {};
@@ -157,8 +157,9 @@
   let glFilter = "all";
   const kindLabel = { emote: "emote", word: "word", phrase: "phrase", nickname: "nickname", meme: "meme",
     reference: "reference", person: "person", event: "event", other: "term" };
-  const srcLabel = (e) => e.definition_source === "Claude" ? `Written by Claude from chat lines only, ${e.definition_date}, unreviewed`
-    : e.definition_source ? `From the ${e.definition_source}` : "";
+  const srcLabel = (e) => `Written by Claude from chat lines only, ${e.definition_date}, unreviewed`;
+  // Only definitions written from collected chat are shown; anything from another source (wiki, glossary) is dropped.
+  const chatDef = (e) => e.definition_source === "Claude" ? e.definition : null;
   function spark(trend) {
     const vals = trend.map((d) => d.per_10k);
     const w = 300, h = 34, max = Math.max(1, ...vals.filter((v) => v != null));
@@ -180,10 +181,11 @@
     chips.append(div("chip", kindLabel[e.kind] || "term"));
     head.append(chips); c.append(head);
     const p = document.createElement("p");
-    p.className = "gl-def" + (e.definition ? "" : " pending");
-    p.textContent = e.definition || "Definition pending.";
+    const def = chatDef(e);
+    p.className = "gl-def" + (def ? "" : " pending");
+    p.textContent = def || "Definition pending.";
     c.append(p);
-    if (e.definition) c.append(div("gl-src", srcLabel(e)));
+    if (def) c.append(div("gl-src", srcLabel(e)));
     c.append(div("gl-stats", `${nf.format(e.messages_24h)} messages from ${nf.format(e.chatters_24h)} chatters in the last 24 hours · ${e.per_10k_24h} per 10k`));
     c.append(spark(e.trend || []));
     const a = e.archive;
@@ -208,13 +210,14 @@
       if (glFilter === "trending" && e.status !== "trending") return false;
       if (glFilter === "emote" && e.kind !== "emote") return false;
       if (glFilter === "word" && e.kind === "emote") return false;
-      return !q || e.term.toLowerCase().includes(q) || (e.definition || "").toLowerCase().includes(q);
+      return !q || e.term.toLowerCase().includes(q) || (chatDef(e) || "").toLowerCase().includes(q);
     });
     list.replaceChildren(...rows.map(glCard));
     $("#gl-empty").hidden = rows.length > 0;
     const et = $("#tb-gl-emotes tbody");
     if (et) {
-      const er = (g.emotes || []).filter((e) => !q || e.emote.toLowerCase().includes(q) || (e.meaning || "").toLowerCase().includes(q));
+      const er = (g.emotes || []).map((e) => e.source === "Claude" ? e : { ...e, meaning: null, source: null })
+        .filter((e) => !q || e.emote.toLowerCase().includes(q) || (e.meaning || "").toLowerCase().includes(q));
       et.replaceChildren(...er.map((e) => {
         const tr = document.createElement("tr");
         const a = document.createElement("td"); a.textContent = e.emote;
@@ -222,7 +225,7 @@
         const c = document.createElement("td");
         c.textContent = e.meaning || "No meaning yet.";
         if (!e.meaning) c.className = "empty";
-        if (e.source) { const s = document.createElement("div"); s.className = "gl-src"; s.textContent = e.source === "Claude" ? "Written by Claude from chat lines only, unreviewed" : "From the " + e.source; c.append(s); }
+        if (e.meaning) { const s = document.createElement("div"); s.className = "gl-src"; s.textContent = "Written by Claude from chat lines only, unreviewed"; c.append(s); }
         tr.append(a, b, c); return tr;
       }));
     }
@@ -258,6 +261,10 @@
     const terms = D.live_terms || [];
     fillTable("#tb-terms", terms, [["term"], ["messages", "num"], ["per_10k", "dec"]]);
     $("#terms-empty").hidden = terms.length > 0;
+    const ch = (D.live_chatters || []).map((r, i) => ({ ...r, rank: i + 1 }));
+    fillTable("#tb-chatters", ch, [["rank", "num"], ["nick"], ["messages", "num"], [(r) => 100 * r.share, "pct"],
+      ["days", "num"], ["words_per_msg", "dec"], [(r) => r.top_emote || "", "txt"]]);
+    $("#chatters-empty").hidden = ch.length > 0;
 
     const chans = D.archive_channels || [];
     $("#a-total").textContent = meta.archive_messages ? cf.format(meta.archive_messages) : "—";

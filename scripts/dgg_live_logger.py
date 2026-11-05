@@ -4,9 +4,10 @@
 Connects anonymously to wss://chat.destiny.gg/ws (no token needed for reading; checked Nov 2 2026) and writes
 every chat message to one JSON-lines file per UTC day. It never sends chat messages.
 
-Privacy: nicks are hashed at ingest (HMAC-SHA256 with the local laptop salt, first 16 hex chars), the same
-scheme as orl_aggregate.py and dgg_chat_pull.py, so live, archive and RustleSearch hashes line up.
-Kept per message: ts (ms), u (hash), text, sub (subscription tier or null), flags (roles + features, e.g. bot,
+Nicks: since Nov 5 2026 (the owner's decision) the raw DGG nick is stored as "nick", next to the hash "u"
+(HMAC-SHA256 with the local laptop salt, first 16 hex chars). The hash is the same scheme as orl_aggregate.py
+and dgg_chat_pull.py, so live, archive and RustleSearch records still line up by "u".
+Kept per message: ts (ms), u (hash), nick, text, sub (subscription tier or null), flags (roles + features, e.g. bot,
 moderator, used to drop bots later). Nothing else from the user object is stored.
 
 Files in --out:
@@ -120,6 +121,7 @@ class Logger:
         rec = {
             "ts": ts,
             "u": self.hash(j.get("nick") or ""),
+            "nick": j.get("nick") or "",  # stored raw since Nov 5 2026 (the owner's decision); "u" kept for joins
             "text": j.get("data", ""),
             "sub": (sub or {}).get("tier") if isinstance(sub, dict) else sub,
             "flags": sorted(set((j.get("roles") or []) + (j.get("features") or []))),
