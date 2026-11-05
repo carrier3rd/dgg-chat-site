@@ -5,7 +5,7 @@ Everything written here is public. Aggregates leave this script (counts, shares,
 terms), plus, since Nov 5 2026 (the owner's decision), DGG chat handles in live_chatters.json: per-handle message
 counts, active days, words per message and favorite emote over the last 7 days. No message text and no user
 hashes are published. Records logged before the logger stored nicks get a handle when the same hash shows up
-later with one. Free-text "top words" are deliberately not published
+later with one, or when someone typed that handle in chat (the word hashes to the same value). Free-text "top words" are deliberately not published
 (the live log has no nick list to filter them against); tracked vocabulary comes from data/glossary.csv instead.
 
 Inputs (defaults are the laptop's paths):
@@ -21,6 +21,8 @@ import collections
 import csv
 import datetime as dt
 import gzip
+import hashlib
+import hmac
 import json
 import os
 import re
@@ -30,6 +32,7 @@ csv.field_size_limit(10**8)
 H = os.path.expanduser
 DAYFILE = re.compile(r"^(\d{4}-\d{2}-\d{2})\.jsonl(\.gz)?$")  # skips *.broken-dedup.jsonl and other side files
 TOK = re.compile(r"[A-Za-z0-9_']+")
+NICKISH = re.compile(r"\b[A-Za-z0-9_]{3,20}\b")  # DGG handles: 3-20 letters, digits, _
 
 # Archive channels: display name, chat platform, group. Groups are descriptive labels for the page.
 CHANNELS = {
@@ -190,7 +193,7 @@ def build_archive(agg, out, emotes):
 
 # ---------------------------------------------------------------- live
 
-def build_live(live, status_path, out, emotes, terms):
+def build_live(live, status_path, out, emotes, terms, salt):
     days = sorted(m.group(1) for fn in os.listdir(live) if (m := DAYFILE.match(fn)))
     days = sorted(set(days))
     emotes_low = {e.lower() for e in emotes}
@@ -204,6 +207,7 @@ def build_live(live, status_path, out, emotes, terms):
     day_rows, hours = [], collections.Counter()
     by_u = collections.defaultdict(lambda: {"m": 0, "w": 0, "days": set(), "em": collections.Counter()})
     nick_of = {}  # hash -> latest nick seen with it
+    mentions = collections.Counter()  # handle-shaped words in messages, for naming hashes logged before nicks
     emo7, term7, n7 = collections.Counter(), collections.Counter(), 0
     for d in days:
         msgs = users = emote_only = 0
@@ -230,6 +234,7 @@ def build_live(live, status_path, out, emotes, terms):
                     seen_u.add(r.get("u"))
                     if r.get("nick"):
                         nick_of[r.get("u")] = r["nick"]
+                    mentions.update(NICKISH.findall(text))
                     hist[min(len(words), 100)] += 1
                     em = [w for w in words if w in emotes]
                     if words and len(em) == len(words):
@@ -290,6 +295,15 @@ def build_live(live, status_path, out, emotes, terms):
     dump(out, "live_hours.json", hour_rows)
     dump(out, "live_emotes.json", emote_rows)
     dump(out, "live_terms.json", term_rows)
+    # Lines logged before Nov 5 2026 carry only the hash. A chatter whose handle someone typed in chat is named by
+    # hashing that word the same way the logger hashes nicks; a nick the logger stored always wins.
+    casing = {}
+    for w, c in mentions.most_common():
+        casing.setdefault(w.lower(), w)
+    for low, w in casing.items():
+        u = hmac.new(salt, low.encode(), hashlib.sha256).hexdigest()[:16]
+        if u in by_u and u not in nick_of:
+            nick_of[u] = w
     chatter_rows = []
     for u, b in sorted(by_u.items(), key=lambda x: -x[1]["m"]):
         if u not in nick_of:
@@ -313,6 +327,7 @@ def main():
     ap.add_argument("--status", default=H("~/socialscope_data/dgg_live_status/status.json"))
     ap.add_argument("--emotes", default=H("~/socialscope_data/dgg_chat/emotes.json"))
     ap.add_argument("--glossary", default=H("~/socialscope/data/glossary.csv"))
+    ap.add_argument("--salt-file", default=H("~/socialscope/.socialscope_salt"))
     ap.add_argument("--out", required=True)
     ap.add_argument("--skip-archive", action="store_true", help="rebuild only the live files (archive never changes)")
     a = ap.parse_args()
@@ -325,7 +340,8 @@ def main():
     else:
         old = json.load(open(os.path.join(a.out, "meta.json"))) if os.path.exists(os.path.join(a.out, "meta.json")) else {}
         meta["archive_messages"], meta["archive_channels"] = old.get("archive_messages"), old.get("archive_channels")
-    meta.update(build_live(a.live, a.status, a.out, emotes, terms))
+    salt = open(a.salt_file).read().strip().encode()
+    meta.update(build_live(a.live, a.status, a.out, emotes, terms, salt))
     dump(a.out, "meta.json", meta)
     print(json.dumps(meta))
 
