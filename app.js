@@ -20,7 +20,7 @@
   window.addEventListener("hashchange", () => { if (D.meta !== undefined) show(fromHash()); });
 
   // ---------- data
-  const files = ["glossary", "meta", "live_days", "live_hours", "live_emotes", "live_terms", "archive_overlap", "archive_channels",
+  const files = ["glossary", "meta", "live_days", "live_hours", "live_emotes", "live_terms", "live_chatters", "archive_overlap", "archive_channels",
     "archive_dgg_years", "archive_dgg_emotes", "archive_politics", "archive_hasan_monthly", "archive_badbunny_monthly",
     "scorecard"];
   const D = {};
@@ -261,6 +261,10 @@
     const terms = D.live_terms || [];
     fillTable("#tb-terms", terms, [["term"], ["messages", "num"], ["per_10k", "dec"]]);
     $("#terms-empty").hidden = terms.length > 0;
+    const ch = (D.live_chatters || []).map((r, i) => ({ ...r, rank: i + 1 }));
+    fillTable("#tb-chatters", ch, [["rank", "num"], ["nick"], ["messages", "num"], [(r) => 100 * r.share, "pct"],
+      ["days", "num"], ["words_per_msg", "dec"], [(r) => r.top_emote || "", "txt"]]);
+    $("#chatters-empty").hidden = ch.length > 0;
 
     const chans = D.archive_channels || [];
     $("#a-total").textContent = meta.archive_messages ? cf.format(meta.archive_messages) : "—";
