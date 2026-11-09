@@ -18,6 +18,11 @@ Run on the laptop (this workspace cannot reach the API):
 Chat hashes never need to match Reddit hashes: chat accounts are not linked to Reddit accounts.
 
 Resumable: finished days are skipped; a day is written to .partial and renamed when complete.
+Nov 9 2026: the anonymous API allows 200 requests a day and one busy day needs ~500-700 pages, so a day could never
+finish in one sitting and every restart began it again. Now (1) each page is appended to .partial as its own gzip
+member and <day>.cursor records search_after, counts and the file size after that page, so a restart truncates to
+the last good page and continues mid-day; (2) every API request is logged in <out>/_requests.json and, once
+--daily-cap requests fall in the trailing 24 h, the pull sleeps until the oldest one ages out.
 Progress lines go to ~/socialscope_data/STATUS.txt.
 """
 import argparse
@@ -48,9 +53,41 @@ def salted_hash(name: str, salt: bytes) -> str:
     return hmac.new(salt, name.lower().encode(), hashlib.sha256).hexdigest()[:16]
 
 
+class Budget:
+    """Keeps API requests under a trailing-24-hour cap; the request log survives restarts."""
+
+    def __init__(self, path: str, cap: int):
+        self.path, self.cap = path, cap
+        try:
+            self.times = json.load(open(path))
+        except (OSError, ValueError):
+            self.times = []
+
+    def take(self):
+        while True:
+            now = time.time()
+            self.times = [t for t in self.times if t > now - 86400]
+            if len(self.times) < self.cap:
+                break
+            wake = self.times[0] + 86400 + 5
+            status(f"daily cap {self.cap} reached; sleeping until "
+                   f"{dt.datetime.fromtimestamp(wake).strftime('%a %H:%M')}")
+            time.sleep(max(1.0, wake - now))
+        self.times.append(time.time())
+        tmp = self.path + ".tmp"
+        with open(tmp, "w") as f:
+            json.dump(self.times, f)
+        os.replace(tmp, self.path)
+
+
+BUDGET = None  # set in main(); counts every request to the search API, retries included
+
+
 def get_json(url: str, tries: int = 6):
     delay = 5
     for attempt in range(tries):
+        if BUDGET is not None and url.startswith(API):
+            BUDGET.take()
         req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
         try:
             with urllib.request.urlopen(req, timeout=60) as r:
@@ -133,9 +170,19 @@ def pull_day(day: str, out_dir: str, salt: bytes, pause: float, prog: "Progress"
     day_end = dt.datetime.fromisoformat(day + "T00:00:00+00:00") + dt.timedelta(days=1)
     t_last, frac_last = time.time(), 0.0
     partial = final + ".partial"
+    cursor_path = os.path.join(out_dir, f"{day}.cursor")
     base = {"channel": "Destinygg", "start_date": day, "end_date": day}
-    search_after, n, pages, ties = None, 0, 0, 0
-    with gzip.open(partial, "wt") as f:
+    search_after, n, pages, ties, size = None, 0, 0, 0, 0
+    if os.path.exists(cursor_path) and os.path.exists(partial):  # resume mid-day after the last complete page
+        c = json.load(open(cursor_path))
+        search_after, n, pages, ties, size = c["search_after"], c["n"], c["pages"], c["ties"], c["size"]
+        os.truncate(partial, size)
+        frac_last = c.get("frac", 0.0)
+        if prog is not None:
+            prog.update(idx, state="running", msgs=n, frac=round(frac_last, 4))
+    else:
+        open(partial, "wb").close()
+    with open(partial, "ab") as fb:
         while True:
             q = dict(base)
             if search_after is not None:
@@ -146,14 +193,19 @@ def pull_day(day: str, out_dir: str, salt: bytes, pause: float, prog: "Progress"
             msgs = j["data"]["messages"]
             if not msgs:
                 break
+            lines = []
             for m in msgs:
                 user = m.get("username") or ""
-                f.write(json.dumps({
+                lines.append(json.dumps({
                     "ts": m["ts"],
                     "u": salted_hash(user, salt),
                     "bot": user.lower() in KNOWN_BOTS,
                     "text": m.get("text", ""),
                 }, ensure_ascii=False) + "\n")
+            fb.write(gzip.compress("".join(lines).encode("utf-8")))
+            fb.flush()
+            os.fsync(fb.fileno())
+            size = fb.tell()
             n += len(msgs)
             pages += 1
             # searchAfter is a ms timestamp; messages sharing the boundary ms can be skipped. Count how often.
@@ -170,8 +222,15 @@ def pull_day(day: str, out_dir: str, salt: bytes, pause: float, prog: "Progress"
             if nxt == search_after or len(msgs) < 100:
                 break
             search_after = nxt
+            tmp = cursor_path + ".tmp"
+            with open(tmp, "w") as cf:
+                json.dump({"search_after": search_after, "n": n, "pages": pages, "ties": ties, "size": size,
+                           "frac": frac_last}, cf)
+            os.replace(tmp, cursor_path)
             time.sleep(pause)
     os.replace(partial, final)
+    if os.path.exists(cursor_path):
+        os.remove(cursor_path)
     if prog is not None:
         prog.add_active(time.time() - t_last, 1.0 - frac_last)
         prog.update(idx, state="done", msgs=n, frac=1.0)
@@ -182,6 +241,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=os.path.expanduser("~/socialscope_data/dgg_chat"))
     ap.add_argument("--pause", type=float, default=1.0, help="seconds between requests")
+    ap.add_argument("--daily-cap", type=int, default=190,
+                    help="max search requests in any 24 h (RustleSearch allows 200 anonymous; 10 kept spare)")
     ap.add_argument("--days", nargs="*", help="explicit YYYY-MM-DD days (default: the six Reddit weeks)")
     ap.add_argument("--salt-file", help="read the hashing salt from this file instead of SOCIALSCOPE_SALT")
     ap.add_argument("--progress-dir", default=os.path.expanduser("~/socialscope_data/dgg_progress"),
@@ -197,6 +258,8 @@ def main():
         sys.exit("No salt: pass --salt-file or set SOCIALSCOPE_SALT.")
     salt = salt.encode()
     os.makedirs(args.out, exist_ok=True)
+    global BUDGET
+    BUDGET = Budget(os.path.join(args.out, "_requests.json"), args.daily_cap)
 
     emotes_path = os.path.join(args.out, "emotes.json")
     if not os.path.exists(emotes_path):
