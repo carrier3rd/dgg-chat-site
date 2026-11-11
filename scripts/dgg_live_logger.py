@@ -188,6 +188,13 @@ class Logger:
             f.write(json.dumps({"start": start, "end": end, "reason": reason}) + "\n")
 
 
+IDLE_S = 300  # DGG chat is never quiet this long; quietest minutes logged so far still have a few messages
+
+
+class Stalled(Exception):
+    pass
+
+
 async def run(lg):
     delay = 5
     while True:
@@ -207,7 +214,14 @@ async def run(lg):
                 lg.session_msgs = 0
                 lg.status(force=True)
                 delay = 5
-                async for raw in ws:
+                # Nov 11 2026: a connection opened Nov 10 06:01 EST went silent at 06:20 without ever closing, and
+                # `async for raw in ws` waited 13 hours (no pings to notice, see above). Now a connection with no
+                # message for IDLE_S seconds is dropped as "Stalled" and reopened by the loop below.
+                while True:
+                    try:
+                        raw = await asyncio.wait_for(ws.recv(), IDLE_S)
+                    except asyncio.TimeoutError:
+                        raise Stalled(f"no message for {IDLE_S} s") from None
                     lg.handle(raw if isinstance(raw, str) else raw.decode("utf-8", "replace"))
                     lg.status()
         except asyncio.CancelledError:
