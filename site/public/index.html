@@ -16,6 +16,7 @@
       <button role="tab" data-tab="live" aria-selected="true">Live</button>
       <button role="tab" data-tab="glossary" aria-selected="false">Glossary</button>
       <button role="tab" data-tab="archive" aria-selected="false">Archive 2014-2020</button>
+      <button role="tab" data-tab="bots" aria-selected="false" id="tab-btn-bots" hidden>Bots</button>
       <button role="tab" data-tab="about" aria-selected="false">About</button>
     </nav>
   </div>
@@ -154,6 +155,15 @@
     <p class="note">Something wrong or harmful in an entry? <a href="https://github.com/carrier3rd/dgg-chat-site/issues">Report it</a> and it will be removed.</p>
   </section>
 
+  <section id="tab-bots" class="tab" hidden>
+    <div class="card prose">
+      <h2>Bots we found that Bot Bouncer then banned</h2>
+      <p class="note">Each account here was flagged by our detector, read by two reviewers, and reported to <a href="https://www.reddit.com/r/BotBouncer/" rel="noopener">Bot Bouncer</a>, which then banned it. The label is Bot Bouncer's, not ours: every entry links to its listing, and the status is rechecked every week. If Bot Bouncer reverses a listing, the account comes off this page at the next rebuild. Only posts from an account's bot period are shown; contact handles and other users' names inside them are masked.</p>
+      <p class="note" id="bots-meta"></p>
+    </div>
+    <div id="bots-list"></div>
+  </section>
+
   <section id="tab-about" class="tab prose" hidden>
     <h2>What this is</h2>
     <p>A side study from a student research project on online communities around streamers. It looks at destiny.gg (DGG) chat two ways: a live log of today's chat, and the OverRustle archive of chat logs up to April 2020.</p>
@@ -164,7 +174,7 @@
     <h2>Archive data</h2>
     <p>OverRustle logged DGG and many Twitch chats until spring 2020. Coverage differs a lot by chat: some have years, some have weeks. The archive's own gaps (outages, late additions) are not filled in.</p>
     <h2>Privacy</h2>
-    <p>Since November 5, 2026, DGG chat handles are logged and the Live tab lists the most active chatters of the last 7 days by handle, with message counts and activity only. No message text is published, and no one's messages are labeled as hostile or harassing by name. Archive (2014-2020) chatters and Reddit users stay anonymous: their names are replaced by a salted one-way code, and overlap between chats is counted only in aggregate; no one is followed from one chat to another.</p>
+    <p>Since November 5, 2026, DGG chat handles are logged and the Live tab lists the most active chatters of the last 7 days by handle, with message counts and activity only. No message text is published, and no one's messages are labeled as hostile or harassing by name. Archive (2014-2020) chatters and Reddit users stay anonymous: their names are replaced by a salted one-way code, and overlap between chats is counted only in aggregate; no one is followed from one chat to another. The one exception is the Bots tab: Reddit accounts that Bot Bouncer has banned as bots, after we reported them, are shown by name with their bot-period posts. They are never linked to chat accounts or to real people.</p>
     <h2>Limits</h2>
     <ul>
       <li>Twitch-to-Twitch overlap matches the same accounts. Overlap with DGG or vaush.gg, which have their own accounts, matches same-spelled names only, so it undercounts.</li>

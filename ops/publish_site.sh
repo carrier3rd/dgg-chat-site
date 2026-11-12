@@ -13,6 +13,8 @@ sed -i "s#href=\"style.css\"#href=\"style.css?v=$v\"#; s#src=\"app.js\"#src=\"ap
 mkdir -p "$SITE/data"
 cp "$REPO/site/public/data/scorecard.json" "$SITE/data/"
 python3 -I "$REPO/site/build_site_data.py" --out "$SITE/data" --skip-archive
+# Bots tab (Nov 11 2026): confirmed bot finds, rewritten every run so a reversed listing comes off at once.
+python3 -I "$REPO/scripts/botfinds/build_site_bots.py" --out "$SITE/data"
 cd "$SITE"
 git add -A
 if git diff --cached --quiet; then echo "site: no changes"; exit 0; fi
