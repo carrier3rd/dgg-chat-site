@@ -413,8 +413,13 @@ def main():
     os.makedirs(a.out, exist_ok=True)
     payload = {"generated": now.isoformat(timespec="minutes"), "messages_24h": n24, "messages_7d": len(recent),
                "model": MODEL, "entries": entries, "emotes": emote_rows}
-    with open(os.path.join(a.out, "glossary.json"), "w") as f:
+    # Nov 11 2026: glossary.json was written in place, so a build killed mid-write (12 segfaults Nov 6-10 from the
+    # laptop's RAM fault) could leave a truncated file for publish_site.sh to push. None did (all 122 published
+    # versions since Nov 5 parse), but it now goes through a temp file and os.replace like the state files below.
+    gtmp = os.path.join(a.out, "glossary.json.tmp")
+    with open(gtmp, "w") as f:
         json.dump(payload, f, separators=(",", ":"))
+    os.replace(gtmp, os.path.join(a.out, "glossary.json"))
     with open(a.pending + ".tmp", "w") as f:
         json.dump({"generated": now.isoformat(timespec="minutes"), "terms": pending[:40]}, f, indent=1)
     os.replace(a.pending + ".tmp", a.pending)
