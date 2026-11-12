@@ -16,13 +16,13 @@
     redraw();
   };
   tabs.forEach((b) => b.addEventListener("click", () => show(b.dataset.tab)));
-  const fromHash = () => { const t = (location.hash || "#live").slice(1).replace(/[^a-z]/g, ""); return ["live", "glossary", "archive", "about"].includes(t) ? t : "live"; };
+  const fromHash = () => { const t = (location.hash || "#live").slice(1).replace(/[^a-z]/g, ""); return ["live", "glossary", "archive", "bots", "about"].includes(t) ? t : "live"; };
   window.addEventListener("hashchange", () => { if (D.meta !== undefined) show(fromHash()); });
 
   // ---------- data
   const files = ["glossary", "meta", "live_days", "live_hours", "live_emotes", "live_terms", "live_chatters", "archive_overlap", "archive_channels",
     "archive_dgg_years", "archive_dgg_emotes", "archive_politics", "archive_hasan_monthly", "archive_badbunny_monthly",
-    "scorecard"];
+    "scorecard", "botfinds"];
   const D = {};
   Promise.all(files.map((f) => fetch("data/" + f + ".json", { cache: "no-cache" })
     .then((r) => (r.ok ? r.json() : null)).catch(() => null).then((j) => { D[f] = j; })))
@@ -277,7 +277,34 @@
     fillTable("#tb-pol", D.archive_politics || [], [["channel"], ["year"], ["electoral_per_10k", "dec"], ["culture_war_per_10k", "dec"]]);
     fillTable("#tb-chans", chans.slice().sort((a, b) => b.messages - a.messages), [["channel"], ["group"], ["messages", "num"], ["first_month"], ["last_month"], ["median_words", "num"], ["top_short_message"]]);
     fillTable("#tb-score", D.scorecard || [], [["n"], ["prediction"], ["result", "res"], ["evidence"]]);
+    renderBots();
     if (meta.generated) $("#about-gen").textContent = `Data generated ${new Date(meta.generated).toLocaleString()}.`;
+  }
+
+  // Bots tab (Nov 11 2026): confirmed finds from data/botfinds.json. The tab stays hidden while the list is empty.
+  function renderBots() {
+    const bf = D.botfinds || {}, bots = bf.bots || [];
+    $("#tab-btn-bots").hidden = bots.length === 0;
+    if (!bots.length) return;
+    const mk = (tag, cls, txt) => { const n = document.createElement(tag); if (cls) n.className = cls; if (txt != null) n.textContent = txt; return n; };
+    const link = (href, txt) => { const a = mk("a", null, txt); a.href = href; a.rel = "noopener nofollow"; return a; };
+    $("#bots-meta").replaceChildren(document.createTextNode(`${bots.length} account${bots.length === 1 ? "" : "s"} · updated ${bf.updated || "—"} · think one is wrong? Email `),
+      link("mailto:" + bf.dispute, bf.dispute));
+    $("#bots-list").replaceChildren(...bots.map((b) => {
+      const c = mk("div", "card bot-card");
+      const h = mk("h3"); h.append(link(b.profile, "u/" + b.name)); c.append(h);
+      const p = mk("p", "note"); p.append(document.createTextNode(`Found by socialscope, reported ${b.submitted || "—"}. `),
+        link(b.listing, "Listed as a bot by Bot Bouncer"), document.createTextNode(` (ban seen ${b.banned_since || "—"}, rechecked ${b.checked}).`));
+      c.append(p);
+      if (b.signals && b.signals.length) { const ul = mk("ul"); b.signals.forEach((s) => ul.append(mk("li", null, s))); c.append(mk("p", null, "What our detector saw:"), ul); }
+      if (b.posts && b.posts.length) {
+        c.append(mk("p", null, `Bot-period posts (${b.posts_note}):`));
+        const ul = mk("ul", "bot-posts");
+        b.posts.forEach((x) => { const li = mk("li"); li.append(mk("span", "note", `${x.time} · r/${x.sub} · ${x.kind}: `), document.createTextNode(x.text)); ul.append(li); });
+        c.append(ul);
+      } else if (b.posts_note) c.append(mk("p", "note", `No posts shown: ${b.posts_note}.`));
+      return c;
+    }));
   }
 
   // ---------- charts (redrawn on tab switch and resize)
