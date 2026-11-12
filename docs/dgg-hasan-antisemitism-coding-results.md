@@ -46,8 +46,13 @@ Opus: 3 hits of 7, Fable: 4 of 7; pair: 2 of 2.
 - **Hasan chat: a different form, rarely joking, mostly outside the keywords.** Endorsed items are dual-loyalty and
   "Israel controls US politicians" claims ("Israel-firsters", "agents of Israel", serving Israeli "masters", Israel
   installing officials), dual-loyalty charges at Jewish journalists, and Holocaust inversion ("committing a holocaust
-  in Gaza", "Zionism is Nazism"). The inversion items are IHRA-only (JDA: contested, not antisemitic on their face); the
-  control and dual-loyalty items are antisemitic under both. Joking is rare (0.8-1.9% of candidates).
+  in Gaza", "Zionism is Nazism"). The inversion items are IHRA-only (JDA: contested, not antisemitic on their face).
+  **The control and dual-loyalty items count as antisemitic under both definitions**: the JDA, too, treats the
+  Jewish-control trope applied to Israel ("Israel controls the US government/military/media") and dual-loyalty charges
+  as antisemitic. That differs from criticism of documented lobbying (AIPAC money), which both models mostly coded
+  not_applicable (34-35 of 35 "Israel lobby" hits). Joking is rare (0.8-1.9% of candidates).
+  Scaled from the on-topic sample, this sincere control/dual-loyalty talk is roughly 100-250 messages in this week of
+  Hasan chat (JDA, both models' range) vs about 30-50 sincere items of any kind in DGG.
 - **The keywords miss Hasan chat's form.** In the on-topic sample, 2.4-3.2% of Hasan messages are endorsed
   antisemitism vs 0.8-1.6% in DGG. Scaled to the on-topic pool, adding misses gives an endorsed JDA-antisemitic rate of
   about 0.75-1.7 per 10k messages in Hasan chat vs 0.45-0.74 in DGG. That reverses prediction 6, but it is post hoc,
