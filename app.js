@@ -16,7 +16,7 @@
     redraw();
   };
   tabs.forEach((b) => b.addEventListener("click", () => show(b.dataset.tab)));
-  const fromHash = () => { const t = (location.hash || "#live").slice(1).replace(/[^a-z]/g, ""); return ["live", "glossary", "archive", "bots", "about"].includes(t) ? t : "live"; };
+  const fromHash = () => { const t = (location.hash || "#live").slice(1).replace(/[^a-z]/g, ""); return ["live", "glossary", "archive", "bots", "lookup", "about"].includes(t) ? t : "live"; };
   window.addEventListener("hashchange", () => { if (D.meta !== undefined) show(fromHash()); });
 
   // ---------- data

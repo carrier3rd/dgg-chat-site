@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DGG Chat Stats</title>
 <meta name="description" content="Destiny.gg chat in numbers: a live daily view and the 2014-2020 OverRustle archive, with overlap across 22 nearby Twitch chats.">
-<link rel="stylesheet" href="style.css?v=da38f57e">
+<link rel="stylesheet" href="style.css?v=c3d792ec">
 </head>
 <body>
 <header class="top">
@@ -17,6 +17,7 @@
       <button role="tab" data-tab="glossary" aria-selected="false">Glossary</button>
       <button role="tab" data-tab="archive" aria-selected="false">Archive 2014-2020</button>
       <button role="tab" data-tab="bots" aria-selected="false" id="tab-btn-bots" hidden>Bots</button>
+      <button role="tab" data-tab="lookup" aria-selected="false">Lookup</button>
       <button role="tab" data-tab="about" aria-selected="false">About</button>
     </nav>
   </div>
@@ -164,6 +165,28 @@
     <div id="bots-list"></div>
   </section>
 
+  <section id="tab-lookup" class="tab" hidden>
+    <div class="card">
+      <h2>Check a Reddit account</h2>
+      <p class="note">Type a username to score it with our bot detector (v7.1). Everything runs in your browser: your browser fetches the account's public posts and comments from <a href="https://arctic-shift.photon-reddit.com" rel="noopener">Arctic Shift</a>, an independent Reddit archive, and the score is worked out on this page. Nothing is sent to this site, saved or shared, and the name you type never goes into the page address.</p>
+      <!-- Never submits natively: no input has a name and the inline handler blocks navigation, so the username can't reach the URL even before lookup.js loads. -->
+      <form id="lk-form" class="lk-form" autocomplete="off" onsubmit="return false">
+        <label for="lk-user" class="lab">Username</label>
+        <div class="lk-row"><span class="lk-u">u/</span><input id="lk-user" spellcheck="false" maxlength="24" placeholder="username" required><button id="lk-go" type="submit" disabled>Check</button></div>
+      </form>
+      <div class="lk-bar" id="lk-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" hidden>
+        <div class="lk-track"><div class="lk-fill" id="lk-fill"></div></div>
+        <p class="lk-bartxt" id="lk-bartxt" aria-live="polite"></p>
+      </div>
+      <p class="status" id="lk-status" aria-live="polite"></p>
+    </div>
+    <div id="lk-result"></div>
+    <div class="card prose">
+      <h2>How to read it</h2>
+      <p class="note">The rating runs from 1 to 10. Each step marks one of the detector's tested lines: <b>5</b> is the loose line (about 7 in 100 ordinary accounts reach it), <b>7</b> is the 2% line, and <b>9</b> is the strict line (about 2 in 100 ordinary accounts). The detector was trained on accounts that the volunteer project <a href="https://www.reddit.com/r/BotBouncer/" rel="noopener">Bot Bouncer</a> banned. A high rating is a lead for a closer look, not proof. Real people get flagged too. The time-zone and location clues come from posting hours and place subreddits. They're rough guesses and aren't part of the score. Arctic Shift can run a few days behind Reddit, and only the newest 1,000 posts and 1,000 comments are read.</p>
+    </div>
+  </section>
+
   <section id="tab-about" class="tab prose" hidden>
     <h2>What this is</h2>
     <p>A side study from a student research project on online communities around streamers. It looks at destiny.gg (DGG) chat two ways: a live log of today's chat, and the OverRustle archive of chat logs up to April 2020.</p>
@@ -174,7 +197,7 @@
     <h2>Archive data</h2>
     <p>OverRustle logged DGG and many Twitch chats until spring 2020. Coverage differs a lot by chat: some have years, some have weeks. The archive's own gaps (outages, late additions) are not filled in.</p>
     <h2>Privacy</h2>
-    <p>Since November 5, 2026, DGG chat handles are logged and the Live tab lists the most active chatters of the last 7 days by handle, with message counts and activity only. No message text is published, and no one's messages are labeled as hostile or harassing by name. Archive (2014-2020) chatters and Reddit users stay anonymous: their names are replaced by a salted one-way code, and overlap between chats is counted only in aggregate; no one is followed from one chat to another. The one exception is the Bots tab: Reddit accounts that Bot Bouncer has banned as bots, after we reported them, are shown by name with their bot-period posts. They are never linked to chat accounts or to real people.</p>
+    <p>Since November 5, 2026, DGG chat handles are logged and the Live tab lists the most active chatters of the last 7 days by handle, with message counts and activity only. No message text is published, and no one's messages are labeled as hostile or harassing by name. Archive (2014-2020) chatters and Reddit users stay anonymous: their names are replaced by a salted one-way code, and overlap between chats is counted only in aggregate; no one is followed from one chat to another. The one exception is the Bots tab: Reddit accounts that Bot Bouncer has banned as bots, after we reported them, are shown by name with their bot-period posts. They are never linked to chat accounts or to real people. The Lookup tab scores only the account you type, inside your own browser. We never see the name or the result, and we publish no lookup results.</p>
     <h2>Limits</h2>
     <ul>
       <li>Twitch-to-Twitch overlap matches the same accounts. Overlap with DGG or vaush.gg, which have their own accounts, matches same-spelled names only, so it undercounts.</li>
@@ -186,6 +209,7 @@
   </section>
 </main>
 <div class="tip" id="tip" hidden></div>
-<script src="app.js?v=da38f57e"></script>
+<script src="app.js?v=c3d792ec"></script>
+<script src="lookup.js?v=c3d792ec" defer></script>
 </body>
 </html>
