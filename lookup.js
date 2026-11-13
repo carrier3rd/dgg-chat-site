@@ -7,12 +7,69 @@
   "use strict";
   const BASE = "https://arctic-shift.photon-reddit.com/api/";
   const PYODIDE = "https://cdn.jsdelivr.net/pyodide/v0.27.2/full/";
-  const PY_FILES = ["__init__.py", "signals.py", "hijack.py", "prewindow.py", "history.py", "lookup_core.py", "salt.py", "sources.py", "vocab.txt"];
+  const PY_FILES = ["__init__.py", "signals.py", "hijack.py", "prewindow.py", "history.py", "lookup_core.py", "salt.py", "sources.py", "reddit_api.py", "vocab.txt"];
   const CAP = 1000;
+  // Reddit's official API (Nov 13 2026), optional. Live account facts only; the score stays on Arctic Shift data.
+  // The client id belongs to an "installed app" registered by the site owner: it's public by design and has no secret.
+  // Empty = the sign-in button stays hidden. The visitor's token lives in sessionStorage for this tab only.
+  const REDDIT_CLIENT_ID = "";
+  const REDIRECT = "https://carrier3rd.github.io/dgg-chat-site/";
   const $ = (s) => document.querySelector(s);
   const form = $("#lk-form"), input = $("#lk-user"), go = $("#lk-go"), status = $("#lk-status"), out = $("#lk-result");
   if (!form) return;
   go.disabled = false;   // the button starts disabled in index.html until this script is ready
+
+  // ---------- Sign in with Reddit (implicit grant: token comes back in the URL fragment and is removed at once)
+  const ss = { get: (k) => { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
+               set: (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) { /* private mode */ } },
+               del: (k) => { try { sessionStorage.removeItem(k); } catch (e) { /* ignore */ } } };
+  (function takeToken() {
+    const h = location.hash;
+    if (!/access_token=|error=/.test(h)) return;
+    const q = new URLSearchParams(h.slice(1));
+    const ok = q.get("state") && q.get("state") === ss.get("lk-state");
+    ss.del("lk-state");
+    if (ok && q.get("access_token")) {
+      ss.set("lk-token", q.get("access_token"));
+      ss.set("lk-token-exp", String(Date.now() + 1000 * (+q.get("expires_in") || 3600)));
+    }
+    history.replaceState(null, "", location.pathname + location.search + "#lookup");   // token out of the URL and history
+  })();
+  const token = () => { const t = ss.get("lk-token"), e = +ss.get("lk-token-exp"); return t && e > Date.now() + 60000 ? t : null; };
+  const rdBox = document.getElementById("lk-reddit");
+  function drawSignin() {
+    if (!rdBox) return;
+    if (!REDDIT_CLIENT_ID) { rdBox.hidden = true; return; }
+    rdBox.hidden = false;
+    rdBox.innerHTML = token()
+      ? `<span class="note">Signed in with Reddit for live account facts (this tab only). <button type="button" class="lk-link" id="lk-out">Sign out</button></span>`
+      : `<button type="button" class="lk-ghost" id="lk-in">Sign in with Reddit</button><span class="note">Optional. Adds live facts from Reddit (exact creation date, karma, suspended or not, posts newer than the archive). Reddit will see which account you look up. Nothing reaches this site.</span>`;
+    const i = document.getElementById("lk-in"), o = document.getElementById("lk-out");
+    if (i) i.onclick = () => {
+      const st = crypto.getRandomValues(new Uint32Array(4)).join("-");
+      ss.set("lk-state", st);
+      location.href = "https://www.reddit.com/api/v1/authorize?" + new URLSearchParams({ client_id: REDDIT_CLIENT_ID, response_type: "token",
+        state: st, redirect_uri: REDIRECT, scope: "read history" }).toString();
+    };
+    if (o) o.onclick = () => { ss.del("lk-token"); ss.del("lk-token-exp"); drawSignin(); };
+  }
+  drawSignin();
+
+  async function redditGet(path, params) {
+    const r = await fetch("https://oauth.reddit.com" + path + "?" + new URLSearchParams(Object.assign({ raw_json: 1 }, params || {})),
+      { headers: { Authorization: "bearer " + token() } });
+    if (r.status === 401) { ss.del("lk-token"); drawSignin(); throw new Error("Reddit sign-in expired"); }
+    return [r.status, r.ok ? await r.json() : null];
+  }
+  async function redditFacts(user) {
+    if (!token()) return null;
+    try {
+      const [code, about] = await redditGet("/user/" + encodeURIComponent(user) + "/about");
+      let ov = null;
+      if (code === 200 && !(about && about.data && about.data.is_suspended)) [, ov] = await redditGet("/user/" + encodeURIComponent(user) + "/overview", { limit: 100, sort: "new" });
+      return { code, about, ov };
+    } catch (e) { return { error: String(e.message || e) }; }
+  }
   const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const bar = document.getElementById("lk-bar"), fill = document.getElementById("lk-fill"), barTxt = document.getElementById("lk-bartxt");
@@ -127,6 +184,21 @@
   // ---------- card
   const pc = (v, d = 0) => (100 * v).toFixed(d) + "%";
   const off = (o) => "UTC" + (o >= 0 ? "+" : "−") + Math.abs(o);
+  function redditCard(rf) {
+    if (rf === undefined || rf === null) return "";
+    if (rf.error) return `<div class="card"><h2>Reddit account facts (live)</h2><p class="note">Couldn't reach Reddit: ${esc(rf.error)}</p></div>`;
+    const d = (t) => new Date(t * 1000).toISOString().slice(0, 10);
+    const rows = [["Status", rf.status + (rf.status_note ? " (" + rf.status_note + ")" : "")]];
+    if (rf.created_utc) rows.push(["Created", d(rf.created_utc)]);
+    if (rf.days_to_first_item != null) rows.push(["First archived item", rf.days_to_first_item >= 1 ? Math.round(rf.days_to_first_item).toLocaleString() + " days after creation" : "within a day of creation"]);
+    if ("link_karma" in rf) rows.push(["Karma", (rf.link_karma || 0).toLocaleString() + " post, " + (rf.comment_karma || 0).toLocaleString() + " comment"]);
+    if ("has_verified_email" in rf) rows.push(["Verified email", rf.has_verified_email ? "yes" : "no"]);
+    if (rf.newest_utc) rows.push(["Newest activity on Reddit", d(rf.newest_utc)]);
+    if (rf.newer_than_arctic != null) rows.push(["Newer than Arctic Shift's copy", `${rf.newer_than_arctic} of the latest ${rf.recent_seen} items`]);
+    return `<div class="card"><h2>Reddit account facts (live)</h2><dl class="lk-dl">${rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>
+      <p class="note">From Reddit's official API, read just now through your sign-in. For context only. The score uses Arctic Shift data, which the detector was trained on.</p></div>`;
+  }
+
   function card(user, R) {
     const th = R.thresholds, rh = R.rhythm, de = R.desc;
     const lp = (x) => Math.max(0, Math.min(100, 25 * (Math.log10(Math.max(x, 1e-4)) + 4)));
@@ -179,6 +251,7 @@
     <dt>Language</dt><dd>${de.english_share != null ? "English " + pc(de.english_share) + " of texts" : "no text"}</dd></dl>
     <p class="note">A rough guess from posting times and place subreddits. Reddit doesn't show where an account is based.</p></div>
   <div class="card"><h2>Top keywords</h2><table class="tbl lk-t">${rows(de.keywords)}</table><p class="note">Share of texts that use the word.</p></div>
+  ${redditCard(R.reddit)}
 </div>`;
   }
 
@@ -209,6 +282,15 @@
       P.globals.set("USER", user);
       P.globals.set("OLDEST", oldest);
       const res = JSON.parse(P.runPython("r = json.dumps(LC.analyze(USER, json.loads(ITEMS_JSON), OLDEST, M))\ndel ITEMS_JSON\nr"));
+      if (!res.error && token()) {
+        prog(98, "Reading live account facts from Reddit…");
+        const rf = await redditFacts(user);
+        if (rf && rf.error) res.reddit = rf;
+        else if (rf) {
+          P.globals.set("RF_JSON", JSON.stringify(rf)); P.globals.set("A_LAST", res.last_item); P.globals.set("A_OLD", oldest);
+          res.reddit = JSON.parse(P.runPython("from socialscope import reddit_api as RA\nf = json.loads(RF_JSON)\njson.dumps(RA.facts_from(f['code'], f['about'], f['ov'], A_LAST, A_OLD))"));
+        }
+      }
       if (res.error) { bar.hidden = true; say("Nothing to score for that name."); return; }
       prog(100, "Done");
       bar.hidden = true;
