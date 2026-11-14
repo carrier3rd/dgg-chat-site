@@ -134,7 +134,3 @@ h2 { font-size: 16px; font-weight: 600; margin: 0; }
 @media (prefers-reduced-motion: reduce) { .lk-fill { animation: none; transition: none; } }
 .lk-bartxt { color: var(--muted); font-size: 13px; margin: 6px 0 0; font-variant-numeric: tabular-nums; }
 .lk-s li.ok, .lk-s li.warn { color: var(--fg); }   /* the site has global .ok/.warn text colors; signal text stays in ink */
-.lk-reddit { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-top: 12px; }
-.lk-reddit .note { margin: 0; }
-.lk-ghost { font: inherit; padding: 6px 12px; border: 1px solid var(--line); border-radius: 6px; background: none; color: var(--fg); cursor: pointer; }
-.lk-link { font: inherit; border: 0; background: none; color: var(--s2); cursor: pointer; padding: 0; text-decoration: underline; }
