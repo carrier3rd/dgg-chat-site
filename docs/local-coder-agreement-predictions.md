@@ -58,3 +58,37 @@ made-up check item went from about 11 to 4.8 seconds. Predictions and the bar ar
 
 Correction, Nov 19 2026 (same day, still before any results were read): the set-aside first run held 15 items,
 not about 100. They were counted, not read.
+
+## Addendum 2, Nov 19 2026: run 2 with a new prompt (v2), written before run 2 started
+
+Run 1 failed the bar (results in `local-coder-agreement-results.md`). Run 2 tests a prompt written for the local
+model. Model, runtime settings, items, per-item prompt and the comparison with the Claude coders are unchanged.
+**The bar is unchanged**, and the Claude codes are still the answer key.
+
+What changed:
+- **System prompt v2.** Same coding rules as Nov 12, rewritten as a step-by-step procedure aimed at the four run-1
+  failures: the keyword list is no longer given as a dictionary (only the matched keyword ids are shown); the model
+  must copy the exact words that carry a trope before naming one; condemning or describing antisemitism is spelled
+  out as not antisemitic content; emotes and unknown slang may not be read as codes. It has 12 worked examples, all
+  made up for the prompt; none is a study item.
+- **Step fields, then fixed rules.** The model answers seven step fields (refers to Jews; plain meaning; the exact
+  trope words; which trope; does the author call it wrong; is the author repeating someone; tone) plus irony kind,
+  pattern ids, quote and reason. The study labels (content, stance, target, categories, IHRA, JDA) are then set from
+  those answers by fixed rules in code, following the Nov 12 conventions. A trope only counts if its quoted words
+  appear verbatim in the target.
+- **What the prompt writer saw.** The prompt was written after reading 67 study items where run 1 went wrong (ids
+  recorded privately before run 2) and the model's answers to follow-up questions on 10 of them. The scores are
+  therefore reported twice: on all 1,285 items, and on the 1,218 items the writer never read. The held-out figure
+  is the one that counts for prompt quality; the bar is applied to both, and run 2 passes only if both pass.
+- Smoke check before this addendum: 8 made-up messages, not study items; 7 coded as intended.
+
+| # | Prediction for run 2 | Confidence |
+|---|---|---|
+| 9 | At least 98% of outputs schema-valid. | high |
+| 10 | Fewer endorse codes than run 1: between 30 and 150. | medium |
+| 11 | Content kappa with each Claude coder at least 0.50. | medium |
+| 12 | Content kappa with each Claude coder at least 0.65 (the bar). | 35% |
+| 13 | Stance agreement with each Claude coder at least 80% (the bar). | 45% |
+| 14 | kappa(endorse) with each Claude coder at least 0.55 (the bar). | 25% |
+| 15 | On the 1,218 held-out items, every agreement measure is within 0.05 of its all-items value. | medium |
+| 16 | Run 2 passes the whole bar. | 20% |
