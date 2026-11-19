@@ -6,7 +6,7 @@
 D=$HOME/socialscope_data
 nohup "$D/status.sh" > "$D/status_loop.out" 2>&1 &
 echo "dgg_chat start $(date)"
-cd "$HOME/socialscope" && HOME="$D/dgg_chat_home" python3 -I scripts/dgg_chat_pull.py \
+cd "$HOME/dgg-chat-site" && HOME="$D/dgg_chat_home" python3 -I scripts/dgg_chat_pull.py \
   --out "$D/dgg_chat" --salt-file "$HOME/socialscope/.socialscope_salt" \
   --progress-dir /home/probs/socialscope_data/dgg_progress > "$D/dgg_chat_run.log" 2>&1
 rc=$?

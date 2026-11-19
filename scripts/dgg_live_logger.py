@@ -270,7 +270,7 @@ if __name__ == "__main__":
 # Description=destiny.gg read-only chat logger (socialscope)
 # After=network-online.target
 # [Service]
-# ExecStart=/usr/bin/python3 /home/probs/socialscope/scripts/dgg_live_logger.py --salt-file /home/probs/socialscope/.socialscope_salt
+# ExecStart=/usr/bin/python3 /home/probs/dgg-chat-site/scripts/dgg_live_logger.py --salt-file /home/probs/socialscope/.socialscope_salt
 # Restart=always
 # RestartSec=10
 # [Install]

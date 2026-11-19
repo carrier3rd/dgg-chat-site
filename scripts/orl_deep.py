@@ -21,7 +21,7 @@ Usage (laptop):
   python3 -I scripts/orl_deep.py --archive "$HOME/Downloads/OverrustleLogs Archive" \
       --out ~/socialscope_data/orl_deep --salt-file ~/socialscope/.socialscope_salt \
       --emotes ~/socialscope_data/dgg_chat/emotes.json \
-      --keep-file ~/socialscope/data/chat_keep_terms.txt ~/socialscope/socialscope/vocab.txt \
+      --keep-file ~/dgg-chat-site/data/chat_keep_terms.txt ~/socialscope/socialscope/vocab.txt \
       --progress-dir ~/socialscope_data/orl_progress
 Resumable: a channel with <out>/<Channel>/DONE is skipped.
 """

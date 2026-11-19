@@ -13,7 +13,7 @@ Inputs (defaults are the laptop's paths):
   --live      ~/socialscope_data/dgg_live         live log (dgg_live_logger.py output)
   --status    ~/socialscope_data/dgg_live_status/status.json
   --emotes    ~/socialscope_data/dgg_chat/emotes.json
-  --glossary  ~/socialscope/data/glossary.csv
+  --glossary  ~/dgg-chat-site/data/glossary.csv
 Output: --out <site>/data/*.json  (overwritten each run)
 """
 import argparse
@@ -326,7 +326,7 @@ def main():
     ap.add_argument("--live", default=H("~/socialscope_data/dgg_live"))
     ap.add_argument("--status", default=H("~/socialscope_data/dgg_live_status/status.json"))
     ap.add_argument("--emotes", default=H("~/socialscope_data/dgg_chat/emotes.json"))
-    ap.add_argument("--glossary", default=H("~/socialscope/data/glossary.csv"))
+    ap.add_argument("--glossary", default=H("~/dgg-chat-site/data/glossary.csv"))
     ap.add_argument("--salt-file", default=H("~/socialscope/.socialscope_salt"))
     ap.add_argument("--out", required=True)
     ap.add_argument("--skip-archive", action="store_true", help="rebuild only the live files (archive never changes)")

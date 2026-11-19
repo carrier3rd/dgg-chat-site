@@ -4,7 +4,7 @@
 D=$HOME/socialscope_data
 nohup "$D/status.sh" > "$D/status_loop.out" 2>&1 &
 echo "orl start $(date)"
-cd "$HOME/socialscope" && python3 -I scripts/orl_aggregate.py --archive "/home/probs/Downloads/OverrustleLogs Archive" \
+cd "$HOME/dgg-chat-site" && python3 -I scripts/orl_aggregate.py --archive "/home/probs/Downloads/OverrustleLogs Archive" \
   --out /home/probs/socialscope_data/orl_agg --salt-file /home/probs/socialscope/.socialscope_salt \
   --emotes /home/probs/socialscope_data/dgg_chat/emotes.json --progress-dir /home/probs/socialscope_data/orl_progress
 rc=$?

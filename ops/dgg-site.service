@@ -1,7 +1,7 @@
 [Unit]
-Description=Publish DGG chat stats site (socialscope)
+Description=Publish DGG chat stats site (dgg-chat-site)
 After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/home/probs/socialscope/ops/publish_site.sh
+ExecStart=/home/probs/dgg-chat-site/ops/publish_site.sh
