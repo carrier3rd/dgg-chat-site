@@ -47,3 +47,11 @@ and at least 95% of non-empty quotes are verbatim. Failing any one means it is n
 
 Each prediction is a hit or a miss on the numbers above, reported in the results file with both comparisons, misses
 included. Per-item codes stay private (they hold chat text); only aggregates are published.
+
+## Addendum, Nov 19 2026, before any results were read
+
+Runtime changed so the whole model runs on the GPU: all layers on the GPU (`num_gpu` 99), flash attention on, and
+the attention cache stored at 8 bits (`OLLAMA_KV_CACHE_TYPE=q8_0`). Model, prompts, schema, temperature, seed and
+context are unchanged. These settings can shift outputs slightly, so the first run (about 100 items, under the old
+settings) was stopped and set aside unread and unscored, and the run restarted from the first item. Speed on the
+made-up check item went from about 11 to 4.8 seconds. Predictions and the bar are unchanged.
