@@ -1,6 +1,6 @@
 # DGG chat vs Hasan chat, Nov 3-10 2026: results
 
-Predictions: `dgg-hasan-chat-comparison-predictions.md` (commit d5a2cf1, Nov 12 09:20 ET, before the DGG data was
+Predictions: `dgg-hasan-chat-comparison-predictions.md` (commit ba2cfc1, Nov 12 09:20 ET, before the DGG data was
 read). Run Nov 12 2026 on the laptop; script kept at `~/socialscope_data/dgg_hasan_compare.py`, output
 `~/socialscope_data/dgg_hasan_compare.json` (aggregates; not committed). Keyword measures only, no model coding.
 
