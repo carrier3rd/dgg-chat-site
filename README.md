@@ -19,9 +19,9 @@ socialscope commits**, where each prediction was first committed; the copies of 
 | `scripts/glossary_count.py`, `scripts/ling.py` | Glossary counts and the shared text features (ling.py is a copy of socialscope's). |
 | `site/build_site_data.py`, `site/build_glossary.py` | Build the site's JSON and the hourly glossary. |
 | `site/public/` | The site's HTML, JS and CSS. |
-| `ops/` | Publish script, systemd units and queue scripts (unit copies; the laptop runs them under systemd --user). |
-| `data/` | Glossary CSV, emote list, chat keep-terms. |
-| `docs/` | Predictions and results for each DGG study, glossary and emote notes. |
+| `ops/publish_site.sh` | Builds the site and pushes it to `gh-pages`. Unit and queue files are kept privately. |
+| `data/` | Glossary term list (the site's tracked vocabulary), emote list, chat keep-terms. |
+| `docs/` | Predictions and results for each DGG study, and emote notes. |
 
 ## Ground rules
 
