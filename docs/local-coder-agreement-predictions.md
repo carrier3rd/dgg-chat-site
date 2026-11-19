@@ -55,3 +55,6 @@ the attention cache stored at 8 bits (`OLLAMA_KV_CACHE_TYPE=q8_0`). Model, promp
 context are unchanged. These settings can shift outputs slightly, so the first run (about 100 items, under the old
 settings) was stopped and set aside unread and unscored, and the run restarted from the first item. Speed on the
 made-up check item went from about 11 to 4.8 seconds. Predictions and the bar are unchanged.
+
+Correction, Nov 19 2026 (same day, still before any results were read): the set-aside first run held 15 items,
+not about 100. They were counted, not read.
