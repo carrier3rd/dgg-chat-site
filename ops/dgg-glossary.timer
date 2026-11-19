@@ -1,0 +1,10 @@
+[Unit]
+Description=Hourly build of the live DGG chat glossary
+
+[Timer]
+# :07 past each hour; dgg-site.timer publishes the result within 15 minutes.
+OnCalendar=*:07
+Persistent=true
+
+[Install]
+WantedBy=timers.target

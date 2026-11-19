@@ -1,0 +1,9 @@
+[Unit]
+Description=Build the live DGG chat glossary (socialscope)
+After=network-online.target
+
+[Service]
+Type=oneshot
+# Holds ANTHROPIC_API_KEY=...; create it yourself, chmod 600. Without it, new terms publish as "definition pending".
+EnvironmentFile=-%h/.config/socialscope/anthropic.env
+ExecStart=/usr/bin/python3 -I /home/probs/socialscope/site/build_glossary.py --out /home/probs/dgg-chat-site/data

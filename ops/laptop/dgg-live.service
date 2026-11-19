@@ -1,0 +1,11 @@
+[Unit]
+Description=destiny.gg read-only chat logger (socialscope)
+After=network-online.target
+[Service]
+# Unit text from the bottom of scripts/dgg_live_logger.py, with two changes: websockets lives in
+# ~/socialscope_data/liveenv (system python is externally managed), and systemd-inhibit keeps the laptop awake.
+ExecStart=/usr/bin/systemd-inhibit --what=sleep:idle --mode=block --who=socialscope --why="dgg live chat logger" /home/probs/socialscope_data/liveenv/bin/python -I /home/probs/socialscope/scripts/dgg_live_logger.py --salt-file /home/probs/socialscope/.socialscope_salt
+Restart=always
+RestartSec=10
+[Install]
+WantedBy=default.target
