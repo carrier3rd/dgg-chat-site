@@ -1,6 +1,6 @@
 # Model coding of antisemitism keyword hits, DGG vs Hasan chat, Nov 3-10 2026: results
 
-Predictions: `dgg-hasan-antisemitism-coding-predictions.md` (commit bcd124a, Nov 12 10:53 ET, before any coding). Run
+Predictions: `dgg-hasan-antisemitism-coding-predictions.md` (commit 48049e5, Nov 12 10:53 ET, before any coding). Run
 Nov 12 on the laptop; script and per-item codes in `~/socialscope_data/as_coding/` (not committed). Aggregates only.
 
 ## Data
