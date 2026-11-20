@@ -47,3 +47,27 @@ antisemitism snippets.
 ## Scoring
 Each prediction is hit or miss on its threshold, reported with the numbers, for each model where it applies. Neither
 model is ground truth; disagreements are reported, not resolved. A hand-checked sample would be the next step.
+
+## Addendum, Nov 19 2026: a larger on-topic sample, Opus only (written before any new item is drawn or coded)
+
+The Nov 12 results (`dgg-hasan-antisemitism-coding-results.md`) found that most endorsed antisemitism in Hasan chat
+sits outside the keywords, and that adding those misses put Hasan chat above DGG, but post hoc, from 250 on-topic
+messages per side, with overlapping intervals. This addendum tests that on new messages.
+
+- **Sample:** a new random sample of 1,000 on-topic non-candidates per side (same week, same definition, same masking,
+  same 10 context messages; pools of 2,037 DGG and 7,765 Hasan messages), seed 20261119, with every message coded on
+  Nov 12 removed first. The 250 per side from Nov 12 suggested the hypothesis, so they are not part of this test.
+- **Coder:** `claude-opus-5-5` at effort low only, with the Nov 12 prompt and schema unchanged (the owner chose one
+  model for cost; on Nov 12 it agreed with Fable on 87% of stances). Cost limit set by the owner: $15.
+- **"Endorsed antisemitism"** below = stance endorse with category antisemitism or holocaust_distortion, as in
+  prediction 7. "JDA" = endorse with jda_antisemitic true.
+
+| # | Prediction | Confidence |
+|---|---|---|
+| 10 | Endorsed antisemitism in the Hasan sample is 1.5-5%; in the DGG sample 0.5-3%. | medium |
+| 11 | The Hasan share is higher than the DGG share. | 75% |
+| 12 | The difference is clear: the 95% interval for Hasan minus DGG (Newcombe) excludes zero. | 50% |
+| 13 | At least half of the Hasan endorsed items are JDA-antisemitic (control or dual-loyalty claims rather than only Holocaust inversion). | medium |
+| 14 | Among items with antisemitic_content true, the joke_or_bait share is higher in DGG than in Hasan. | 80% |
+
+Scored only on the new 1,000 per side, with Wilson intervals; results are added to the results file, misses included.
