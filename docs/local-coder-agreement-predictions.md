@@ -92,3 +92,30 @@ What changed:
 | 14 | kappa(endorse) with each Claude coder at least 0.55 (the bar). | 25% |
 | 15 | On the 1,218 held-out items, every agreement measure is within 0.05 of its all-items value. | medium |
 | 16 | Run 2 passes the whole bar. | 20% |
+
+## Addendum 3, Nov 19 2026, 11:15 PM ET: larger local models (runs 3 and 4), written before either started
+
+Runs 1 and 2 put the 8B model well short of the bar. Runs 3 and 4 test whether a larger model, still free and
+runnable at home or on a cheap rented GPU, closes the gap, with the run 1 setup otherwise unchanged.
+
+- **Models.** Run 3: `qwen3:14b`. Run 4: `qwen3:32b`. Both 4-bit, from the Ollama library, on a rented RTX 4090
+  (24 GB, Runpod Secure Cloud), Ollama 0.40.16, all layers on the GPU, flash attention on, 8-bit attention cache,
+  thinking off, temperature 0, seed 7, context 4,608 tokens, output constrained to the schema.
+- **Task.** The run 1 task exactly: the Nov 12 system prompt (the one the Claude coders had, not the v2 prompt), the
+  same per-item prompts and schema, all 1,285 items.
+- **Comparison and bar.** Unchanged: each Claude coder separately, the same measures, the same bar (against both:
+  stance agreement at least 80%, kappa(endorse) at least 0.55, content kappa at least 0.65; at least 98%
+  schema-valid; at least 95% of non-empty quotes verbatim). Scores are also given on the 1,218 items never read
+  while writing prompt v2, for comparability with run 2.
+- **Order.** Run 3 first, then run 4. If run 4 cannot load fully on the GPU, it is not run and that is reported.
+
+| # | Prediction | Confidence |
+|---|---|---|
+| 17 | Runs 3 and 4 each have at least 98% schema-valid outputs. | high |
+| 18 | Run 3 kappa(endorse) with each Claude coder is 0.15-0.40. | medium |
+| 19 | Run 4 kappa(endorse) with each Claude coder is 0.25-0.55. | medium |
+| 20 | kappa(endorse) rises with size against both coders: run 4 > run 3 > run 1 (0.121 Opus, 0.101 Fable). | medium |
+| 21 | Run 4 content kappa with each Claude coder is 0.40-0.70. | medium |
+| 22 | Both runs code more items as endorse than either Claude coder (45 Opus, 38 Fable). | medium |
+| 23 | Run 3 passes the whole bar. | 5% |
+| 24 | Run 4 passes the whole bar. | 15% |

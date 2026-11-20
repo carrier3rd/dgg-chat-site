@@ -55,3 +55,17 @@ each time. If only a screener passes, it is used to cut what Claude codes. If ne
 
 Each prediction is a hit or a miss on these numbers. Rates get 95% Wilson intervals, kappas a bootstrap interval
 over stream units (2,000 draws, seed 7). Misses are reported.
+
+## Addendum, Nov 19 2026, 11:15 PM ET, before any screener result was read
+
+- **The Ollama screener runs on a rented GPU.** The owner moved it from the PC to a rented RTX 4090 (Runpod, Secure
+  Cloud) so the PC's nightly job keeps its GPU. Same Ollama version (0.40.16), same model (`qwen3:8b`, id
+  500a1f067a9f), same runtime settings as run 1 (all layers on the GPU, flash attention on, 8-bit attention cache,
+  temperature 0, seed 7, context 4,608), same prompt and the same 2,000 item prompts (files checked by SHA-256 against
+  the PC's copies). Only the GPU differs, which can change a few outputs at temperature 0.
+- **A false start, set aside.** The first 181 items on the rented GPU were coded without the flash-attention and
+  8-bit-cache settings. That run was stopped, its output set aside unread (only counts and timings were looked at),
+  and the run restarted from the first item with the settings above.
+- **Classifier training change.** From fold 3 on (the run was stopped by the system for low memory after folds 1-2
+  were saved), training uses gradient checkpointing, which recomputes activations instead of storing them. The
+  gradients are the same, so the design and predictions are unchanged.
