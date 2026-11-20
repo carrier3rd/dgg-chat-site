@@ -68,3 +68,41 @@ Opus: 3 hits of 7, Fable: 4 of 7; pair: 2 of 2.
   Sincerity in shock-humour pile-ons is where the models disagree, as expected.
 - Neither model is ground truth. Next step: a blind hand-check of about 100 items, oversampling disagreements
   (`rhetoric.py sheet`-style), then a larger on-topic sample (around 1,000 per side) to tighten the miss estimate.
+
+## Addendum, Nov 19 2026: 1,000 new on-topic messages per side, Opus only
+
+Predictions 10-14 (addendum in the predictions file, commit d2b1548, written before drawing or coding). New random
+sample, seed 20261119, Nov 12 items removed (159 DGG, 48 Hasan) before 1,000 per side were kept. `claude-opus-5-5`
+effort low, Nov 12 prompt and schema. 2,000 of 2,000 coded; 1,996 quotes verbatim. Cost $6.48 (limit $15).
+
+| | DGG | Hasan |
+|---|---|---|
+| Endorsed antisemitism (endorse + antisemitism/holocaust_distortion) | 21 = 2.1% (1.4-3.2%) | 35 = 3.5% (2.5-4.8%) |
+| of which JDA-antisemitic | 20 | 22 |
+| antisemitic_content true | 127 | 49 |
+| of those, joke_or_bait | 84 (66%) | 7 (14%) |
+| stance unclear | 99 | 24 |
+
+| # | Prediction | Result |
+|---|---|---|
+| 10 | Hasan 1.5-5%, DGG 0.5-3% | **Hit** (3.5%, 2.1%) |
+| 11 | Hasan share higher | **Hit** |
+| 12 | 95% interval for Hasan minus DGG excludes zero | **Miss**: +1.40 points, Newcombe -0.06 to +2.91 |
+| 13 | At least half of Hasan endorsed items JDA-antisemitic | **Hit** (22 of 35) |
+| 14 | Joke share of antisemitic content higher in DGG | **Hit** (66% vs 14%) |
+
+4 of 5 hit. The sign of the Nov 12 result holds on new messages, but the share difference stops just short of clear.
+
+**What the endorsed items are.** Hasan: 28 of 35 carry both antisemitism and israel categories; the most common
+patterns are Zionist control (16), dual loyalty (12, both forms) and Jewish control (6), with 3 Gaza-Holocaust
+inversions; most target "Israel or Zionists" (23). DGG: mostly antisemitism alone (18 of 21), most often Jewish
+control (7), aimed at Jews (10) or named people (5). "Zionist control" items are JDA-contested by definition, which is
+why Hasan's JDA count (22) trails its endorse count more than DGG's.
+
+**Rate per message (not predicted; post hoc).** Hasan chat has about twice as many on-topic messages per message as
+DGG (7,765 of 1.30M vs 2,037 of 714k). Scaling the JDA-endorsed share to each pool gives about 171 missed messages in
+Hasan chat that week (113-257) vs 41 in DGG (26-63): 1.32 vs 0.57 per 10k messages, intervals 0.87-1.98 and 0.36-0.88.
+Combined with the keyword candidates this supports the Nov 12 reading, but it was not a pre-stated test.
+
+Caveats as on Nov 12: one model, no hand check, Twitch filtering removes explicit content from Hasan chat before it
+is logged, and DGG's high unclear count (99) leaves room for sincerity the model would not commit to.
