@@ -90,3 +90,43 @@ all-items numbers match, so the result is not an artefact of the items read whil
 **Conclusion:** at 8B and 4-bit, prompting alone does not bring the local model to the bar. The larger on-topic sample
 stays with the Claude coders unless a different local setup (a larger model, or one trained on coded items) is
 tested under new predictions.
+
+## Runs 3 and 4: larger local models (addendum 3)
+
+Finished Nov 20, 2026 at 2:22 AM ET on a rented RTX 4090 (about $3 of GPU time for runs 3-4 and the screener test
+together). Same task, prompt (the Nov 12 one), schema and settings as run 1; only the model size changed.
+
+| Measure | Run 3 `qwen3:14b` vs Opus / Fable | Run 4 `qwen3:32b` vs Opus / Fable | Run 1 `qwen3:8b` (for comparison) | Bar |
+|---|---|---|---|---|
+| Stance agreement | 0.544 / 0.553 | 0.620 / 0.639 | 0.475 / 0.490 | 0.80 |
+| kappa(endorse) | 0.109 / 0.098 | 0.108 / 0.097 | 0.121 / 0.101 | 0.55 |
+| Stance kappa | 0.188 / 0.200 | 0.262 / 0.285 | 0.147 / 0.162 | — |
+| Content kappa | 0.321 / 0.368 | 0.267 / 0.302 | 0.278 / 0.310 | 0.65 |
+| Items coded endorse | 439 | 242 | 364 | — |
+| Held-out (1,218 unread items): kappa(endorse) | 0.107 / 0.094 | 0.102 / 0.088 | | |
+| Schema-valid; quotes verbatim | 99.8%; 94.7% | 100%; 97.5% | 100%; 98.5% | 98%; 95% |
+
+**Both fail the bar**, on all items and held out. More parameters did not help where it counts: agreement on
+sincere antisemitism stays flat at about 0.10 from 8B to 32B. The 32B model over-reads less than the 14B (242
+endorse codes against 439) and agrees more on stance overall, but mostly by matching more of the clearly irrelevant
+items; it still codes six times as many items endorse as either Claude coder and finds antisemitic content in 577
+items where Opus finds 160 and Fable 185.
+
+### Predictions 17-24
+
+| # | Prediction | Result |
+|---|---|---|
+| 17 | Runs 3 and 4 each at least 98% schema-valid | **Hit** (99.8%, 100%) |
+| 18 | Run 3 kappa(endorse) 0.15-0.40 with each coder | **Miss** (0.109, 0.098) |
+| 19 | Run 4 kappa(endorse) 0.25-0.55 with each coder | **Miss** (0.108, 0.097) |
+| 20 | kappa(endorse) rises with size: run 4 > run 3 > run 1 | **Miss** (flat: 0.121, 0.109, 0.108 vs Opus) |
+| 21 | Run 4 content kappa 0.40-0.70 with each coder | **Miss** (0.267, 0.302) |
+| 22 | Both runs code more items endorse than either Claude coder | **Hit** (439 and 242 vs 45 and 38) |
+| 23 | Run 3 passes the whole bar (5%) | **Miss** |
+| 24 | Run 4 passes the whole bar (15%) | **Miss** |
+
+2 of 8 hit. The misses go one way: the predictions expected size to help, and it did not.
+
+**Conclusion across runs 1-4 and the screener test:** open models up to 32B, prompted or used as a filter, do not
+code this task to the standard of the Claude coders. The coding stays with Claude. A larger open model would need
+new predictions and a reason to expect a different result; the flat 8B-to-32B trend gives little.
