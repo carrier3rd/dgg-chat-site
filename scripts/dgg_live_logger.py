@@ -68,14 +68,14 @@ class Logger:
     @staticmethod
     def _load_json(path, default):
         try:
-            with open(path) as f:
+            with open(path, encoding="utf-8") as f:
                 return json.load(f)
         except Exception:
             return default
 
     def _atomic_json(self, path, obj):
         tmp = path + ".tmp"
-        with open(tmp, "w") as f:
+        with open(tmp, "w", encoding="utf-8", newline="\n") as f:
             json.dump(obj, f)
         os.replace(tmp, path)
 
@@ -93,7 +93,7 @@ class Logger:
             self.fh.close()
             self.fh = None
         self.day = day
-        self.fh = open(os.path.join(self.out, f"{day}.jsonl"), "a", buffering=1)
+        self.fh = open(os.path.join(self.out, f"{day}.jsonl"), "a", buffering=1, encoding="utf-8", newline="\n")
         self._compress_old_days()
 
     def hash(self, nick):
@@ -178,13 +178,13 @@ class Logger:
     def _recent_sessions(self):
         path = os.path.join(self.out, "sessions.jsonl")
         try:
-            with open(path) as f:
+            with open(path, encoding="utf-8") as f:
                 return [json.loads(l) for l in f.readlines()[-8:]]
         except Exception:
             return []
 
     def session_log(self, start, end, reason):
-        with open(os.path.join(self.out, "sessions.jsonl"), "a") as f:
+        with open(os.path.join(self.out, "sessions.jsonl"), "a", encoding="utf-8", newline="\n") as f:
             f.write(json.dumps({"start": start, "end": end, "reason": reason}) + "\n")
 
 
@@ -251,7 +251,10 @@ def main():
     loop = asyncio.new_event_loop()
     task = loop.create_task(run(lg))
     for sig in (signal.SIGINT, signal.SIGTERM):
-        loop.add_signal_handler(sig, task.cancel)
+        try:
+            loop.add_signal_handler(sig, task.cancel)
+        except NotImplementedError:   # Windows (moved to the PC Nov 26 2026): Ctrl-C still stops it via KeyboardInterrupt
+            pass
     try:
         loop.run_until_complete(task)
     except asyncio.CancelledError:
