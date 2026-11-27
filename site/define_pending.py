@@ -24,6 +24,7 @@ import argparse
 import datetime as dt
 import json
 import os
+import shutil
 import re
 import subprocess
 import sys
@@ -73,7 +74,9 @@ def ask(terms, model, effort, timeout):
     fields = ("key", "term", "kind", "messages_24h", "chatters_24h", "lift", "archive_note", "co", "samples")
     text = ("Write one entry for each of these terms. The term data (JSON):\n"
             + json.dumps([{k: t.get(k) for k in fields} for t in terms], ensure_ascii=False, indent=1))
-    args = ["claude", "-p", "--model", model, "--effort", effort, "--output-format", "json", "--no-session-persistence",
+    # full path: Windows looks a bare name up in this process's PATH, not env's (failed in a scheduled task, Nov 27 2026)
+    exe = shutil.which("claude", path=env["PATH"]) or "claude"
+    args = [exe, "-p", "--model", model, "--effort", effort, "--output-format", "json", "--no-session-persistence",
             "--strict-mcp-config", "--disable-slash-commands", "--setting-sources", "", "--tools", "",
             "--system-prompt", SYSTEM, "--json-schema", json.dumps(SCHEMA)]
     p = subprocess.run(args, input=text, capture_output=True, text=True, encoding="utf-8", env=env,
